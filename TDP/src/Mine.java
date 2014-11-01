@@ -2,7 +2,7 @@
 public class Mine extends Follower implements Drawable {
 
 	@Override
-	public Object computeWhichFollow() {
+	public SpaceShip computeWhichFollow() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -13,4 +13,9 @@ public class Mine extends Follower implements Drawable {
 		
 	}
 
+	@Override
+	public void followTarget(SpaceShip s) {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -5,8 +5,14 @@ public class Cannon extends Follower {
 	private int angle = 0;
 
 	@Override
-	public Object computeWhichFollow() {
+	public SpaceShip computeWhichFollow() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void followTarget(SpaceShip s) {
+		// TODO Auto-generated method stub
+		
 	}	
 }
