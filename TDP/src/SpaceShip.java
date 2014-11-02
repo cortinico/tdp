@@ -65,7 +65,8 @@ public class SpaceShip extends GameEntity implements Collideable {
 	}
 	
 	public Missile shot(){
-		return null;
+		Missile justShooted = new Missile(x, y, angle);
+		return justShooted;
 	}
 	
 	@Override

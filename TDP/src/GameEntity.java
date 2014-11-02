@@ -24,6 +24,10 @@ public abstract class GameEntity implements Drawable {
 		this.strategy = strategy;
 	}
 	
+	public boolean isDestroyed(){
+		return this.state.isDestroyed();
+	}
+	
 	public abstract void evolveEntity();
 	
 	@Override

@@ -47,6 +47,9 @@ public class GameEnvironment extends GameDisplay {
 		timer.scheduleAtFixedRate(new TimerTask() {
 			  @Override
 			  public void run() {
+				  
+				  cleanEntities();
+				  
 				  for (Command cmd: commands)
 					  cmd.execute();
 				  
@@ -54,7 +57,7 @@ public class GameEnvironment extends GameDisplay {
 				  for (GameEntity e: entities)
 					  e.evolveEntity();
 				  
-				  mediator.checkCollision();
+				  mediator.checkCollision(entities);
 				  
 				  render(backgroundBuffer);
 				  
@@ -66,6 +69,13 @@ public class GameEnvironment extends GameDisplay {
 			}, 1000/FPS, 1000/FPS);
 	}
 	
+	protected void cleanEntities() {
+		for (GameEntity ent: entities){
+			if (ent instanceof Mine || ent instanceof PlasmaBall || ent instanceof PowerBar)
+				if (ent.isDestroyed()) removeEntity(ent);
+		}
+	}
+
 	private void renderRealBuffer(GraphicEnvironment buffer) {
 		/*	Inserire qui i metodi per trasferire il
 		 * 	buffer grafico calcolato all'interno di un
@@ -83,7 +93,8 @@ public class GameEnvironment extends GameDisplay {
 	
 	public void fireSpaceShip(SpaceShip s){
 		Missile m = s.shot();
-		mediator.addCollideable(m);
+		addEntity(m);
+		
 	}
 	
 	@Override
