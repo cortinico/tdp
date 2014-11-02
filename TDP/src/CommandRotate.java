@@ -1,11 +1,11 @@
 
-public class EscCommand implements Command {
+public class CommandRotate implements Command {
 
 	GameEnvironment env;
 	
-	public EscCommand(GameEnvironment env) {
+	public CommandRotate(GameEnvironment env) {
 		this.env = env;
-	}
+	}	
 	
 	@Override
 	public void execute() {

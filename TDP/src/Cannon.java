@@ -1,18 +1,11 @@
-public class Cannon extends Follower {
+public class Cannon extends GameEntity {
 
 	// Cannon orientation
 	@SuppressWarnings("unused")
 	private int angle = 0;
-
-	@Override
-	public SpaceShip computeWhichFollow() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public Cannon() {
+		this.state = new CannonAliveState();
+		this.strategy = new DrawVectors();
 	}
-
-	@Override
-	public void followTarget(SpaceShip s) {
-		// TODO Auto-generated method stub
-		
-	}	
 }

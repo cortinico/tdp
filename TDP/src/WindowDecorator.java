@@ -15,7 +15,7 @@ public class WindowDecorator extends GameDisplay {
 
 	@Override
 	public void receiveCommand(Command c) {
-		if (c instanceof EscCommand){
+		if (c instanceof CommandEsc){
 			// TODO Gestisco la richiesta
 		} else {
 			component.receiveCommand(c);

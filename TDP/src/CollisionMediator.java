@@ -32,6 +32,7 @@ public class CollisionMediator {
 	
 	private boolean overLap(BoundCircle first, BoundCircle second){
 		
+		// TODO Implementare la collisione
 		return false;
 	}
 }

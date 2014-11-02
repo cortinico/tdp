@@ -1,29 +1,32 @@
 import java.util.Observer;
 
-@SuppressWarnings("unused")
-public class SpaceShip implements Drawable{
+public class SpaceShip extends GameEntity {
 
 	public static final int LEFT = 1;
 	public static final int RIGHT = 2;
 	
-	// Spaceship coordinates
-	private int x;
-	private int y;
+	public static final int MAX_SPEED = 10;
+
+	private int speed;
+	@SuppressWarnings("unused")
 	private int angle;
 	
 	private DelegatedObservable obs;
-	
+		
 	public SpaceShip(int x, int y, int angle){
 		this.x = x;
 		this.y = y;
 		this.angle = angle;
+		this.speed = 0;
 		this.obs = new DelegatedObservable();
+		this.strategy = new DrawVectors();
+		this.state = new SpaceShipAliveState();
 	}
 	
 	public void propel(){
-		/*
-		 * Propel the spaceship on
-		 */
+		this.speed++;
+		if (this.speed > MAX_SPEED) this.speed = MAX_SPEED;
+		
 		obs.setChanged();
 		obs.notifyObservers(this);
 	}
@@ -46,10 +49,12 @@ public class SpaceShip implements Drawable{
 	public void deleteObserver(Observer o){
 		obs.deleteObserver(o);
 	}
-
-	@Override
-	public void draw(GraphicsEnvironment g) {
-		// TODO Auto-generated method stub
-		
+	
+	public void reverseDirection() {
+		this.angle += 180 % 360;
+	}
+	
+	public void stop(){
+		this.speed = 0;
 	}
 }

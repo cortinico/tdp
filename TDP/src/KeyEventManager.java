@@ -16,12 +16,12 @@ public class KeyEventManager implements KeyListener {
 		this.receiver = receiver;
 		
 		// TODO manca l'environment e la rotazione
-		rotateLeft = new RotateCommand(null);
-		rotateRight = new RotateCommand(null);
+		rotateLeft = new CommandRotate(null);
+		rotateRight = new CommandRotate(null);
 		
-		propelOn = new PropelCommand(null);
-		escKey = new EscCommand(null);
-		spaceKey = new EscCommand(null);
+		propelOn = new CommandPropel(null);
+		escKey = new CommandEsc(null);
+		spaceKey = new CommandEsc(null);
 	}
 	
 	@Override

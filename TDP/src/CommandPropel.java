@@ -1,9 +1,9 @@
 
-public class PropelCommand implements Command {
+public class CommandPropel implements Command {
 
 	GameEnvironment env;
 	
-	public PropelCommand(GameEnvironment env) {
+	public CommandPropel(GameEnvironment env) {
 		this.env = env;
 	}
 	
