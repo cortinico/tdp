@@ -2,8 +2,8 @@ import java.util.Observer;
 
 public class SpaceShip extends GameEntity implements Collideable {
 
-	public static final int LEFT = 1;
-	public static final int RIGHT = 2;
+	public static final int SPACESHIP_LEFT = 1;
+	public static final int SPACESHIP_RIGHT = 2;
 	
 	public static final int MAX_SPEED = 10;
 
@@ -38,9 +38,9 @@ public class SpaceShip extends GameEntity implements Collideable {
 	}
 	
 	public void rotate(int direction){
-		if (direction == LEFT){
+		if (direction == SPACESHIP_LEFT){
 			// turn left
-		} else if (direction == RIGHT) {
+		} else if (direction == SPACESHIP_RIGHT) {
 			// turn right
 		}
 		

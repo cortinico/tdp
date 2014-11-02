@@ -1,15 +1,14 @@
 
 public class CommandPropel implements Command {
 
-	GameEnvironment env;
+	private SpaceShip owner;
 	
-	public CommandPropel(GameEnvironment env) {
-		this.env = env;
+	public CommandPropel(SpaceShip owner) {
+		this.owner = owner;
 	}
 	
 	@Override
 	public void execute() {
-		// TODO env.execute()
+		GameEnvironment.getInstance().propelSpaceShip(owner);
 	}
-
 }

@@ -4,24 +4,24 @@ import java.awt.event.KeyListener;
 
 public class KeyEventManager implements KeyListener {
 
-	GameDisplay receiver;
+	SpaceShip owner;
+	GameDisplay display;
 	
 	Command rotateLeft;
 	Command rotateRight;
 	Command propelOn;
-	Command escKey;
-	Command spaceKey;
+	Command fireOff;
 	
-	public KeyEventManager(GameDisplay receiver) {
-		this.receiver = receiver;
+	public KeyEventManager(GameDisplay display, SpaceShip owner) {
+		this.owner = owner;
+		this.display = display;
 		
-		// TODO manca l'environment e la rotazione
-		rotateLeft = new CommandRotate(null);
-		rotateRight = new CommandRotate(null);
+		rotateLeft = new CommandRotate(owner, SpaceShip.SPACESHIP_LEFT);
+		rotateRight = new CommandRotate(owner, SpaceShip.SPACESHIP_RIGHT);
+		propelOn = new CommandPropel(owner);
+		fireOff = new CommandFire(owner);
 		
 		propelOn = new CommandPropel(null);
-		escKey = new CommandEsc(null);
-		spaceKey = new CommandEsc(null);
 	}
 	
 	@Override
@@ -34,11 +34,9 @@ public class KeyEventManager implements KeyListener {
 		else if (arg0.getKeyChar() == 'w')
 			toSend = propelOn;
 		else if (arg0.getKeyChar() == 's')
-			toSend = spaceKey;
-		else if (arg0.getKeyChar() == 'e')
-			toSend = escKey;
+			toSend = fireOff;
 		
-		if (toSend != null) receiver.receiveCommand(toSend);
+		if (toSend != null) display.receiveCommand(toSend);
 	}
 
 	public void keyReleased(KeyEvent arg0) { }

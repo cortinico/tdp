@@ -1,14 +1,16 @@
 
 public class CommandRotate implements Command {
 
-	GameEnvironment env;
+	SpaceShip owner;
+	int direction;
 	
-	public CommandRotate(GameEnvironment env) {
-		this.env = env;
+	public CommandRotate(SpaceShip owner, int direction) {
+		this.owner = owner;
+		this.direction = direction;
 	}	
 	
 	@Override
 	public void execute() {
-		// TODO env.execute()
+		GameEnvironment.getInstance().rotateSpaceShip(owner, direction);
 	}
 }

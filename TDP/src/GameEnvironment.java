@@ -19,9 +19,16 @@ public class GameEnvironment extends GameDisplay {
 	
 	public final static int FPS = 25;
 	
-	public GameEnvironment() {
+	private static GameEnvironment env = new GameEnvironment();
+	private GameEnvironment() {
 		timer = new Timer();
 		commands = Collections.synchronizedList(new ArrayList<Command>());
+		entities = Collections.synchronizedList(new ArrayList<GameEntity>());
+		mediator = new CollisionMediator();
+	}
+	
+	public static GameEnvironment getInstance(){
+		return env;
 	}
 	
 	@Override
@@ -49,7 +56,20 @@ public class GameEnvironment extends GameDisplay {
 			  }
 			}, 1000/FPS, 1000/FPS);
 	}
+	
+	public void rotateSpaceShip(SpaceShip s, int direction){
+		s.rotate(direction);
+	}
 
+	public void propelSpaceShip(SpaceShip s){
+		s.propel();
+	}
+	
+	public void fireSpaceShip(SpaceShip s){
+		Missile m = s.shot();
+		mediator.addCollideable(m);
+	}
+	
 	@Override
 	public void receiveCommand(Command c) {
 		commands.add(c);
