@@ -8,8 +8,8 @@ public class WindowDecorator extends GameDisplay {
 	}
 	
 	@Override
-	public void render() {
-		component.render();
+	public void render(GraphicEnvironment env) {
+		component.render(env);
 		// TODO Aggiunge il  comportamento per la finestra
 	}
 

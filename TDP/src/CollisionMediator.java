@@ -4,6 +4,7 @@ import java.util.List;
 public class CollisionMediator {
 
 	List<Collideable> objects;
+	public static final int BND_RADIUS = 5;
 	
 	public CollisionMediator(){
 		objects = new ArrayList<>();
@@ -31,8 +32,12 @@ public class CollisionMediator {
 	}
 	
 	private boolean overLap(BoundCircle first, BoundCircle second){
-		
-		// TODO Implementare la collisione
-		return false;
+		int width = first.getX() - second.getX();
+		int height = first.getY() - second.getY();
+		double distance = Math.sqrt(width*width + height*height);
+		if (distance <= first.getRadius() + second.getRadius())
+			return true;
+		else
+			return false;
 	}
 }

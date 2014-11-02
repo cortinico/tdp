@@ -1,5 +1,13 @@
 
-public class Missile extends GameEntity {
+public class Missile extends GameEntity implements Collideable {
+
+	private int angle;
+	private static final int MISSILE_SPEED = 20;
+	
+	public Missile(int x, int y, int angle) {
+		super(x, y);
+		this.angle = angle;
+	}
 
 	@Override
 	protected EntityState createInitialState() {
@@ -9,6 +17,21 @@ public class Missile extends GameEntity {
 	@Override
 	protected DrawStrategy createInitialStrategy() {
 		return new DrawVectors();
+	}
+	
+	@Override
+	public BoundCircle getBoundCircle() {
+		return new BoundCircle(getX(), y, CollisionMediator.BND_RADIUS);
+	}
+
+	@Override
+	public void collideWith(Collideable c) {
+		state.collide(this, c);
+	}
+
+	@Override
+	public void evolveEntity() {
+		physicMove(angle, MISSILE_SPEED);
 	}
 	
 }

@@ -1,6 +1,6 @@
 import java.util.Observer;
 
-public class SpaceShip extends GameEntity {
+public class SpaceShip extends GameEntity implements Collideable {
 
 	public static final int LEFT = 1;
 	public static final int RIGHT = 2;
@@ -8,15 +8,12 @@ public class SpaceShip extends GameEntity {
 	public static final int MAX_SPEED = 10;
 
 	private int speed;
-	@SuppressWarnings("unused")
 	private int angle;
 	
 	private DelegatedObservable obs;
 		
 	public SpaceShip(int x, int y, int angle){
-		super();
-		this.x = x;
-		this.y = y;
+		super(x, y);
 		this.angle = angle;
 		this.speed = 0;
 		this.obs = new DelegatedObservable();
@@ -65,5 +62,25 @@ public class SpaceShip extends GameEntity {
 	
 	public void stop(){
 		this.speed = 0;
+	}
+	
+	public Missile shot(){
+		return null;
+	}
+	
+	@Override
+	public BoundCircle getBoundCircle() {
+		return new BoundCircle(getX(), y, CollisionMediator.BND_RADIUS);
+	}
+
+	@Override
+	public void collideWith(Collideable c) {
+		state.collide(this, c);
+	}
+
+	@Override
+	public void evolveEntity() {
+		physicMove(angle, speed);
+		speed--;
 	}
 }
