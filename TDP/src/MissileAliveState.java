@@ -4,14 +4,13 @@ import java.util.List;
 public class MissileAliveState extends EntityState {
 
 	@Override
-	public boolean isDestroyed() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public boolean isDestroyed() { return false; }
 
 	@Override
 	public List<GraphicEntity> getEntity() {
-		// TODO Auto-generated method stub
+		/*	Ritorna la grafica del missile
+		 * 	sparato da disegnare
+		 */
 		return null;
 	}
 
@@ -20,7 +19,6 @@ public class MissileAliveState extends EntityState {
 		if (c instanceof PowerBar || c instanceof Mine || c instanceof Cannon){
 			s.setState(new MissileDeadState());
 		}
-
 	}
 
 }

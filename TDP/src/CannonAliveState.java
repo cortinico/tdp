@@ -8,7 +8,9 @@ public class CannonAliveState extends EntityState {
 
 	@Override
 	public List<GraphicEntity> getEntity() {
-		// TODO Auto-generated method stub
+		/*	Inserisci grafica del cannone
+		 * 	da disegnare.
+		 */
 		return null;
 	}
 

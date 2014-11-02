@@ -8,7 +8,7 @@ public class PowerBarNoHit extends EntityState {
 
 	@Override
 	public List<GraphicEntity> getEntity() {
-		// TODO Auto-generated method stub
+		// Ritorna la grafica della power bar
 		return null;
 	}
 

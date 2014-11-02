@@ -8,7 +8,8 @@ public class PowerBarOneHit extends EntityState {
 
 	@Override
 	public List<GraphicEntity> getEntity() {
-		// TODO Auto-generated method stub
+		// Ritorna la grafica della power bar
+		// che ha subito un colpo
 		return null;
 	}
 

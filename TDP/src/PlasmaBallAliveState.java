@@ -4,14 +4,12 @@ import java.util.List;
 public class PlasmaBallAliveState extends EntityState {
 
 	@Override
-	public boolean isDestroyed() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public boolean isDestroyed() { return false; }
 
 	@Override
 	public List<GraphicEntity> getEntity() {
-		// TODO Auto-generated method stub
+		/*	Ritorno la sprite della plasma ball
+		 */
 		return null;
 	}
 
@@ -20,7 +18,6 @@ public class PlasmaBallAliveState extends EntityState {
 		if (c instanceof PowerBar || c instanceof Mine || c instanceof Cannon){
 			s.setState(new PlasmaBallDeadState());
 		}
-
 	}
 
 }

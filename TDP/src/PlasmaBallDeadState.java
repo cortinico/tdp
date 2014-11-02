@@ -4,21 +4,17 @@ import java.util.List;
 public class PlasmaBallDeadState extends EntityState {
 
 	@Override
-	public boolean isDestroyed() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public boolean isDestroyed() { return true; }
 
 	@Override
 	public List<GraphicEntity> getEntity() {
-		// TODO Auto-generated method stub
+		// Ritorno la sprite della plasma ball che sta esplodendo
 		return null;
 	}
 
 	@Override
 	public void collide(GameEntity s, Collideable c) {
-		// TODO Auto-generated method stub
-
+		// Ignora
 	}
 
 }

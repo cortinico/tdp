@@ -4,21 +4,19 @@ import java.util.List;
 public class MissileDeadState extends EntityState {
 
 	@Override
-	public boolean isDestroyed() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public boolean isDestroyed() { return true; }
 
 	@Override
 	public List<GraphicEntity> getEntity() {
-		// TODO Auto-generated method stub
+		/*	Ritorno la grafica dell'esplosione
+		 * 	del missile
+		 */
 		return null;
 	}
 
 	@Override
 	public void collide(GameEntity s, Collideable c) {
-		// TODO Auto-generated method stub
-
+		// Ignoro e rimuovo il missile, tanto e' esploso
 	}
 
 }

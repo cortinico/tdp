@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.swing.text.html.parser.Entity;
-
 
 public class GameEnvironment extends GameDisplay {
 
@@ -31,6 +29,14 @@ public class GameEnvironment extends GameDisplay {
 		return env;
 	}
 	
+	public void addEntity(GameEntity ent){
+		this.entities.add(ent);
+	}
+	
+	public void removeEntity(GameEntity ent){
+		this.entities.remove(ent);
+	}
+	
 	@Override
 	public void render(GraphicEnvironment env) {
 		  for (GameEntity e: entities)
@@ -53,10 +59,20 @@ public class GameEnvironment extends GameDisplay {
 				  render(backgroundBuffer);
 				  
 				  frontBuffer = backgroundBuffer;
+				  
+				  renderRealBuffer(frontBuffer);
+				  
 			  }
 			}, 1000/FPS, 1000/FPS);
 	}
 	
+	private void renderRealBuffer(GraphicEnvironment buffer) {
+		/*	Inserire qui i metodi per trasferire il
+		 * 	buffer grafico calcolato all'interno di un
+		 * 	buffer grafico reale 
+		 */
+	}
+
 	public void rotateSpaceShip(SpaceShip s, int direction){
 		s.rotate(direction);
 	}

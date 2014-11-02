@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -5,20 +6,20 @@ public class MineDeadState extends EntityState {
 
 	@Override
 	public boolean isDestroyed() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public List<GraphicEntity> getEntity() {
-		// TODO Auto-generated method stub
-		return null;
+		/*	Ritorno la grafica della bomba che sta
+		 * 	esplodendo
+		 */
+		return new ArrayList<GraphicEntity>();
 	}
 
 	@Override
 	public void collide(GameEntity s, Collideable c) {
-		// TODO Auto-generated method stub
-
+		// Ignora, la mina non esiste piu'
 	}
 
 }

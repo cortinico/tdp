@@ -10,7 +10,9 @@ public class MineAliveState extends EntityState {
 
 	@Override
 	public List<GraphicEntity> getEntity() {
-		// TODO Auto-generated method stub
+		/*	Inserisci sprites della mina
+		 * 	da disegnare
+		 */
 		return null;
 	}
 
@@ -19,7 +21,6 @@ public class MineAliveState extends EntityState {
 		if (c instanceof SpaceShip || c instanceof Missile){
 			s.setState(new MineDeadState());
 		}
-
 	}
 
 }
