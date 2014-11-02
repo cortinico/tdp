@@ -1,4 +1,3 @@
-
 public interface Collideable {
 
 	public BoundCircle getBoundCircle();
