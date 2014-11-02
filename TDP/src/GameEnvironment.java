@@ -43,7 +43,7 @@ public class GameEnvironment extends GameDisplay {
 			  e.draw(env);
 	}
 	
-	public void stub(){
+	public void start(){
 		timer.scheduleAtFixedRate(new TimerTask() {
 			  @Override
 			  public void run() {
@@ -69,10 +69,22 @@ public class GameEnvironment extends GameDisplay {
 			}, 1000/FPS, 1000/FPS);
 	}
 	
+	public void stop(){
+		timer.cancel();
+	}
+	
 	protected void cleanEntities() {
 		for (GameEntity ent: entities){
 			if (ent instanceof Mine || ent instanceof PlasmaBall || ent instanceof PowerBar)
 				if (ent.isDestroyed()) removeEntity(ent);
+		}
+	}
+	
+	protected void checkStatus() {
+		for (GameEntity ent: entities){
+			if (ent instanceof SpaceShip || ent instanceof Cannon)
+				if (ent.isDestroyed()) stop();
+				// Game is over
 		}
 	}
 

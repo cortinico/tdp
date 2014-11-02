@@ -12,28 +12,33 @@ public class KeyEventManager implements KeyListener {
 	Command propelOn;
 	Command fireOff;
 	
-	public KeyEventManager(GameDisplay display, SpaceShip owner) {
+	char left, right, propel, fire;
+	
+	public KeyEventManager(GameDisplay display, SpaceShip owner, char left, char right, char propel, char fire) {
 		this.owner = owner;
 		this.display = display;
+		
+		this.left = left;
+		this.right = right;
+		this.propel = propel;
+		this.fire = fire;
 		
 		rotateLeft = new CommandRotate(owner, SpaceShip.SPACESHIP_LEFT);
 		rotateRight = new CommandRotate(owner, SpaceShip.SPACESHIP_RIGHT);
 		propelOn = new CommandPropel(owner);
 		fireOff = new CommandFire(owner);
-		
-		propelOn = new CommandPropel(null);
 	}
 	
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		Command toSend = null;
-		if (arg0.getKeyChar() == 'a')
+		if (arg0.getKeyChar() == left)
 			toSend = rotateLeft;
-		else if (arg0.getKeyChar() == 'd')
+		else if (arg0.getKeyChar() == right)
 			toSend = rotateRight;
-		else if (arg0.getKeyChar() == 'w')
+		else if (arg0.getKeyChar() == propel)
 			toSend = propelOn;
-		else if (arg0.getKeyChar() == 's')
+		else if (arg0.getKeyChar() == fire)
 			toSend = fireOff;
 		
 		if (toSend != null) display.receiveCommand(toSend);
