@@ -5,9 +5,14 @@ public class Mine extends GameEntity {
 	@SuppressWarnings("unused")
 	private Follower followEngine;
 	
-	public Mine() {
-		this.strategy = new DrawSprite();
-		this.state = new MineAliveState();
+	@Override
+	protected EntityState createInitialState() {
+		return new MineAliveState();
+	}
+
+	@Override
+	protected DrawStrategy createInitialStrategy() {
+		return new DrawSprite();
 	}
 	
 //	@Override

@@ -1,9 +1,14 @@
 
 public class Missile extends GameEntity {
 
-	public Missile() {
-		this.strategy = new DrawVectors();
-		this.state = new MissileAliveState();
+	@Override
+	protected EntityState createInitialState() {
+		return new MissileAliveState();
+	}
+
+	@Override
+	protected DrawStrategy createInitialStrategy() {
+		return new DrawVectors();
 	}
 	
 }

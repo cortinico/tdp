@@ -6,6 +6,14 @@ public abstract class GameEntity implements Drawable {
 	protected EntityState state;
 	protected DrawStrategy strategy;
 	
+	public GameEntity() {
+		this.state = createInitialState();
+		this.strategy = createInitialStrategy();
+	}
+	
+	protected abstract EntityState createInitialState();
+	protected abstract DrawStrategy createInitialStrategy();
+
 	public void setState(EntityState state){
 		this.state = state;
 	}

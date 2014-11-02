@@ -11,7 +11,7 @@ public class SpaceShipDeadState extends EntityState {
 	}
 	
 	@Override
-	public boolean isGameOver() {
+	public boolean isDestroyed() {
 		return true;
 	}
 

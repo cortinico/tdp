@@ -4,7 +4,7 @@ import java.util.List;
 public class PowerBarNoHit extends EntityState {
 
 	@Override
-	public boolean isGameOver() { return false; }
+	public boolean isDestroyed() { return false; }
 
 	@Override
 	public List<GraphicEntity> getEntity() {

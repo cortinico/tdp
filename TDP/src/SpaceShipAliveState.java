@@ -4,7 +4,7 @@ import java.util.List;
 public class SpaceShipAliveState extends EntityState {
 
 	@Override
-	public boolean isGameOver() {
+	public boolean isDestroyed() {
 		return false;
 	}
 

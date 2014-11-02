@@ -1,8 +1,13 @@
 public class PowerBar extends GameEntity implements Collideable{
 
-	public PowerBar() {
-		this.strategy = new DrawVectors();
-		this.state = new PowerBarNoHit();
+	@Override
+	protected EntityState createInitialState() {
+		return new PowerBarNoHit();
+	}
+
+	@Override
+	protected DrawStrategy createInitialStrategy() {
+		return new DrawVectors();
 	}
 	
 	@Override

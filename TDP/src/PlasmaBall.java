@@ -1,7 +1,12 @@
 public class PlasmaBall extends GameEntity {
 
-	public PlasmaBall() {
-		this.strategy = new DrawSprite();
-		this.state = new PlasmaBallAliveState();
+	@Override
+	protected EntityState createInitialState() {
+		return new PlasmaBallAliveState();
+	}
+
+	@Override
+	protected DrawStrategy createInitialStrategy() {
+		return new DrawSprite();
 	}
 }

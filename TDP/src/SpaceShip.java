@@ -14,13 +14,22 @@ public class SpaceShip extends GameEntity {
 	private DelegatedObservable obs;
 		
 	public SpaceShip(int x, int y, int angle){
+		super();
 		this.x = x;
 		this.y = y;
 		this.angle = angle;
 		this.speed = 0;
 		this.obs = new DelegatedObservable();
-		this.strategy = new DrawVectors();
-		this.state = new SpaceShipAliveState();
+	}
+	
+	@Override
+	protected EntityState createInitialState() {
+		return new SpaceShipAliveState();
+	}
+
+	@Override
+	protected DrawStrategy createInitialStrategy() {
+		return new DrawVectors();
 	}
 	
 	public void propel(){

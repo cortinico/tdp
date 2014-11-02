@@ -4,7 +4,7 @@ import java.util.List;
 public class CannonDeadState extends EntityState {
 
 	@Override
-	public boolean isGameOver() {
+	public boolean isDestroyed() {
 		// TODO Auto-generated method stub
 		return true;
 	}
