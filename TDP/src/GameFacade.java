@@ -1,6 +1,7 @@
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GameFacade extends UnicastRemoteObject implements RemoteGame {
@@ -18,7 +19,7 @@ public class GameFacade extends UnicastRemoteObject implements RemoteGame {
 	
 	public GameFacade() throws RemoteException { }
 	
-	public GameFacade(boolean windowed) throws RemoteException {
+	public GameFacade(boolean windowed) throws RemoteException {		
 		gameEnv = GameEnvironment.getInstance();
 		gameDecorator = new WindowDecorator(gameEnv);
 		this.windowed = windowed;
@@ -27,6 +28,8 @@ public class GameFacade extends UnicastRemoteObject implements RemoteGame {
 			game = gameDecorator;
 		else
 			game = gameEnv;
+		
+		managers = new ArrayList<>();
 	}
 	
 	public static void main(String[] args) {
