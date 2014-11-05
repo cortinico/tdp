@@ -5,7 +5,7 @@ import java.util.Observer;
 public class Mine extends GameEntity implements Collideable, Observer {
 
 	private int angle = 0;
-	private SpaceShip following;
+	private SpaceShip following = null;
 	private static final int MINE_SPEED = 5;
 		
 	public Mine(int x, int y) {
@@ -41,8 +41,13 @@ public class Mine extends GameEntity implements Collideable, Observer {
 	@Override
 	public void evolveEntity() {
 		if (this.following != null){
-			angle = (this.x -following.getX())/(this.y - following.getY());
+			angle = (this.x - following.getX())/(this.y - following.getY());
 			physicMove(angle, MINE_SPEED);
 		}
+	}
+
+	@Override
+	public String toString() {
+		return "MINE x:" + this.x + " y:" + this.y + " angle: " + this.angle;
 	}
 }

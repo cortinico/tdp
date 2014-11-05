@@ -16,7 +16,7 @@ public class Missile extends GameEntity implements Collideable {
 
 	@Override
 	protected DrawStrategy createInitialStrategy() {
-		return new DrawVectors();
+		return new DrawSprite();
 	}
 	
 	@Override
@@ -32,6 +32,11 @@ public class Missile extends GameEntity implements Collideable {
 	@Override
 	public void evolveEntity() {
 		physicMove(angle, MISSILE_SPEED);
+	}
+	
+	@Override
+	public String toString() {
+		return "MISSILE x:" + this.x + " y:" + this.y + " angle: " + this.angle;
 	}
 	
 }

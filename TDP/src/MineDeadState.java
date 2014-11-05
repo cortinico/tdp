@@ -4,6 +4,14 @@ import java.util.List;
 
 public class MineDeadState extends EntityState {
 
+	private List<GraphicEntity> mineDeadSprites;
+
+	public MineDeadState() {
+		mineDeadSprites = new ArrayList<>();
+		mineDeadSprites.add(new GraphicSprite("mineDead - 1"));
+		mineDeadSprites.add(new GraphicSprite("mineDead - 2"));
+	}
+	
 	@Override
 	public boolean isDestroyed() {
 		return true;
@@ -11,10 +19,8 @@ public class MineDeadState extends EntityState {
 
 	@Override
 	public List<GraphicEntity> getEntity() {
-		/*	Ritorno la grafica della bomba che sta
-		 * 	esplodendo
-		 */
-		return new ArrayList<GraphicEntity>();
+	
+		return mineDeadSprites;
 	}
 
 	@Override

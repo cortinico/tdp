@@ -13,4 +13,10 @@ public class GraphicSprite implements GraphicEntity {
 	public void setFile(String file) {
 		this.file = file;
 	}
+
+	@Override
+	public String drawString() {
+		System.err.println("### DRAWED SPRITE - " + file);
+		return null;
+	}
 }

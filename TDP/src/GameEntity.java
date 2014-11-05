@@ -36,8 +36,8 @@ public abstract class GameEntity implements Drawable {
 	}
 	
 	public void physicMove(int angle, int speed){
-		this.x += Math.cos(angle) * speed;
-		this.y += Math.sin(angle) * speed;
+		this.x += Math.cos(Math.toRadians(angle)) * speed;
+		this.y += Math.sin(Math.toRadians(angle)) * speed;
 	}
 
 	public int getX() {
@@ -46,4 +46,6 @@ public abstract class GameEntity implements Drawable {
 	public int getY() {
 		return y;
 	}
+	
+	public abstract String toString();
 }

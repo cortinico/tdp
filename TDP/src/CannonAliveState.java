@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -11,7 +12,13 @@ public class CannonAliveState extends EntityState {
 		/*	Inserisci grafica del cannone
 		 * 	da disegnare.
 		 */
-		return null;
+		
+		List<GraphicEntity> cannonAliveVect = new ArrayList<>();
+		cannonAliveVect.add(new GraphicVector("cannonAlive - 1"));
+		cannonAliveVect.add(new GraphicVector("cannonAlive - 2"));
+		cannonAliveVect.add(new GraphicVector("cannonAlive - 3"));
+		
+		return cannonAliveVect;
 	}
 
 	@Override

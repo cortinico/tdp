@@ -36,4 +36,9 @@ public class PowerBar extends GameEntity implements Collideable{
 	public int getAngle(){
 		return this.angle;
 	}
+	
+	@Override
+	public String toString() {
+		return "POWER BAR x:" + this.x + " y:" + this.y + " angle: " + this.angle;
+	}
 }

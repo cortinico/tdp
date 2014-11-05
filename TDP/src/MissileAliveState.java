@@ -1,17 +1,23 @@
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class MissileAliveState extends EntityState {
 
+	private List<GraphicEntity> missileAliveSprites;
+
+	public MissileAliveState() {
+		missileAliveSprites = new ArrayList<>();
+		missileAliveSprites.add(new GraphicSprite("missileAlive - 1"));
+		missileAliveSprites.add(new GraphicSprite("missileAlive - 2"));
+	}
+	
 	@Override
 	public boolean isDestroyed() { return false; }
 
 	@Override
 	public List<GraphicEntity> getEntity() {
-		/*	Ritorna la grafica del missile
-		 * 	sparato da disegnare
-		 */
-		return null;
+		return missileAliveSprites;
 	}
 
 	@Override

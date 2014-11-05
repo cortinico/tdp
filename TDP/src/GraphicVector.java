@@ -5,6 +5,8 @@ public class GraphicVector implements GraphicEntity {
 	private int endX;
 	private int endY;
 	private int color;
+	
+	private String message;
 
 	public GraphicVector(int beginX, int beginY, int endX, int endY, int color) {
 		this.setBeginX(beginX);
@@ -12,6 +14,16 @@ public class GraphicVector implements GraphicEntity {
 		this.setEndX(endX);
 		this.setEndY(endY);
 		this.setColor(color);
+		this.message = "MANUAL VECT";
+	}
+	
+	public GraphicVector(String message) {
+		this.setBeginX(0);
+		this.setBeginY(0);
+		this.setEndX(0);
+		this.setEndY(0);
+		this.setColor(0);
+		this.message = message;
 	}
 
 	public int getBeginX() {
@@ -52,6 +64,12 @@ public class GraphicVector implements GraphicEntity {
 
 	public void setColor(int color) {
 		this.color = color;
+	}
+	
+	@Override
+	public String drawString() {
+		System.err.println("### DRAWED VECT - " + message);
+		return null;
 	}
 
 }

@@ -32,4 +32,9 @@ public class PlasmaBall extends GameEntity implements Collideable {
 	public void evolveEntity() {
 		physicMove(angle, PLASMA_BALL_SPEED);
 	}
+	
+	@Override
+	public String toString() {
+		return "PLASMA x:" + this.x + " y:" + this.y + " angle: " + this.angle;
+	}
 }

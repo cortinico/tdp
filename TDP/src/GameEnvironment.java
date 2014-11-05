@@ -15,7 +15,8 @@ public class GameEnvironment extends GameDisplay {
 	private GraphicEnvironment backgroundBuffer;
 	private GraphicEnvironment frontBuffer;
 	
-	public final static int FPS = 25;
+	//public final static long FPS = 1;
+	public final static long MSEC = 2000;
 	
 	private static GameEnvironment env = new GameEnvironment();
 	private GameEnvironment() {
@@ -23,6 +24,9 @@ public class GameEnvironment extends GameDisplay {
 		commands = Collections.synchronizedList(new ArrayList<Command>());
 		entities = Collections.synchronizedList(new ArrayList<GameEntity>());
 		mediator = new CollisionMediator();
+		
+		frontBuffer = new GraphicEnvironment();
+		backgroundBuffer = new GraphicEnvironment();
 	}
 	
 	public static GameEnvironment getInstance(){
@@ -36,37 +40,74 @@ public class GameEnvironment extends GameDisplay {
 	public void removeEntity(GameEntity ent){
 		this.entities.remove(ent);
 	}
-	
-	@Override
+
+	public void renderBorder(GraphicEnvironment env) {
+		System.err.println("@@@ DRAW BLACK BOX @@@");
+	}
+
 	public void render(GraphicEnvironment env) {
 		  for (GameEntity e: entities)
 			  e.draw(env);
 	}
+
 	
 	public void start(){
+		
+		initialState();
+		
 		timer.scheduleAtFixedRate(new TimerTask() {
 			  @Override
 			  public void run() {
 				  
 				  cleanEntities();
+				  System.err.println("=== CLEAN ENTITIES ===");
 				  
-				  for (Command cmd: commands)
+				  for (Command cmd: commands){
 					  cmd.execute();
+					  System.err.println("!!!!!!!! ESEGUITO UN COMANDO !!!!!!!!!");
+				  }
+				  
+				  System.err.println("=== EXECUTED COMMANDS ===");
 				  
 				  commands.clear();
 				  for (GameEntity e: entities)
 					  e.evolveEntity();
 				  
+				  System.err.println("=== EVOLVED ENTITIES ===");
+				  
+				  dumpStatus();
+				  			  
+				  
 				  mediator.checkCollision(entities);
 				  
+				  System.err.println("=== CHECK COLLISION ENTITIES ===");
+				  
 				  render(backgroundBuffer);
+				  
+				  System.err.println("=== RENDER BUFFER ===");
 				  
 				  frontBuffer = backgroundBuffer;
 				  
 				  renderRealBuffer(frontBuffer);
 				  
 			  }
-			}, 1000/FPS, 1000/FPS);
+			}, MSEC, MSEC);
+	}
+	
+	private void initialState() {
+		addEntity(new Cannon(9000, 0));
+		addEntity(new PowerBar(2000, 1000, 0));
+		addEntity(new PowerBar(3000, 1000, 0));
+		addEntity(new PowerBar(4000, 1000, 0));
+		addEntity(new Mine(1000, 1000));
+		addEntity(new Missile(5000, 5000, 180));
+	}
+
+	private void dumpStatus() {
+		  for (GameEntity e: entities){
+			  System.err.println(e.toString());
+			  
+		  }
 	}
 	
 	public void stop(){
@@ -76,7 +117,10 @@ public class GameEnvironment extends GameDisplay {
 	protected void cleanEntities() {
 		for (GameEntity ent: entities){
 			if (ent instanceof Mine || ent instanceof PlasmaBall || ent instanceof PowerBar)
-				if (ent.isDestroyed()) removeEntity(ent);
+				if (ent.isDestroyed()) {
+					System.err.println("||| ENTITY CLEANED |||");
+					removeEntity(ent);
+				}
 		}
 	}
 	
@@ -84,15 +128,12 @@ public class GameEnvironment extends GameDisplay {
 		for (GameEntity ent: entities){
 			if (ent instanceof SpaceShip || ent instanceof Cannon)
 				if (ent.isDestroyed()) stop();
-				// Game is over
+					System.err.println("||| GAME OVER |||");
 		}
 	}
 
 	private void renderRealBuffer(GraphicEnvironment buffer) {
-		/*	Inserire qui i metodi per trasferire il
-		 * 	buffer grafico calcolato all'interno di un
-		 * 	buffer grafico reale 
-		 */
+		buffer.renderOver();
 	}
 
 	public void rotateSpaceShip(SpaceShip s, int direction){

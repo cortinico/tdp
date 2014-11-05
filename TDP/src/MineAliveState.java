@@ -1,19 +1,26 @@
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class MineAliveState extends EntityState {
 
+	
+	private List<GraphicEntity> mineAliveSprites;
+
+	public MineAliveState() {
+		mineAliveSprites = new ArrayList<>();
+		mineAliveSprites.add(new GraphicSprite("mineAlive - 1"));
+		mineAliveSprites.add(new GraphicSprite("mineAlive - 2"));
+	}
+	
 	@Override
 	public boolean isDestroyed() {
 		return false;
 	}
 
 	@Override
-	public List<GraphicEntity> getEntity() {
-		/*	Inserisci sprites della mina
-		 * 	da disegnare
-		 */
-		return null;
+	public List<GraphicEntity> getEntity() {		
+		return mineAliveSprites;
 	}
 
 	@Override

@@ -8,13 +8,14 @@ public class DrawSprite extends DrawStrategy {
 	@Override
 	public void drawEntity(GraphicEnvironment env, List<GraphicEntity> entity) {
 
-		if (!lastSprites.equals(entity)) {
+		if (lastSprites == null || !lastSprites.equals(entity)) {
 			lastSprites = entity;
 			animation = 0;
 		}
 		
 		GraphicSprite spriteToDraw = (GraphicSprite) entity.get(animation);
 		env.drawSprite(spriteToDraw);
-		animation += 1 % entity.size();
+		animation++;
+		if (animation >= entity.size()) animation = 0;
 	}
 }

@@ -1,4 +1,3 @@
-import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
@@ -8,7 +7,7 @@ public class GameFacade extends UnicastRemoteObject implements RemoteGame {
 	
 	private static final long serialVersionUID = 1L;
 
-	private GameDisplay game;
+	private GameDisplay gameDisp;
 	
 	private GameEnvironment gameEnv;
 	private WindowDecorator gameDecorator;
@@ -17,47 +16,40 @@ public class GameFacade extends UnicastRemoteObject implements RemoteGame {
 	
 	private boolean windowed = false;
 	
-	public GameFacade() throws RemoteException { }
+	public GameFacade() throws RemoteException {
+		this(false);
+	}
 	
 	public GameFacade(boolean windowed) throws RemoteException {		
 		gameEnv = GameEnvironment.getInstance();
+		
 		gameDecorator = new WindowDecorator(gameEnv);
 		this.windowed = windowed;
 		
 		if (windowed)
-			game = gameDecorator;
+			gameDisp = gameDecorator;
 		else
-			game = gameEnv;
+			gameDisp = gameEnv;
 		
 		managers = new ArrayList<>();
 	}
-	
-	public static void main(String[] args) {
-		try {
-			RemoteGame game = new GameFacade();
-			Naming.bind("RemoteGame", game);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+
 	
 	public void playGame() {
-		gameEnv.start();
+		gameDisp.renderBorder(new GraphicEnvironment());
+		gameDisp.start();
 	}
 
 	public void stopGame() {
-		gameEnv.stop();
+		gameDisp.stop();
 	}
-	
-	public void render() {
-		game.render(new GraphicEnvironment());
-	}
-	
-	public void addPlayer(char left, char right, char propel, char fire) {
+		
+	public KeyEventManager addPlayer(char left, char right, char propel, char fire) {
 		SpaceShip newShip = new SpaceShip(0, 0, 0);
 		gameEnv.addEntity(newShip);
-		managers.add(new KeyEventManager(game, newShip, left, right, propel, fire));
+		KeyEventManager mgr = new KeyEventManager(gameDisp, newShip, left, right, propel, fire);
+		managers.add(mgr);
+		return mgr;
 	}
 	
 	public void setWindowed(boolean windowed){
@@ -65,8 +57,9 @@ public class GameFacade extends UnicastRemoteObject implements RemoteGame {
 		this.windowed = windowed;
 		
 		if (windowed)
-			game = gameDecorator;
+			gameDisp = gameDecorator;
 		else
-			game = gameEnv;
+			gameDisp = gameEnv;
+		gameDisp.renderBorder(new GraphicEnvironment());
 	}
 }

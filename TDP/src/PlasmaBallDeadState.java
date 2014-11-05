@@ -1,15 +1,23 @@
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class PlasmaBallDeadState extends EntityState {
 
+	private List<GraphicEntity> plasmaBallDeadSprites;
+
+	public PlasmaBallDeadState() {
+		plasmaBallDeadSprites = new ArrayList<>();
+		plasmaBallDeadSprites.add(new GraphicSprite("plasmaBallDead - 1"));
+		plasmaBallDeadSprites.add(new GraphicSprite("plasmaBallDead - 2"));
+	}
+	
 	@Override
 	public boolean isDestroyed() { return true; }
 
 	@Override
-	public List<GraphicEntity> getEntity() {
-		// Ritorno la sprite della plasma ball che sta esplodendo
-		return null;
+	public List<GraphicEntity> getEntity() {	
+		return plasmaBallDeadSprites;
 	}
 
 	@Override

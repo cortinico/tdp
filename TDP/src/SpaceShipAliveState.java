@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -23,10 +24,14 @@ public class SpaceShipAliveState extends EntityState {
 
 	@Override
 	public List<GraphicEntity> getEntity() {
-		/*	Ritorna la grafica dell'astronave
-		 * 	da disegnare
-		 */
-		return null;
+		List<GraphicEntity> spaceShipAliveVect = new ArrayList<>();
+		spaceShipAliveVect.add(new GraphicVector("spaceShipAlive - 1"));
+		spaceShipAliveVect.add(new GraphicVector("spaceShipAlive - 2"));
+		spaceShipAliveVect.add(new GraphicVector("spaceShipAlive - 3"));
+		spaceShipAliveVect.add(new GraphicVector("spaceShipAlive - 4"));
+		spaceShipAliveVect.add(new GraphicVector("spaceShipAlive - 5"));
+		
+		return spaceShipAliveVect;
 	}
 
 }

@@ -32,14 +32,19 @@ public class KeyEventManager implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent arg0) {
 		Command toSend = null;
-		if (arg0.getKeyChar() == left)
+		if (arg0.getKeyChar() == left){
 			toSend = rotateLeft;
-		else if (arg0.getKeyChar() == right)
+			System.err.println("%%% PRESSED: ROTATE LEFT");
+		} else if (arg0.getKeyChar() == right) {
 			toSend = rotateRight;
-		else if (arg0.getKeyChar() == propel)
+			System.err.println("%%% PRESSED: ROTATE RIGHT");
+		} else if (arg0.getKeyChar() == propel) {
 			toSend = propelOn;
-		else if (arg0.getKeyChar() == fire)
+			System.err.println("%%% PRESSED: PROPEL");
+		} else if (arg0.getKeyChar() == fire) {
 			toSend = fireOff;
+			System.err.println("%%% PRESSED: FIRE");
+		}
 		
 		if (toSend != null) display.receiveCommand(toSend);
 	}

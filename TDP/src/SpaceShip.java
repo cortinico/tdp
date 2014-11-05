@@ -39,9 +39,10 @@ public class SpaceShip extends GameEntity implements Collideable {
 	
 	public void rotate(int direction){
 		if (direction == SPACESHIP_LEFT){
-			// turn left
+			this.angle += 1 % 360;
 		} else if (direction == SPACESHIP_RIGHT) {
-			// turn right
+			this.angle--;
+			if (this.angle < 0) this.angle = 360;
 		}
 		
 		obs.setChanged();
@@ -83,5 +84,10 @@ public class SpaceShip extends GameEntity implements Collideable {
 	public void evolveEntity() {
 		physicMove(angle, speed);
 		speed--;
+	}
+	
+	@Override
+	public String toString() {
+		return "SPACESHIP x:" + this.x + " y:" + this.y + " angle: " + this.angle + " speed:" + this.speed;
 	}
 }

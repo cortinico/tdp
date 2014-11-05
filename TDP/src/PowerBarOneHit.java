@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -8,9 +9,13 @@ public class PowerBarOneHit extends EntityState {
 
 	@Override
 	public List<GraphicEntity> getEntity() {
-		// Ritorna la grafica della power bar
-		// che ha subito un colpo
-		return null;
+		List<GraphicEntity> powerBarOneHitVect = new ArrayList<>();
+		powerBarOneHitVect.add(new GraphicVector("powerBarOneHit - 1"));
+		powerBarOneHitVect.add(new GraphicVector("powerBarOneHit - 2"));
+		powerBarOneHitVect.add(new GraphicVector("powerBarOneHit - 3"));
+		
+		return powerBarOneHitVect;
+		
 	}
 
 	@Override

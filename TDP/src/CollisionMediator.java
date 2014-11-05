@@ -14,8 +14,10 @@ public class CollisionMediator {
 				if (!first.equals(second)){
 					BoundCircle firstCircle = first.getBoundCircle();
 					BoundCircle secondCircle = second.getBoundCircle();
-					if (overLap(firstCircle, secondCircle))
+					if (overLap(firstCircle, secondCircle)){
 						first.collideWith(second);
+						System.err.println("$$$ COLLISION!!!");
+					}
 				}
 			}
 		}
@@ -27,7 +29,7 @@ public class CollisionMediator {
 			if (ent instanceof Collideable) 
 				filtered.add((Collideable)ent);
 		
-		return null;
+		return filtered;
 	}
 
 	private boolean overLap(BoundCircle first, BoundCircle second){

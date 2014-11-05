@@ -8,12 +8,9 @@ public class WindowDecorator extends GameDisplay {
 	}
 	
 	@Override
-	public void render(GraphicEnvironment env) {
-		component.render(env);
-		/*  Aggiungo la decorazione per la finestra,
-		 *  quali bordi, menu, bottoni chiusura, ombre,
-		 *  secondo l'ambiente di sistema.
-		 */
+	public void renderBorder(GraphicEnvironment env) {
+		component.renderBorder(env);
+		System.err.println("+++++ WINDOW: RENDERING");
 	}
 
 	@Override
@@ -22,6 +19,17 @@ public class WindowDecorator extends GameDisplay {
 		 *  e non recapitarli all'environment
 		 */
 		component.receiveCommand(c);
+		System.err.println("+++++ WINDOW: RECEIVED COMMAND");
+	}
+
+	@Override
+	public void start() {
+		component.start();
+	}
+
+	@Override
+	public void stop() {
+		component.stop();
 	}
 
 }

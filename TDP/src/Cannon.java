@@ -82,4 +82,9 @@ public class Cannon extends GameEntity implements Collideable, Observer {
 		 */
 		return false;
 	}
+	
+	@Override
+	public String toString() {
+		return "CANNON x:" + this.x + " y:" + this.y + " angle: " + this.angle;
+	}
 }
