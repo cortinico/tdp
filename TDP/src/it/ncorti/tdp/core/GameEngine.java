@@ -165,6 +165,45 @@ public class GameEngine extends GameDisplay {
 		timer.cancel();
 	}
 
+	/* (non-Javadoc)
+	 * @see GameDisplay#receiveCommand(Command) */
+	@Override
+	public void receiveCommand(Command c) {
+		commands.add(c);
+		Log.e(TAG, "Command received");
+		
+	}
+
+	/**
+	 * Funzione che permette di ruotare una navicella in gioco
+	 * 
+	 * @param s Riferimento alla navicella da routare
+	 * @param direction Direzione di rotazione {@link SpaceShip} per le costanti di rotazione
+	 */
+	public void rotateSpaceShip(SpaceShip s, int direction) {
+		s.rotate(direction);
+	}
+
+	/**
+	 * Funzione che permette di far accelerare una navicella in gioco
+	 * 
+	 * @param s Riferimento alla navicella da far accelerare
+	 */
+	public void propelSpaceShip(SpaceShip s) {
+		s.propel();
+	}
+
+	/**
+	 * Funzione che permette di far sparare una navicella in gioco
+	 * 
+	 * @param s Riferimento alla navicella da far sparare
+	 */
+	public void fireSpaceShip(SpaceShip s) {
+		Missile m = s.shot();
+		addEntity(m);
+	
+	}
+
 	/**
 	 * Metodo che genera uno stato iniziale per il gioco
 	 */
@@ -214,42 +253,5 @@ public class GameEngine extends GameDisplay {
 	 */
 	private void renderRealBuffer(GraphicEnvironment buffer) {
 		buffer.renderOver();
-	}
-
-	/**
-	 * Funzione che permette di ruotare una navicella in gioco
-	 * 
-	 * @param s Riferimento alla navicella da routare
-	 * @param direction Direzione di rotazione {@link SpaceShip} per le costanti di rotazione
-	 */
-	public void rotateSpaceShip(SpaceShip s, int direction) {
-		s.rotate(direction);
-	}
-
-	/**
-	 * Funzione che permette di far accelerare una navicella in gioco
-	 * 
-	 * @param s Riferimento alla navicella da far accelerare
-	 */
-	public void propelSpaceShip(SpaceShip s) {
-		s.propel();
-	}
-
-	/**
-	 * Funzione che permette di far sparare una navicella in gioco
-	 * 
-	 * @param s Riferimento alla navicella da far sparare
-	 */
-	public void fireSpaceShip(SpaceShip s) {
-		Missile m = s.shot();
-		addEntity(m);
-
-	}
-
-	/* (non-Javadoc)
-	 * @see GameDisplay#receiveCommand(Command) */
-	@Override
-	public void receiveCommand(Command c) {
-		commands.add(c);
 	}
 }

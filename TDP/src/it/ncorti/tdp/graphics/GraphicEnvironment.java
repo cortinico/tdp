@@ -25,9 +25,9 @@ public class GraphicEnvironment {
 	/**
 	 * Metodo per disegnare un vettore
 	 * 
-	 * @param spriteToDraw Riferimento al vettore da disegnare
+	 * @param vectToDraw Riferimento al vettore da disegnare
 	 */
-	public void drawVector(GraphicVector vect){ list.add(vect); }
+	public void drawVector(GraphicVector vectToDraw){ list.add(vectToDraw); }
 	
 	/**
 	 * Svuota la lista delle primitive di cui e' stato richiesto il draw e le

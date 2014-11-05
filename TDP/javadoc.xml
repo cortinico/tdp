@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="private" author="true" classpath="." destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="it.ncorti.tdp.user,it.ncorti.tdp.core.entities,it.ncorti.tdp.core,it.ncorti.tdp.graphics" source="1.8" sourcepath="src" splitindex="true" use="true" version="true">
+            <link href="file:/home/nicola/git/tdp/TDP/doc/"/>
+            <link href="http://docs.oracle.com/javase/7/docs/api/"/>
+        </javadoc>
+    </target>
+</project>

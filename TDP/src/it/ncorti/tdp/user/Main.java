@@ -39,11 +39,11 @@ public class Main {
 
 					JFrame f = new JFrame("Star Castle Test Window");
 					f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-					f.setSize(100, 100);
+					f.setSize(800, 600);
 
 					Panel p = new Panel();
+					p.setSize(100, 100);
 					p.addKeyListener(manager);
-
 					p.setFocusable(true);
 					f.add(p);
 					p.requestFocusInWindow();

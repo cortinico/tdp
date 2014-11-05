@@ -42,8 +42,9 @@ public class WindowDecorator extends GameDisplay {
 		/*  Qui potrei gestire dei comandi 
 		 *  e non recapitarli all'environment
 		 */
-		component.receiveCommand(c);
 		Log.e(TAG, "Command received");
+		component.receiveCommand(c);
+		
 	}
 
 	@Override
