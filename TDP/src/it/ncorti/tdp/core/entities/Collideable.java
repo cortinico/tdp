@@ -10,7 +10,7 @@ public interface Collideable {
 	/**
 	 * Ritorna l'area nel quale una entita' registra le collisioni
 	 * 
-	 * @return
+	 * @return L'area nel quale una entita' registra le collisioni
 	 */
 	public BoundCircle getBoundCircle();
 	

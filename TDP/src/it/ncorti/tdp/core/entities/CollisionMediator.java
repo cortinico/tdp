@@ -15,7 +15,7 @@ public class CollisionMediator {
 	/** TAG per le stampe di debug */
 	private static final String TAG = "***** CollisionMediator";
 	
-	/** Costante che indica la dimensione base del raggio dei {@link BoundCirlce} */
+	/** Costante che indica la dimensione base del raggio dei {@link BoundCircle} */
 	public static final int BND_RADIUS = 5;
 	
 	/**

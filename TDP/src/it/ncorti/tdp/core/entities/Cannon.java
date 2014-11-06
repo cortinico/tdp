@@ -133,9 +133,9 @@ public class Cannon extends GameEntity implements Collideable, Observer {
 	}
 
 	/**
-	 * Metodo che controlla se fra le powerbars 
+	 * Metodo che controlla se fra le powerbars c'e' spazio per poter sparare al nemico
 	 * 
-	 * @return 
+	 * @return True se c'e' spazio, false altrimenti 
 	 */
 	private boolean checkPowerBars() {
 		/*	Metodo per controllare se c'e' spazio
