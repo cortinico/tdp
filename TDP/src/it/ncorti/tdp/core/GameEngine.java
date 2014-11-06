@@ -1,4 +1,5 @@
 package it.ncorti.tdp.core;
+
 import it.ncorti.tdp.core.entities.Cannon;
 import it.ncorti.tdp.core.entities.CollisionMediator;
 import it.ncorti.tdp.core.entities.GameEntity;

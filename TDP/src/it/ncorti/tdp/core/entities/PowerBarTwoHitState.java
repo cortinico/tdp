@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class PowerBarTwoHit extends EntityState {
+public class PowerBarTwoHitState extends EntityState {
 
 	@Override
 	public boolean isDestroyed() { return false; }

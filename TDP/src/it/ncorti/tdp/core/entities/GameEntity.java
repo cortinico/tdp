@@ -4,14 +4,31 @@ import it.ncorti.tdp.graphics.DrawStrategy;
 import it.ncorti.tdp.graphics.Drawable;
 import it.ncorti.tdp.graphics.GraphicEnvironment;
 
+/**
+ * Classe astratta che rappresenta un entita' del gioco.
+ * Mantiene i riferimenti ad uno stato dell'entita' e ad una strategia di gioco 
+ * 
+ * @author nicola
+ */
 public abstract class GameEntity implements Drawable {
 	
+	/** Coordinata x dell'entita' */
 	protected int x;
+	/** Coordinata y dell'entita' */
 	protected int y;
 	
+	/** Stato dell'entita' */
 	protected EntityState state;
-	protected DrawStrategy strategy;
+	/** Strategia di gioco */
+	private DrawStrategy strategy;
 	
+	/**
+	 * Costruttore base che crea una nuova entita' di gioco.
+	 * Lo state e lo strategy vengono creati con il Factory Method
+	 * 
+	 * @param x Coordinata x dell'entita'
+	 * @param y Coordinata y dell'entita'
+	 */
 	public GameEntity(int x, int y) {
 		this.x = x;
 		this.y = y;
@@ -19,39 +36,82 @@ public abstract class GameEntity implements Drawable {
 		this.strategy = createInitialStrategy();
 	}
 	
+	/**
+	 * Factory method che crea lo stato in cui parte l'entita' di gioco
+	 * 
+	 * @return Stato iniziale dell'entita' di gioco
+	 */
 	protected abstract EntityState createInitialState();
+	
+	/**
+	 * Factory method che crea la strategia per disegnare l'entita' di gioco
+	 * 
+	 * @return Strategia di disegno dell'entita'
+	 */
 	protected abstract DrawStrategy createInitialStrategy();
 
-	public void setState(EntityState state){
-		this.state = state;
-	}
-
-	public void setStrategy(DrawStrategy strategy){
-		this.strategy = strategy;
-	}
-	
-	public boolean isDestroyed(){
-		return this.state.isDestroyed();
-	}
-	
-	public abstract void evolveEntity();
-	
-	@Override
-	public void draw(GraphicEnvironment g) {
-		this.strategy.drawEntity(g, state.getEntity());
-	}
-	
-	public void physicMove(int angle, int speed){
-		this.x += Math.cos(Math.toRadians(angle)) * speed;
-		this.y += Math.sin(Math.toRadians(angle)) * speed;
-	}
-
+	/**
+	 * Ritorna la coordinata x dell'entita'
+	 * 
+	 * @return La coordinata x dell'entita'
+	 */
 	public int getX() {
 		return x;
 	}
+	
+	/**
+	 * Ritorna la coordinata y dell'entita'
+	 * 
+	 * @return La coordinata y dell'entita'
+	 */
 	public int getY() {
 		return y;
 	}
 	
-	public abstract String toString();
+	/**
+	 * Metodo che viene invocato ad ogni ciclo del gioco
+	 * per indicare come si evolve l'entita' dal punto di vista fisico
+	 * (velocita', spostamento, inseguimento, etc...)
+	 * 
+	 */
+	public abstract void evolveEntity();
+	
+	/**
+	 * Aggiorna lo stato dell'entita' di gioco
+	 * 
+	 * @param state Nuovo stato dell'entita' di gioco
+	 */
+	protected void setState(EntityState state){
+		this.state = state;
+	}
+	
+	/**
+	 * Indica se l'entita' di gioco e' stata distrutta
+	 * 
+	 * @return True se l'entita' e' stata distrutta
+	 */
+	public boolean isDestroyed(){
+		return this.state.isDestroyed();
+	}
+	
+	/**
+	 * Muove l'entita' fisica dalle coordinati iniziali, verso un angolo angle alla velocita' speed
+	 * 
+	 * @param angle Angolo di movimento
+	 * @param speed Velocita' di movimento
+	 */
+	protected void physicMove(int angle, int speed){
+		
+		// Nota: questa formula fisica non e' stata testata a fondo
+		this.x += Math.cos(Math.toRadians(angle)) * speed;
+		this.y += Math.sin(Math.toRadians(angle)) * speed;
+	}
+	
+	/* (non-Javadoc)
+	 * @see it.ncorti.tdp.graphics.Drawable#draw(it.ncorti.tdp.graphics.GraphicEnvironment)
+	 */
+	@Override
+	public void draw(GraphicEnvironment g) {
+		this.strategy.drawEntity(g, state.getEntity());
+	}
 }

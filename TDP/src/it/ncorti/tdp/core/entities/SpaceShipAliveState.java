@@ -16,13 +16,13 @@ public class SpaceShipAliveState extends EntityState {
 	public void collide(GameEntity e, Collideable c) {
 		SpaceShip ship = (SpaceShip) e;
 		if (c instanceof Mine){
-			ship.setState(new SpaceShipDeadState());
+			ship.setState(new EntityDeadState());
 		} else if (c instanceof SpaceShip) {
 			ship.reverseDirection();
 		} else if (c instanceof PowerBar) {
 			ship.stop();
 		} else if (c instanceof PlasmaBall){
-			ship.setState(new SpaceShipDeadState());
+			ship.setState(new EntityDeadState());
 		}
 	}
 

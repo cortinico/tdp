@@ -15,7 +15,7 @@ public class PowerBar extends GameEntity implements Collideable{
 
 	@Override
 	protected EntityState createInitialState() {
-		return new PowerBarNoHit();
+		return new PowerBarNoHitState();
 	}
 
 	@Override

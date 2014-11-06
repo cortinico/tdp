@@ -6,25 +6,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class PowerBarOneHit extends EntityState {
+public class PowerBarNoHitState extends EntityState {
 
 	@Override
 	public boolean isDestroyed() { return false; }
 
 	@Override
 	public List<GraphicEntity> getEntity() {
-		List<GraphicEntity> powerBarOneHitVect = new ArrayList<>();
-		powerBarOneHitVect.add(new GraphicVector("powerBarOneHit - 1"));
-		powerBarOneHitVect.add(new GraphicVector("powerBarOneHit - 2"));
-		powerBarOneHitVect.add(new GraphicVector("powerBarOneHit - 3"));
+		List<GraphicEntity> powerBarNoHitVect = new ArrayList<>();
+		powerBarNoHitVect.add(new GraphicVector("powerBarNoHit - 1"));
+		powerBarNoHitVect.add(new GraphicVector("powerBarNoHit - 2"));
+		powerBarNoHitVect.add(new GraphicVector("powerBarNoHit - 3"));
 		
-		return powerBarOneHitVect;
+		return powerBarNoHitVect;
 		
 	}
 
 	@Override
 	public void collide(GameEntity s, Collideable c) {
 		if (c instanceof Missile)
-			s.setState(new PowerBarOneHit());
+			s.setState(new PowerBarOneHitState());
 	}
 }

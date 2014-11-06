@@ -28,7 +28,7 @@ public class CannonAliveState extends EntityState {
 	@Override
 	public void collide(GameEntity s, Collideable c) {
 		if (c instanceof Missile){
-			s.setState(new CannonDeadState());
+			s.setState(new EntityDeadState());
 		}
 	}
 
