@@ -15,6 +15,7 @@ import it.ncorti.tdp.user.Log;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Observer;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -81,11 +82,31 @@ public class GameEngine extends GameDisplay {
 
 	/**
 	 * Aggiunge un'entità di gioco allo stato
+	 * NOTA: se gli viene passato un'observer, questo viene aggiunto alla lista
+	 * degli observer di tutte le spaceship (e viceversa)
 	 * 
 	 * @param ent Entità di gioco da aggiungere
 	 */
 	public void addEntity(GameEntity ent) {
 		this.entities.add(ent);
+		
+		// Controllo se e' un observer
+		if (ent instanceof Observer){
+			for (GameEntity spaceship: entities){
+				if (spaceship instanceof SpaceShip){
+					((SpaceShip) spaceship).addObserver((Observer)ent);
+				}
+			}
+		}
+		
+		// Constrollo se e' una spaceship
+		if (ent instanceof SpaceShip){
+			for (GameEntity observer: entities){
+				if (observer instanceof Observer){
+					((SpaceShip) ent).addObserver((Observer)observer);
+				}
+			}
+		}
 	}
 
 	/**
@@ -226,11 +247,32 @@ public class GameEngine extends GameDisplay {
 		}
 	}
 
+	/**
+	 * Funzione di comodo che rimuove tutte le entita' che sono state distrutte dall'elenco
+	 * di quelle
+	 */
 	private void cleanEntities() {
 		for (GameEntity ent : entities) {
-			if (ent instanceof Mine || ent instanceof PlasmaBall || ent instanceof PowerBar) if (ent.isDestroyed()) {
-				Log.e(TAG, "I'm about to CLEAN: " + ent);
-				removeEntity(ent);
+			if (ent instanceof Mine || ent instanceof PlasmaBall || ent instanceof PowerBar || ent instanceof Missile) {
+				if (ent.isDestroyed()) {
+					Log.e(TAG, "I'm about to CLEAN: " + ent);
+					removeEntity(ent);
+					if (ent instanceof Observer)
+						removeObserverAll((Observer)ent);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Funzione di comodo che deregistra un observer da tutte le navicelle che sono in gioco
+	 * 
+	 * @param ent Observer da de-registrare
+	 */
+	private void removeObserverAll(Observer ent) {
+		for (GameEntity spaceship : entities){
+			if (spaceship instanceof SpaceShip){
+				((SpaceShip)spaceship).deleteObserver(ent);
 			}
 		}
 	}

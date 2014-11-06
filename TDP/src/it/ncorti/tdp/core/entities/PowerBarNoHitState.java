@@ -5,25 +5,48 @@ import it.ncorti.tdp.graphics.GraphicVector;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Stato che rappresenta la power bar che sta ruotando e non ha ancora subito nessun colpo
+ * 
+ * @author nicola
+ *
+ */
 public class PowerBarNoHitState extends EntityState {
 
-	@Override
-	public boolean isDestroyed() { return false; }
-
-	@Override
-	public List<GraphicEntity> getEntity() {
-		List<GraphicEntity> powerBarNoHitVect = new ArrayList<>();
+	/** Lista di vettori grafici per disegnare la barra */
+	private List<GraphicEntity> powerBarNoHitVect;
+	
+	/**
+	 * Costruttore di base per creare un nuovo stato per la barra senza colpi subiti
+	 */
+	public PowerBarNoHitState() {
+		powerBarNoHitVect = new ArrayList<>();
 		powerBarNoHitVect.add(new GraphicVector("powerBarNoHit - 1"));
 		powerBarNoHitVect.add(new GraphicVector("powerBarNoHit - 2"));
 		powerBarNoHitVect.add(new GraphicVector("powerBarNoHit - 3"));
-		
-		return powerBarNoHitVect;
-		
 	}
 
+	/* (non-Javadoc)
+	 * @see it.ncorti.tdp.core.entities.EntityState#isDestroyed()
+	 */
+	@Override
+	public boolean isDestroyed() { return false; }
+
+	/* (non-Javadoc)
+	 * @see it.ncorti.tdp.core.entities.EntityState#getEntity()
+	 */
+	@Override
+	public List<GraphicEntity> getEntity() {
+		return powerBarNoHitVect;
+	}
+
+	/* (non-Javadoc)
+	 * @see it.ncorti.tdp.core.entities.EntityState#collide(it.ncorti.tdp.core.entities.GameEntity, it.ncorti.tdp.core.entities.Collideable)
+	 */
 	@Override
 	public void collide(GameEntity s, Collideable c) {
+		
+		// Se collide con un missile, evolve
 		if (c instanceof Missile)
 			s.setState(new PowerBarOneHitState());
 	}

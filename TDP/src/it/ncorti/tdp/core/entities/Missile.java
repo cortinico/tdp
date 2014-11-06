@@ -51,7 +51,7 @@ public class Missile extends GameEntity implements Collideable {
 	 */
 	@Override
 	public BoundCircle getBoundCircle() {
-		return new BoundCircle(getX(), y, CollisionMediator.BND_RADIUS);
+		return new BoundCircle(getX(), getY(), CollisionMediator.BND_RADIUS);
 	}
 
 	/* (non-Javadoc)
