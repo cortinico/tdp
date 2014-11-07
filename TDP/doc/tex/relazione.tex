@@ -1,0 +1,168 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%		Relazione del progetto di Design Patterns
+%
+%				    Nicola Corti - 2014
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,12pt]{article} 
+\usepackage{graphicx}
+\usepackage{vmargin}
+\usepackage[italian]{babel} 
+\usepackage[utf8x]{inputenc}
+\usepackage{listings}
+\usepackage{url}
+\usepackage{pdflscape}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{amsfonts}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\setlength{\parskip}{8pt}
+
+%\usepackage{chngcntr}
+%\counterwithin{equation}{subsection}
+
+\renewcommand\lstlistingname{Codice}
+\addto\captionsitalian{\renewcommand\figurename{Immagine}}
+
+%\setpapersize{A4}
+%\setmarginsrb{15mm}{10mm}{15mm}{10mm}%
+%             {0mm}{10mm}{0mm}{10mm}
+
+
+\definecolor{LightLightGray}{RGB}{241,241,241}
+
+\lstset{
+basicstyle=\scriptsize\ttfamily,
+keywordstyle=\color{MidnightBlue}\bfseries,
+identifierstyle=\color{Black},
+commentstyle=\color{Green}\itshape,
+stringstyle=\color{Red}\ttfamily,
+showstringspaces=false,
+%numbers=left, numberstyle=\tiny,
+%stepnumber=1, numbersep=10pt,
+tabsize=4,
+framexleftmargin=5mm, rulesepcolor=\color{LightLightGray},
+frame=tb,
+backgroundcolor=\color{LightLightGray},
+language={Java},
+%mathescape=true,
+%fontadjust=true,
+breaklines=true,breakatwhitespace=true,breakautoindent
+}
+
+\title{StarCastle - Esempio di applicazione dei design pattern nella modellazione di un videogioco}
+\author{Nicola Corti - 454413 \\Corso di Laurea Magistrale in Informatica - Universit\`a di Pisa}
+\date{22 Aprile 2014}
+
+ 
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Questa relazione ha lo scopo di illustrare come i design pattern possono essere utilizzati nella modellazione di un software complesso, quale pu\`o essere un videogioco. Gli aspetti da tenere in considerazione sono svariati, dal mantenimento di uno stato consistente, alla gestione degli eventi, delle collisioni, etc\dots{}
+
+Il codice sorgente allegato \`e da considerarsi parte integrante di questa relazione, al fine di permettere una comprensione pi\`u organica di tutti gli aspetti di design ed implementativi.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section*{Introduzione}
+\label{sec:introduzione}
+
+I videogiochi rappresentano forse la categoria di software pi\`u complessi da realizzare, coinvolgendo in un unico progetto svariati aspetti dell'informatica (si pensi al networking, all'intelligenza artificiale o alla gestione dei database).
+
+La realizzazione di un videogioco, se non supportata da un'accurata fase di analisi e di progettazione, pu\`o risultare veramente complessa o addirittura impossibile. Tralasciare la fase di progettazione di un videogioco potrebbe portare a notevoli perdite di tempo o addirittura al fallimento del progetto stesso.
+
+Per questo motivo risulta fondamentale analizzare sotto ogni aspetto il videogioco che si intende realizzare, e progettare ogni classe/interfaccia con la massima accuratezza. In questa fase dello sviluppo i \emph{design pattern} possono essere un strumento valido per risolvere alcune delle problematiche pi\`u comuni e ricorrenti nel campo dello sviluppo di videogiochi.
+
+In particolare in questa relazione mostreremo come i \emph{design pattern} possono essere di supporto nella progettazione del videogioco \emph{StarCastle}\footnote{\url{http://en.wikipedia.org/wiki/Star_Castle}}, un videogioco vettoriale del 1980 prodotto da Cinematronics\footnote{\`E possibile testare una demo online del gioco all'indirizzo seguente \\ \url{http://www.download-free-games.com/online/game/star_castle/}}.
+
+In \emph{StarCastle} il giocatore si trover\`a a comandare un'astronave spaziale, e dovr\`a attaccare un cannone posto al centro dello schermo (vedi immagine \ref{img:screen}). Il cannone \`e protetto da 3 annelli formate da barre di energie ed \`e in grado di attaccare il giocatore tramite mine (che inseguiranno l'astronave del giocatore) e sfere al plasma (che verranno sparate direttamente dal cannone verso l'astronave). 
+
+\begin{figure}
+\centering
+\includegraphics[width=6cm]{screen.jpg}
+\caption{Una schermata di gioco di \emph{StarCastle}}
+\label{img:screen}
+\end{figure}
+
+Tralasciamo una discussione pi\`u dettagliata di tutte le meccaniche di gioco, in quanto verranno analizzate singolarmente nelle varie sezioni seguenti.
+
+
+
+
+
+\section{Mantenimento dello stato}
+\label{sec:stato}
+
+\section{Gestione delle collisioni}
+\label{sec:collisioni}
+
+\section{Gestione dei comandi}
+\label{sec:comandi}
+
+\section{Avvio e terminazione del gioco}
+\label{sec:avvio}
+
+\section{Gestione del multiplayer}
+\label{sec:multiplayer}
+
+\section{User guide}
+\label{sec:guide}
+
+La simulazione \`e stata realizzata in Java utilizzando il simulatore Peersim ed \`e stata corredata di un file \textbf{ant} (il file \texttt{build.xml}) che offre dei target per automatizzare il processo di compilazione e di esecuzione del software.
+
+Per funzionare, la simulazione ha bisogno di un file di configurazione in input da cui poter caricare la configurazione della rete (numero di nodi, numero di link, protocolli da utilizzare, etc...). Alcuni esempi di file di configurazione possono essere trovati all'interno della cartella \texttt{example/}.
+
+Per compilare la simulazione \`e necessario posizionarsi all'interno della directory dove \`e contenuto il software ed invocare da terminale il comando
+
+\begin{lstlisting}[basicstyle=\ttfamily]
+ant build
+\end{lstlisting}
+
+che provveder\`a ad invocare il compilatore \texttt{javac} per compilare i sorgenti presenti all'interno della cartella \texttt{src/}, i file \texttt{.class} generati si troveranno all'interno della cartella \texttt{bin/}. 
+
+Per pulire la cartella \texttt{bin/} al fine di avere un ambiente pulito per poter effettuare una nuova compilazione \`e possibile utilizzare il target
+\begin{lstlisting}[basicstyle=\ttfamily]
+ant clean
+\end{lstlisting}
+
+\`E infine possibile generare un file \texttt{jar} contenente tutti i file compilati e tutte le librerie necessarie all'esecuzione. Per farlo \`e sufficiente invocare il target
+\begin{lstlisting}[basicstyle=\ttfamily]
+ant jar
+\end{lstlisting}
+Verr\`a generato un file chiamato \texttt{p2p\_final.jar} all'interno della cartella principale del software.
+Per avviare il file \texttt{jar} \`e necessario invocare il comando
+\begin{lstlisting}[basicstyle=\ttfamily]
+java -jar p2p_final.jar [file di configurazione]
+\end{lstlisting}
+
+\subsection{Documentazione}
+
+Al fine di rendere il codice sorgente pi\`u comprensibile, il software \`e stato corredato di documentazione. In particolare tutte le parti del codice sorgente che potrebbero risultare di difficile comprensione sono state commentate. Inoltre ogni funzione e classe del software \`e stata documentata con il formato \textsf {javadoc}, la documentazione generata pu\`o essere visionata all'interno della cartella \textsf{doc/} e pu\`o essere rigenerata utilizzando il comando
+\begin{lstlisting}[basicstyle=\ttfamily]
+ant javadoc
+\end{lstlisting}
+
+Per una comprensione organica del software si consiglia la lettura della seguente relazione nella sua interezza. La presente relazione viene rilasciata in Pdf ed in \LaTeX\ e pu\`o essere visionata all'interno della cartella \texttt{doc/tex/}.
+
+\subsection{Avvio della simulazione}
+
+Una volta compilato il software \`e possibile invocarlo tramite il comando
+\begin{lstlisting}[basicstyle=\ttfamily]
+ant Execute [-Dfile=nomefile]
+\end{lstlisting}
+
+Con \texttt{-Dfile=nomefile} \`e possibile impostare il file di configurazione da usare. Per effettuare alcune computazioni di esempio \`e quindi sufficiente impostare \texttt{-Dfile=example/<nomefile.conf>}, eseguendo alcuni dei files di esempio gi\`a predisposti all'interno della cartella \texttt{example}.
+
+I nomi dei files contenuti nella cartella \texttt{example} permettono di comprendere facilmente quali sono le configurazioni impostate. Sono stati predisposti calcoli solamente \textsc{count} oppure \textsc{count-beacon}, con grafi random, small-world e scale-free. Inoltre sono stati predisposti esempi con debugger attivato ed altri esempi in cui si calcolano altre funzioni (massimo, somma, etc...).
+
+Se la struttura dei file di configurazione non fosse chiara \`e possibile visionare il file \textsf{example.conf} che contiene tutti i commenti necessari a comprendere le impostazioni possibili.
+
+\end{document}

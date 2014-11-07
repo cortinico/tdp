@@ -1,0 +1,10 @@
+\select@language {italian}
+\select@language {italian}
+\contentsline {section}{\numberline {1}Mantenimento dello stato}{3}{section.1}
+\contentsline {section}{\numberline {2}Gestione delle collisioni}{3}{section.2}
+\contentsline {section}{\numberline {3}Gestione dei comandi}{3}{section.3}
+\contentsline {section}{\numberline {4}Avvio e terminazione del gioco}{3}{section.4}
+\contentsline {section}{\numberline {5}Gestione del multiplayer}{3}{section.5}
+\contentsline {section}{\numberline {6}User guide}{3}{section.6}
+\contentsline {subsection}{\numberline {6.1}Documentazione}{4}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Avvio della simulazione}{4}{subsection.6.2}
