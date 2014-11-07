@@ -285,7 +285,7 @@ public class GameEngine extends GameDisplay {
 			if (ent instanceof SpaceShip || ent instanceof Cannon) {
 				if (ent.isDestroyed()) {
 					Log.e(TAG, "|||||||||||||||||| GAME OVER ||||||||||||||||||");
-					stop();
+					System.exit(0);
 					return false;
 				}
 			}

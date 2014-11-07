@@ -1,5 +1,6 @@
 package it.ncorti.tdp.user;
 
+import java.awt.event.KeyListener;
 import java.rmi.RemoteException;
 
 import javax.swing.JFrame;
@@ -42,10 +43,10 @@ public class SimpleClient {
 				public void run() {
 					try {
 						GameFacade game = new GameFacade(true);
-						KeyEventManager manager = game.addPlayer(left, right, propel, fire);
+						KeyListener manager = game.addPlayer(left, right, propel, fire);
 
-						JFrame frame = showWindow();
-						frame.addKeyListener(manager);
+						showWindow(manager);
+						
 						game.playGame();
 					} catch (RemoteException e) {
 						e.printStackTrace();
@@ -63,9 +64,11 @@ public class SimpleClient {
 	 * Metodo per mostrare un generico frame che funga da recettore degli eventi di input
 	 * da tastiera
 	 * 
+	 * @param manager Manager input che deve essere associato al pannello 
+	 * 
 	 * @return Un JFrame che contiene una singola textbox
 	 */
-	public static JFrame showWindow() {
+	public static JFrame showWindow(KeyListener manager) {
 		JFrame frame = new JFrame("Star Castle Event Window");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -75,11 +78,14 @@ public class SimpleClient {
 		JTextPane text = new JTextPane();
 		text.setText("StarCastel Event Window");
 
+		panel.addKeyListener(manager);
+		
 		panel.add(text);
 		frame.add(panel);
 
 		panel.requestFocusInWindow();
 		frame.pack();
+		frame.setVisible(true);
 		return frame;
 	}
 }

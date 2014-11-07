@@ -11,7 +11,6 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
-import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 /**
@@ -20,7 +19,7 @@ import javax.swing.SwingUtilities;
  * @author Nicola Corti
  */
 public class RemoteClient {
-	
+
 	/** TAG per le stampe di debug */
 	private static final String TAG = "<RMI> RemoteClient";
 
@@ -47,8 +46,8 @@ public class RemoteClient {
 		fire = args[3].charAt(0);
 
 		// Recupero indirizzo e porta del server
-		String server = args[0];
-		int port = Integer.parseInt(args[1]);
+		String server = args[4];
+		int port = Integer.parseInt(args[5]);
 
 		try {
 
@@ -61,9 +60,10 @@ public class RemoteClient {
 			
 			SwingUtilities.invokeLater(new Runnable() {
 				public void run() {
-					JFrame frame = SimpleClient.showWindow();
-					frame.addKeyListener(new RemoteKeyListner(service, ID, left, right, propel, fire));
 					
+					KeyListener manager = new RemoteKeyListner(service, ID, left, right, propel, fire);
+					SimpleClient.showWindow(manager);		
+			
 					try {
 						service.playGame();
 					} catch (RemoteException e) {
@@ -80,10 +80,9 @@ public class RemoteClient {
 			Log.e(TAG, "Service not bound on server: " + e.getMessage());
 		}
 	}
-	
+
 	/**
-	 * Classe che rappresenta un event listner Swing che collega gli input utente
-	 * alle chiamate sul servizio remoto
+	 * Classe che rappresenta un event listner Swing che collega gli input utente alle chiamate sul servizio remoto
 	 * 
 	 * @author nicola
 	 */
@@ -97,15 +96,14 @@ public class RemoteClient {
 		private char propel;
 		/** Carattere tasto fuoco */
 		private char fire;
-		
+
 		/** Riferimento al servizio remoto */
 		private RemoteGame service;
 		/** ID del giocatore */
 		private double ID;
-		
+
 		/**
-		 * Costruttore che crea un nuovo RemoteKeyListner che puo' essere assegnato ad un
-		 * componente Java Swing
+		 * Costruttore che crea un nuovo RemoteKeyListner che puo' essere assegnato ad un componente Java Swing
 		 * 
 		 * @param service Servizio remoto a cui inviare le richieste
 		 * @param ID ID del giocatore associato
@@ -114,7 +112,7 @@ public class RemoteClient {
 		 * @param propel Carattere tasto accelera
 		 * @param fire Carattere tasto fuoco
 		 */
-		public RemoteKeyListner(RemoteGame service, double ID,  char left, char right, char propel, char fire) {
+		public RemoteKeyListner(RemoteGame service, double ID, char left, char right, char propel, char fire) {
 			this.left = left;
 			this.right = right;
 			this.propel = propel;
@@ -122,14 +120,13 @@ public class RemoteClient {
 			this.ID = ID;
 			this.service = service;
 		}
-		
+
 		/* (non-Javadoc)
-		 * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
-		 */
+		 * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent) */
 		@Override
 		public void keyPressed(KeyEvent arg0) {
-			try{
-				if (arg0.getKeyChar() == left){
+			try {
+				if (arg0.getKeyChar() == left) {
 					service.rotate(ID, SpaceShip.SPACESHIP_LEFT);
 				} else if (arg0.getKeyChar() == right) {
 					service.rotate(ID, SpaceShip.SPACESHIP_RIGHT);
@@ -141,12 +138,12 @@ public class RemoteClient {
 			} catch (RemoteException e) {
 				Log.e(TAG, "Unable to deliver your command due to: " + e.getMessage());
 			}
-			
+
 		}
 
 		public void keyReleased(KeyEvent arg0) {}
-		public void keyTyped(KeyEvent arg0) { }
 
-		
+		public void keyTyped(KeyEvent arg0) {}
+
 	}
 }
