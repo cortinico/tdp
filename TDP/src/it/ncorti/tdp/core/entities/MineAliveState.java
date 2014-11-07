@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Stato che rappresenta una mina che e' viva e sta inseguendo una navicella
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public class MineAliveState extends EntityState {

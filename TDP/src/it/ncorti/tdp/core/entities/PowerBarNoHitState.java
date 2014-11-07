@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Stato che rappresenta la power bar che sta ruotando e non ha ancora subito nessun colpo
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public class PowerBarNoHitState extends EntityState {

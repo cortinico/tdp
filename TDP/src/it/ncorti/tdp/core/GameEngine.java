@@ -25,7 +25,7 @@ import java.util.TimerTask;
  * 
  * Mantenuto con pattern Singleton (instanziato eager)
  * 
- * @author nicola
+ * @author Nicola Corti
  */
 public class GameEngine extends GameDisplay {
 
@@ -139,7 +139,7 @@ public class GameEngine extends GameDisplay {
 			public void run() {
 
 				// Controllo il gameover
-				checkStatus();
+				if (!checkStatus()) return;
 
 				// Rimuovo le entità esplose
 				cleanEntities();
@@ -190,7 +190,7 @@ public class GameEngine extends GameDisplay {
 	/* (non-Javadoc)
 	 * @see GameDisplay#receiveCommand(Command) */
 	@Override
-	public void receiveCommand(Command c) {
+	public void sendCommand(Command c) {
 		commands.add(c);
 		Log.e(TAG, "Command received");
 		
@@ -230,12 +230,12 @@ public class GameEngine extends GameDisplay {
 	 * Metodo che genera uno stato iniziale per il gioco
 	 */
 	private void initialState() {
-		addEntity(new Cannon(9000, 0));
-		addEntity(new PowerBar(2000, 1000, 0));
-		addEntity(new PowerBar(3000, 1000, 0));
-		addEntity(new PowerBar(4000, 1000, 0));
-		addEntity(new Mine(1000, 1000));
-		addEntity(new Missile(5000, 5000, 180));
+		addEntity(new Cannon(5000, 5000));
+//		addEntity(new PowerBar(2000, 1000, 0));
+//		addEntity(new PowerBar(3000, 1000, 0));
+//		addEntity(new PowerBar(4000, 1000, 0));
+		addEntity(new Mine(-100, -100));
+		addEntity(new Missile(9000, 5000, 180));
 	}
 
 	/**
@@ -280,15 +280,17 @@ public class GameEngine extends GameDisplay {
 	/**
 	 * Funzione di comodo che controlla se il gioco e' in uno stato di Game Over o meno
 	 */
-	private void checkStatus() {
+	private boolean checkStatus() {
 		for (GameEntity ent : entities) {
 			if (ent instanceof SpaceShip || ent instanceof Cannon) {
 				if (ent.isDestroyed()) {
 					Log.e(TAG, "|||||||||||||||||| GAME OVER ||||||||||||||||||");
 					stop();
+					return false;
 				}
 			}
 		}
+		return true;
 	}
 
 	/**

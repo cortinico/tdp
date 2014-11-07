@@ -3,7 +3,7 @@ package it.ncorti.tdp.graphics;
 /**
  * Interfaccia che deve essere implementata dalle entita che devono prevedere di essere disegnate a schermo
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public interface Drawable {

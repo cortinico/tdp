@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * Strategia per disegnare una serie di sprite
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public class DrawSprite extends DrawStrategy {
@@ -27,11 +27,13 @@ public class DrawSprite extends DrawStrategy {
 		}
 		
 		// Disegno una singola sprite
-		GraphicSprite spriteToDraw = (GraphicSprite) entity.get(animation);
-		env.drawSprite(spriteToDraw);
+		if (entity.size() > 0){
+			GraphicSprite spriteToDraw = (GraphicSprite) entity.get(animation);
+			env.drawSprite(spriteToDraw);
 		
-		// Aggiorno il contatore per la prossima sprite
-		animation++;
-		if (animation >= entity.size()) animation = 0;
+			// Aggiorno il contatore per la prossima sprite
+			animation++;
+			if (animation >= entity.size()) animation = 0;
+		}
 	}
 }

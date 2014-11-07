@@ -4,11 +4,11 @@ import it.ncorti.tdp.core.GameEngine;
 import it.ncorti.tdp.core.WindowDecorator;
 import it.ncorti.tdp.core.entities.SpaceShip;
 import it.ncorti.tdp.graphics.GraphicEnvironment;
+import it.ncorti.tdp.user.rmi.RemoteGame;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 /**
  * Classe facade per gestire in modo semplificato l'avvio e lo stop
@@ -32,11 +32,11 @@ public class GameFacade extends UnicastRemoteObject implements RemoteGame {
 	/** Riferimento alla finestra */
 	private WindowDecorator gameDecorator;
 	
-	/** Elenco dei manager utente registrati */
-	private List<KeyEventManager> userManagers;
-	
 	/** Flag che indica se è stata impostata la modalità window */
 	private boolean flagWindowed = false;
+	
+	/** Hashmap che mantiene i riferimenti alle astronavi dei giocatori */
+	private HashMap<Double, SpaceShip> players;
 	
 	
 	/** Costruttore base che crea un nuovo GameFacade senza finestra
@@ -60,8 +60,9 @@ public class GameFacade extends UnicastRemoteObject implements RemoteGame {
 			gameDisp = gameDecorator;
 		else
 			gameDisp = gameEnv;
+			
+		players = new HashMap<>(1);
 		
-		userManagers = new ArrayList<>();
 		Log.e(TAG, "Façade ready!");
 	}
 
@@ -83,23 +84,78 @@ public class GameFacade extends UnicastRemoteObject implements RemoteGame {
 		gameDisp.stop();
 	}
 		
-	/* (non-Javadoc)
-	 * @see RemoteGame#addPlayer(char, char, char, char)
-	 */
-	public KeyEventManager addPlayer(char left, char right, char propel, char fire) {
+	@Override
+	public double addPlayer() {
 		
 		// Creo una nuova navicella in coordinate 0,0
 		SpaceShip newShip = new SpaceShip(0, 0, 0);
+		double ID = newShip.getID();
+		
+		players.put(ID, newShip);
 		gameEnv.addEntity(newShip);
+		
+		Log.e(TAG, "Ship " + ID + " Created");
+		return ID;
+	}
+
+	/**
+	 * Metodo che permette di aggiungere un nuovo giocatore e che ritorna il suo event listner swing
+	 * 
+	 * @param left Carattere per il tasto left
+	 * @param right Carattere per il tasto right
+	 * @param propel Carattere per il tasto propel
+	 * @param fire Carattere per il tasto fire
+	 * @return Un {@link KeyEventManager} per poterlo linkare ad un controllo grafico
+	 */
+	public KeyEventManager addPlayer(char left, char right, char propel, char fire) {
+		
+		double ID = this.addPlayer();
+		SpaceShip newShip = players.get(ID);
 		
 		// Creo un nuovo EventManager
 		KeyEventManager mgr = new KeyEventManager(gameDisp, newShip, left, right, propel, fire);
-		userManagers.add(mgr);
 		
-		Log.e(TAG, "Ship Created");
+		Log.e(TAG, "KeyEventManager Created");
 		return mgr;
 	}
+
+	@Override
+	public void rotate(double playerID, int direction) {
+		
+		// Invio un comando di rotazione
+		SpaceShip owner = players.get(playerID);
+		if (owner != null && (direction == SpaceShip.SPACESHIP_LEFT || direction == SpaceShip.SPACESHIP_RIGHT)){
+			CommandRotate rotate = new CommandRotate(owner, direction);
+			gameDisp.sendCommand(rotate);
+		}
+	}
+
+	@Override
+	public void propel(double playerID) {
+		
+		// Invio un comando di propulsione
+		SpaceShip owner = players.get(playerID);
+		if (owner != null){
+			CommandPropel propel = new CommandPropel(owner);
+			gameDisp.sendCommand(propel);
+		}
+	}
+
 	
+	/* (non-Javadoc)
+	 * @see it.ncorti.tdp.user.RemoteGame#fire(double)
+	 */
+	@Override
+	public void fire(double playerID) {
+		
+		// Invio un comando di sparo
+		SpaceShip owner = players.get(playerID);
+		if (owner != null){
+			CommandFire fire = new CommandFire(owner);
+			gameDisp.sendCommand(fire);
+		}
+	}
+
 	/* (non-Javadoc)
 	 * @see RemoteGame#setWindowed(boolean)
 	 */
@@ -115,4 +171,5 @@ public class GameFacade extends UnicastRemoteObject implements RemoteGame {
 		
 		Log.e(TAG, "Setted Window to " + windowed);
 	}
+
 }

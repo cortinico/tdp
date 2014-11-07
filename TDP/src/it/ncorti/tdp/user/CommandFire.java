@@ -6,7 +6,7 @@ import it.ncorti.tdp.core.entities.SpaceShip;
 /**
  * Comando che rappresenta una richiesta di far sparare una {@link SpaceShip}
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public class CommandFire implements Command {

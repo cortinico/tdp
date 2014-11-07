@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Stato che rappresenta una entita' che e' entrata in collisione ed e' da considerarsi morta
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public class EntityDeadState extends EntityState {

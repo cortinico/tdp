@@ -6,13 +6,13 @@ import it.ncorti.tdp.graphics.DrawStrategy;
 /**
  * Classe che rappresenta una sfera di plasma sparata dal cannone per uccidere un'astronave
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public class PlasmaBall extends GameEntity implements Collideable {
 
 	/** Angolo di lancio */
-	private int angle;
+	private double angle;
 	
 	/** Velocita' di default della plasma ball */
 	private static final int PLASMA_BALL_SPEED = 40;
@@ -24,7 +24,7 @@ public class PlasmaBall extends GameEntity implements Collideable {
 	 * @param y Coordinata y della plasmaball
 	 * @param angle Angolo di sparo
 	 */
-	public PlasmaBall(int x, int y, int angle) {
+	public PlasmaBall(int x, int y, double angle) {
 		super(x, y);
 		this.angle = angle;
 	}

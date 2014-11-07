@@ -15,7 +15,7 @@ public class Cannon extends GameEntity implements Collideable, Observer {
 	private static final String TAG = "CCCCC Cannon";
 	
 	/** Angolo di rotazione */
-	private int angle = 0;
+	private double angle = 0;
 	/** Astronave che si sta seguendo */
 	private SpaceShip following;
 	
@@ -108,7 +108,10 @@ public class Cannon extends GameEntity implements Collideable, Observer {
 	@Override
 	public void evolveEntity() {
 		if (this.following != null){
-			int followingAngle = (this.x -following.getX())/(this.y - following.getY());
+			
+			// Nota: questa formula fisica non e' stata testata a fondo
+			double m = (getY() - following.getY()) / (getX() - following.getX());
+			double followingAngle = Math.toDegrees(Math.atan(m));
 			
 			// Faccio evolvere l'angolo verso la navicella
 			if (followingAngle > angle)

@@ -8,7 +8,7 @@ import it.ncorti.tdp.user.Log;
  * Classe decorator che aggiunge del comportamento alle classi base di {@link GameDisplay}
  * In particolare aggiunge il comportamento per poter visualizzare una finestra
  * 
- * @author nicola
+ * @author Nicola Corti
  */
 public class WindowDecorator extends GameDisplay {
 
@@ -38,12 +38,12 @@ public class WindowDecorator extends GameDisplay {
 	 * @see GameDisplay#receiveCommand(Command)
 	 */
 	@Override
-	public void receiveCommand(Command c) {
+	public void sendCommand(Command c) {
 		/*  Qui potrei gestire dei comandi 
 		 *  e non recapitarli all'environment
 		 */
 		Log.e(TAG, "Command received");
-		component.receiveCommand(c);
+		component.sendCommand(c);
 		
 	}
 

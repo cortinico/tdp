@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * Classe che rappresenta una Strategy per effettuare il disegno di una serie di primitive grafiche
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public abstract class DrawStrategy {

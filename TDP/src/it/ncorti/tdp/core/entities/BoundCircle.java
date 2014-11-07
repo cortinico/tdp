@@ -3,7 +3,7 @@ package it.ncorti.tdp.core.entities;
 /**
  * Classe che rappresenta un area circolare, utilizzata per calcolare le collisioni
  * 
- * @author nicola
+ * @author Nicola Corti
  */
 public class BoundCircle {
 

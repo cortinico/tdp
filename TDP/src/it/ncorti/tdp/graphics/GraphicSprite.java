@@ -5,7 +5,7 @@ import it.ncorti.tdp.user.Log;
 /**
  * Classe che rappresenta uno sprite da disegnare
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public class GraphicSprite implements GraphicEntity {

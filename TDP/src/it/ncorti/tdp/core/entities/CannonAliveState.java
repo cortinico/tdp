@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Stato che rappresenta il cannone nemico che e' vivo e pronto a sparare
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public class CannonAliveState extends EntityState {

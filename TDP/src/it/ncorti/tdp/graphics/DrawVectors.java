@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * Strategia per disegnare una serie di vettori grafici
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public class DrawVectors extends DrawStrategy {

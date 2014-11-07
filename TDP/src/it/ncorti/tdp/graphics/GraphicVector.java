@@ -5,7 +5,7 @@ import it.ncorti.tdp.user.Log;
 /**
  * Classe che rappresenta un vettore grafico da disegnare
  * 
- * @author nicola
+ * @author Nicola Corti
  */
 public class GraphicVector implements GraphicEntity {
 

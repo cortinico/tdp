@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Stato che rappresenta una plasma ball che e' stata sparata e puo' entrare in collisione
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public class PlasmaBallAliveState extends EntityState {

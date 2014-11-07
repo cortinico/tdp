@@ -8,7 +8,7 @@ import it.ncorti.tdp.graphics.GraphicEnvironment;
  * Classe astratta che rappresenta un entita' del gioco.
  * Mantiene i riferimenti ad uno stato dell'entita' e ad una strategia di gioco 
  * 
- * @author nicola
+ * @author Nicola Corti
  */
 public abstract class GameEntity implements Drawable {
 	
@@ -100,7 +100,7 @@ public abstract class GameEntity implements Drawable {
 	 * @param angle Angolo di movimento
 	 * @param speed Velocita' di movimento
 	 */
-	protected void physicMove(int angle, int speed){
+	protected void physicMove(double angle, int speed){
 		
 		// Nota: questa formula fisica non e' stata testata a fondo
 		this.x += Math.cos(Math.toRadians(angle)) * speed;

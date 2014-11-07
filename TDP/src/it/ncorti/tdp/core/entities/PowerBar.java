@@ -6,7 +6,7 @@ import it.ncorti.tdp.graphics.DrawVectors;
 /**
  * Classe che rappresenta la barra di energia che protegge il cannone
  * 
- * @author nicola
+ * @author Nicola Corti
  */
 public class PowerBar extends GameEntity implements Collideable{
 

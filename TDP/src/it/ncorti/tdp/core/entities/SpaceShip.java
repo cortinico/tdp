@@ -10,7 +10,7 @@ import java.util.Observer;
  * che puo' sparare Missili e che puo' entrare in collisione con altre entita'
  * e quindi morire
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public class SpaceShip extends GameEntity implements Collideable {
@@ -26,10 +26,16 @@ public class SpaceShip extends GameEntity implements Collideable {
 	/** Costante che indica la velocita' massima raggiungibile dall'astronave */
 	public static final int MAX_SPEED = 10;
 
+	/** Numero massimo di ID disponibili */
+	private static final double MAX_ID = 100000;
+
 	/** Velocita' a cui sta andando l'astronave */
 	private int speed;
 	/** Angolo di direzione */
 	private int angle;
+	
+	/** ID univoco dell'astronave per il muliplayer */
+	private double ID;
 	
 	/** Oggetto observable a cui si registrano le mine e il cannone */
 	private DelegatedObservable obs;
@@ -46,6 +52,7 @@ public class SpaceShip extends GameEntity implements Collideable {
 		this.angle = angle;
 		this.speed = 0;
 		this.obs = new DelegatedObservable();
+		this.ID = Math.random() * MAX_ID;
 	}
 	
 	/* (non-Javadoc)
@@ -88,7 +95,17 @@ public class SpaceShip extends GameEntity implements Collideable {
 		physicMove(angle, speed);
 		
 		// Decrementa la velocita' ad ogni istante
-		speed--;
+		if (speed > 0) speed--;
+		else if (speed < 0) speed = 0;
+	}
+	
+	/**
+	 * Metodo che ritorna l'ID dell'astronave (nota: potrebbe non essere univoco)
+	 * 
+	 * @return L'ID dell'astronave
+	 */
+	public double getID(){
+		return this.ID;
 	}
 
 	/**

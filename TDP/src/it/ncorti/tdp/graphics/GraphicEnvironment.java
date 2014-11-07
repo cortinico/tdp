@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Classe che rappresenta un ambiente grafico, contenente tutti gli strumenti
  * per disegnare su schermo le primitive grafiche (sprite o vettori)
  * 
- * @author nicola
+ * @author Nicola Corti
  */
 public class GraphicEnvironment {
 	

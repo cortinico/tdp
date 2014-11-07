@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Classe che rappresenta lo stato di un'astronave viva, che riceve comandi utente e che puo' sparare
  * 
- * @author nicola
+ * @author Nicola Corti
  */
 public class SpaceShipAliveState extends EntityState {
 

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Stato che rappresenta la power bar che sta ruotando e ha ancora subito un colpo
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public class PowerBarOneHitState extends EntityState {

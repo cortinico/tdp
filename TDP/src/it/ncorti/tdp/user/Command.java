@@ -3,7 +3,7 @@ package it.ncorti.tdp.user;
 /**
  * Interfaccia comune per gli oggetti Command
  * 
- * @author nicola
+ * @author Nicola Corti
  */
 public interface Command {
 

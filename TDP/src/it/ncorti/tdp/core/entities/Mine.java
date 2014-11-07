@@ -10,7 +10,7 @@ import java.util.Observer;
 /**
  * Classe che rappresenta una mina lanciata dal cannone e che insegue le navicelle spaziali
  * 
- * @author nicola
+ * @author Nicola Corti
  */
 public class Mine extends GameEntity implements Collideable, Observer {
 
@@ -18,7 +18,7 @@ public class Mine extends GameEntity implements Collideable, Observer {
 	private static final String TAG = "MMMMM Mine";
 
 	/** Angolo attuale di direzione */
-	private int angle = 0;
+	private double angle = 0;
 
 	/** Ultima navicella che si sta seguendo */
 	private SpaceShip following = null;
@@ -81,9 +81,9 @@ public class Mine extends GameEntity implements Collideable, Observer {
 	@Override
 	public void evolveEntity() {
 		if (this.following != null) {
-
-			// TODO Questa formula va corretta
-			angle = (this.x - following.getX()) / (this.y - following.getY());
+			// Nota: questa formula fisica non e' stata testata a fondo
+			double m = (getY() - following.getY()) / (getX() - following.getX());
+			angle = Math.toDegrees(Math.atan(m));
 			physicMove(angle, MINE_SPEED);
 		}
 	}

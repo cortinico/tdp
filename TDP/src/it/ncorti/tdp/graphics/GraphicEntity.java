@@ -2,7 +2,7 @@ package it.ncorti.tdp.graphics;
 /**
  * Interfaccia che rappresenta una primitiva grafica
  * 
- * @author nicola
+ * @author Nicola Corti
  */
 public interface GraphicEntity {
 

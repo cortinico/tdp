@@ -9,7 +9,7 @@ import java.awt.event.KeyListener;
 /**
  * Classe che si occupa di gestire gli eventi della tastiera e di trasformarli in {@link Command}
  * 
- * @author nicola
+ * @author Nicola Corti
  */
 public class KeyEventManager implements KeyListener {
 
@@ -80,7 +80,7 @@ public class KeyEventManager implements KeyListener {
 			Log.e(TAG, "PRESSED: FIRE");
 		}
 
-		if (toSend != null) display.receiveCommand(toSend);
+		if (toSend != null) display.sendCommand(toSend);
 	}
 
 	/* (non-Javadoc)

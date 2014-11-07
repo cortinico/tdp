@@ -5,7 +5,7 @@ import java.util.Observable;
  * Classe che estende la visibilita' dei metodi clearChanged e setChanged per utilizzare
  * un oggetto di tipo java.util.Observable con delega 
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public class DelegatedObservable extends Observable {

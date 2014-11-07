@@ -7,7 +7,7 @@ import it.ncorti.tdp.graphics.DrawStrategy;
  * Classe che rappresenta un missile lanciato dalla navicella per permettere
  * di uccidere un'altra entita'
  * 
- * @author nicola
+ * @author Nicola Corti
  */
 public class Missile extends GameEntity implements Collideable {
 

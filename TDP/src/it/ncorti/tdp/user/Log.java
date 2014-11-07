@@ -35,7 +35,7 @@ public class Log {
 	 * @param message Messaggio di errore
 	 */
 	public static void e(String TAG, String message) {
-		System.err.println(formatTAG(TAG) + ">> \t" + message);
+		System.err.println(formatTAG(TAG) + "   >>  \t" + message);
 	}
 
 	/**
@@ -45,6 +45,6 @@ public class Log {
 	 * @param message Messaggio da stampare
 	 */
 	public static void o(String TAG, String message) {
-		System.out.println(formatTAG(TAG) + ">> \t" + message);
+		System.out.println(formatTAG(TAG) + "   >>  \t" + message);
 	}
 }

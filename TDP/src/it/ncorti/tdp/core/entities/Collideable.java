@@ -2,7 +2,7 @@ package it.ncorti.tdp.core.entities;
 /**
  * Interfaccia che deve essere implementata dagli oggetti che vogliono collidere con altri
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public interface Collideable {

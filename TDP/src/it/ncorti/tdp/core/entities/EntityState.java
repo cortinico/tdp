@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Classe astratta che rappresenta un generico stato di gioco
  * 
- * @author nicola
+ * @author Nicola Corti
  */
 public abstract class EntityState {
 

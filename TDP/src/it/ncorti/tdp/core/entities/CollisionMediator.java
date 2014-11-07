@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Classe che rappresenta un mediatore che si occupa 
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public class CollisionMediator {
@@ -16,7 +16,7 @@ public class CollisionMediator {
 	private static final String TAG = "***** CollisionMediator";
 	
 	/** Costante che indica la dimensione base del raggio dei {@link BoundCircle} */
-	public static final int BND_RADIUS = 5;
+	public static final int BND_RADIUS = 50;
 	
 	/**
 	 * Metodo per controllare se all'interno di una lista di entita' esistono delle 

@@ -9,7 +9,7 @@ import java.util.List;
  * Stato che rappresenta un missile che e' vivo e puo' entrare in collisione con altre
  * entita'
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public class MissileAliveState extends EntityState {

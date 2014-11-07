@@ -7,7 +7,7 @@ import it.ncorti.tdp.user.Command;
  * Classe astratta padre della gerarchia delle finestre dei videogiochi. Questa classe rappresenta una generica finestra
  * di videogioco
  * 
- * @author nicola
+ * @author Nicola Corti
  *
  */
 public abstract class GameDisplay {
@@ -23,7 +23,7 @@ public abstract class GameDisplay {
 	 * 
 	 * @param c Comando recapitato
 	 */
-	public abstract void receiveCommand(Command c);
+	public abstract void sendCommand(Command c);
 
 	/**
 	 * Disegna la finestra. Questo metodo deve essere invocato solamente all'avvio del gioco, ed in ogni momento in cui
