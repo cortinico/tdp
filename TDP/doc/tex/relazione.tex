@@ -168,11 +168,34 @@ Ogni classe provveder\`a a realizzare le sottoclassi di \textsf{EntityState} e a
 \label{img:State}
 \end{figure}
 
-Nel diagramma in figura \ref{img:State} si nota che la classe \textsf{EntityState} contiene i metodi: \textsf{isDestroyed} per verificare se l'astronave si trova in uno stato in cui \`e stata distrutta, e \textsf{collideWith} per gestire la collisione fra 
+Nel diagramma in figura \ref{img:State} si nota che la classe \textsf{EntityState} contiene i metodi: \textsf{isDestroyed} per verificare se l'astronave si trova in uno stato in cui \`e stata distrutta, e \textsf{collideWith} per gestire la collisione fra l'entit\`a e un altro oggetto. (Per la gestione delle collisioni si rimanda alla sezione \ref{sec:collisioni}).
 
+Si noti come il metodo \textsf{collideWith} ha due parametri, il primo rappresenta il riferimento al \textsf{GameEntity} stesso, mentre il secondo rappresenta un oggetto con cui si \`e entrati in collisione; il primo parametro \`e necessario in quanto lo stato invocher\`a il metodo \textsf{setState} sul \textsf{GameEntity} al fine di realizzare la transizione verso un nuovo stato.
+
+Utilizzare il pattern \emph{State} comporta la realizzazione di tante piccole classi che rappresentano i singoli stati delle entit\`a, come si pu\`o notare dalle sottoclassi di \textsf{EntityState} presenti nel diagramma. Questo sembrerebbe introdurre complessit\`a nella progettazione, ma porta invece notevoli benefici, permettendo di evitare grossi statement switch e permettendo di semplificare notevolmente la fase di rendering grafico (sezione \ref{sec:graphics}).
+
+Si noti infine che \`e stata realizzata una singola classe \textsf{DeadEntityState} al fine di rappresentare lo stato in cui termina una generica entit\`a che \`e stata distrutta; invece di realizzare svariate classi del tipo \textsf{SpaceShipDeadState}, \textsf{CannonDeadState}, etc\dots{} riducendo cos\`i la replicazione del codice.
+
+\subsection{Utilizzo del pattern \emph{Factory Method}}
+
+Per la creazione del primo stato in cui nasce una \textsf{GameEntity} si \`e deciso di utilizzare il pattern \emph{Factory Method}: nella classe \textsf{GameEntity} \`e presente il metodo astratto \textsf{createInitialState}, ogni classe deve quindi implementare questo metodo, costruendo quello che \`e l'oggetto che rappresenta il loro stato iniziale. Per cui ad esempio la classe \textsf{SpaceShip} ritorner\`a un nuovo oggetto di tipo \textsf{SpaceShipAliveState}.
+
+Nel diagramma in figura \ref{img:FactoryMethod} riportiamo le classi relative a \textsf{SpaceShip}, i diagrammi per le altre sottoclassi di \textsf{GameEntity} sono pressoch\'e analoghi.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm]{FactoryMethod.pdf}
+\caption{Diagramma UML del pattern \emph{Factory Method}}
+\label{img:FactoryMethod}
+\end{figure}
+
+\subsection{Utilizzo del pattern \emph{Observer}}
 
 \section{Gestione delle collisioni}
 \label{sec:collisioni}
+
+\section{Gestione del rendering grafico}
+\label{sec:graphics}
 
 \section{Gestione dei comandi}
 \label{sec:comandi}
