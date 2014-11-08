@@ -13,7 +13,7 @@ import java.util.Observer;
  * @author Nicola Corti
  *
  */
-public class SpaceShip extends GameEntity implements Collideable {
+public class SpaceShip extends GameEntity {
 
 	/** TAG per le stampe di debug */
 	private static final String TAG = "&&&&& SpaceShip";
@@ -71,22 +71,6 @@ public class SpaceShip extends GameEntity implements Collideable {
 		return new DrawVectors();
 	}
 	
-	/* (non-Javadoc)
-	 * @see it.ncorti.tdp.core.entities.Collideable#getBoundCircle()
-	 */
-	@Override
-	public BoundCircle getBoundCircle() {
-		return new BoundCircle(getX(), getY(), CollisionMediator.BND_RADIUS);
-	}
-
-	/* (non-Javadoc)
-	 * @see it.ncorti.tdp.core.entities.Collideable#collideWith(it.ncorti.tdp.core.entities.Collideable)
-	 */
-	@Override
-	public void collideWith(Collideable c) {
-		state.collide(this, c);
-	}
-
 	/* (non-Javadoc)
 	 * @see it.ncorti.tdp.core.entities.GameEntity#evolveEntity()
 	 */

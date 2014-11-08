@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
-public class Cannon extends GameEntity implements Collideable, Observer {
+public class Cannon extends GameEntity implements Observer {
 	
 	/** TAG per le stampe di debug */
 	private static final String TAG = "CCCCC Cannon";
@@ -73,22 +73,6 @@ public class Cannon extends GameEntity implements Collideable, Observer {
 	@Override
 	protected DrawStrategy createInitialStrategy() {
 		return new DrawVectors();
-	}
-
-	/* (non-Javadoc)
-	 * @see it.ncorti.tdp.core.entities.Collideable#getBoundCircle()
-	 */
-	@Override
-	public BoundCircle getBoundCircle() {
-		return new BoundCircle(getX(), getY(), CollisionMediator.BND_RADIUS);
-	}
-
-	/* (non-Javadoc)
-	 * @see it.ncorti.tdp.core.entities.Collideable#collideWith(it.ncorti.tdp.core.entities.Collideable)
-	 */
-	@Override
-	public void collideWith(Collideable c) {
-		state.collide(this, c);
 	}
 
 	/* (non-Javadoc)

@@ -12,7 +12,7 @@ import java.util.Observer;
  * 
  * @author Nicola Corti
  */
-public class Mine extends GameEntity implements Collideable, Observer {
+public class Mine extends GameEntity implements Observer {
 
 	/** TAG per le stampe di debug */
 	private static final String TAG = "MMMMM Mine";
@@ -48,20 +48,6 @@ public class Mine extends GameEntity implements Collideable, Observer {
 	@Override
 	protected DrawStrategy createInitialStrategy() {
 		return new DrawSprite();
-	}
-
-	/* (non-Javadoc)
-	 * @see it.ncorti.tdp.core.entities.Collideable#getBoundCircle() */
-	@Override
-	public BoundCircle getBoundCircle() {
-		return new BoundCircle(getX(), getY(), CollisionMediator.BND_RADIUS);
-	}
-
-	/* (non-Javadoc)
-	 * @see it.ncorti.tdp.core.entities.Collideable#collideWith(it.ncorti.tdp.core.entities.Collideable) */
-	@Override
-	public void collideWith(Collideable c) {
-		this.state.collide(this, c);
 	}
 
 	/* (non-Javadoc)

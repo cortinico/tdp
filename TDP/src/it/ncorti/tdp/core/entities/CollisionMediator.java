@@ -1,7 +1,6 @@
 package it.ncorti.tdp.core.entities;
 import it.ncorti.tdp.user.Log;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,17 +18,15 @@ public class CollisionMediator {
 	public static final int BND_RADIUS = 50;
 	
 	/**
-	 * Metodo per controllare se all'interno di una lista di entita' esistono delle 
-	 * collisioni fra entita' e notifica i relativi oggetti della collisione (entrambi i soggetti)
+	 * Metodo per controllare se all'interno di una lista di collideable esistono delle 
+	 * collisioni e notifica i relativi oggetti della collisione (entrambi i soggetti)
 	 * 
-	 * @param entities Lista di entita' di gioco da controllare e notificare
+	 * @param entities Lista di collideable da controllare e notificare
 	 */
-	public void checkCollision(List<GameEntity> entities){
+	public void checkCollision(List<? extends Collideable> entities){
 		
-		List<Collideable> objects = filter(entities);
-		
-		for (Collideable first: objects){
-			for (Collideable second: objects){
+		for (Collideable first: entities){
+			for (Collideable second: entities){
 				if (!first.equals(second)){
 					BoundCircle firstCircle = first.getBoundCircle();
 					BoundCircle secondCircle = second.getBoundCircle();
@@ -43,20 +40,6 @@ public class CollisionMediator {
 		}
 	}
 	
-	/**
-	 * Metodo che filtra una lista di entita' e ritorna una lista di oggetti Collideable
-	 * 
-	 * @param entities Lista di entita' da filtrare
-	 * @return Una lista di collideable filtrata
-	 */
-	private List<Collideable> filter(List<GameEntity> entities) {
-		List<Collideable> filtered = new ArrayList<>();
-		for (GameEntity ent : entities)
-			if (ent instanceof Collideable) 
-				filtered.add((Collideable)ent);
-		
-		return filtered;
-	}
 
 	/**
 	 * Metodo che controlla se due aree BoundCircle si intersecano

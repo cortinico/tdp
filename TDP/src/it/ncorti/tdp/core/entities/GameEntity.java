@@ -10,7 +10,7 @@ import it.ncorti.tdp.graphics.GraphicEnvironment;
  * 
  * @author Nicola Corti
  */
-public abstract class GameEntity implements Drawable {
+public abstract class GameEntity implements Drawable, Collideable {
 	
 	/** Coordinata x dell'entita' */
 	protected int x;
@@ -20,7 +20,7 @@ public abstract class GameEntity implements Drawable {
 	/** Stato dell'entita' */
 	protected EntityState state;
 	/** Strategia di gioco */
-	private DrawStrategy strategy;
+	protected DrawStrategy strategy;
 	
 	/**
 	 * Costruttore base che crea una nuova entita' di gioco.
@@ -113,5 +113,21 @@ public abstract class GameEntity implements Drawable {
 	@Override
 	public void draw(GraphicEnvironment g) {
 		this.strategy.drawEntity(g, state.getEntity());
+	}
+	
+
+	/* (non-Javadoc)
+	 * @see it.ncorti.tdp.core.entities.Collideable#getBoundCircle()
+	 */
+	public BoundCircle getBoundCircle(){
+		return new BoundCircle(getX(), getY(), CollisionMediator.BND_RADIUS);
+	}
+	
+	
+	/* (non-Javadoc)
+	 * @see it.ncorti.tdp.core.entities.Collideable#collideWith(it.ncorti.tdp.core.entities.Collideable)
+	 */
+	public void collideWith(Collideable c){
+		this.state.collide(this, c);
 	}
 }

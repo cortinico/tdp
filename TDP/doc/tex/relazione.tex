@@ -94,12 +94,82 @@ In \emph{StarCastle} il giocatore si trover\`a a comandare un'astronave spaziale
 
 Tralasciamo una discussione pi\`u dettagliata di tutte le meccaniche di gioco, in quanto verranno analizzate singolarmente nelle varie sezioni seguenti.
 
+Preferiamo piuttosto soffermarci su un pattern che ha guidato la fase di progettazione di tutto il software e che permea tutti gli aspetti che verranno analizzati nelle sezioni seguenti, il \emph{Model-View-Controller}.
 
+\subsection*{Il pattern \emph{Model-View-Controller}}
 
+Il \emph{Model-View-Controller} \`e un pattern architetturale che ha come scopo principale quello di mettere il focus sulla separazione fra la rappresentazione dei dati e la loro rappresentazione.
 
+I componenti che interagiscono nel pattern \emph{Model-View-Controller}, come suggerisce il nome, sono 3 (vedi immagine \ref{img:mvc}):
 
-\section{Mantenimento dello stato}
+\begin{description}
+\item[\textsf{Model}] Mantiene la rappresentazione dei dati e si occupa della \emph{business logic},
+\item[\textsf{View}] Interagisce con il \textsf{Model} e offre all'utente una sua rappresentazione visuale,
+\item[\textsf{Controller}] Raccoglie l'input dell'utente e modifica il \textsf{Model} di conseguenza.
+\end{description}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=5cm]{mvc.png}
+\caption{Diagramma del pattern \emph{Model-View-Controller}}
+\label{img:mvc}
+\end{figure}
+
+In particolare in \emph{StarCastle} sono stati i componenti del \emph{Model-View-Controller} sono stati istanziati come segue:
+
+\begin{description}
+\item[\textsf{Model}] Rappresenta lo stato di tutte le entit\`a di gioco, mantenendone stato attuale, posizione, velocit\`a ed eventuali interazioni con altre entit\`a di gioco
+\item[\textsf{View}] Rappresenta il contesto grafico sul quale verranno disegnate tutte le primitive grafiche per rappresentare i vari componenti del gioco, secondo le policy grafiche previste dal sistema
+\item[\textsf{Controller}] Rappresenta il meccanismo che si occupa di raccogliere gli input dell'utente, e di convertirli in comandi di giochi, che verranno elaborati al fine di far evolvere le entit\`a in gioco (nella fattispecie quindi muovere o far sparare una navicella).
+\end{description}
+
+\section{Modellazione della realt\`a}
 \label{sec:stato}
+
+Il primo passo effettuato nella fase di progettazione di dettaglio consiste nell'individuare quali saranno le classi che andranno a rappresentare la nostra realt\`a.
+
+Analizzando il nostro caso ci rendiamo subito conto che:
+\begin{itemize}
+\item Le entit\`a da modellare sono fondamentalmente 5: l'astronave, il cannone, le mine, i missili e le barre di energia.
+\item Esse condividono alcuni attributi comuni, quali ad esempio la posizione.
+\item Esse condividono dei comportamenti comuni, quali ad esempio la necessit\`a di modificare la propria posizione.
+\item Le entit\`a necessitano di mantenere uno stato comune, che muta quando avviene una collisione fra due entit\`a distinte.
+\item Alcune entit\`a (cannone e mine) hanno la necessit\`a di essere notificate quando un utente interagisce con il gioco, al fine di poter decidere quale navicella spaziale seguire.
+\end{itemize}
+
+Per questi motivi si \`e deciso di progettare una gerarchia di classi che ha come padre la classe astratta \textsf{GameEntity} e di utilizzare i seguenti pattern:
+\begin{description}
+\item[\emph{State}] Per modellare gli stati delle entit\`a in gioco e le loro transizioni di stato,
+\item[\emph{Factory method}] Per delegare la creazione dello stato iniziale alle sottoclassi di \textsf{GameEntity},
+\item[\emph{Observer}] Per modellare il meccanismo di notifica di interazione del giocatore alle mine e al cannone.
+\end{description}
+
+La gerarchia di classi \`e rappresentata nell'immagine \ref{img:GameEntity}\footnote{Si noti che in questo e nei prossimi diagrammi UML non sono rappresentati tutti gli attrubuti e i metodi della classe, ma solamente quelli significati nel contesto in cui vengono trattati, al fine di non appesantire il diagramma}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm]{GameEntity.pdf}
+\caption{Diagramma UML della classe \textsf{GameEntity}}
+\label{img:GameEntity}
+\end{figure}
+
+Presentiamo nel dettaglio i vari pattern utilizzati.
+
+\subsection{Utilizzo dal pattern \emph{State}}
+
+Al fine di modellare al meglio la necessit\`a di mantenere uno stato e di evolverlo da parte delle \textsf{GameEntity} si \`e utilizzato il pattern \emph{State}: \`e stata definita la classe astratta \textsf{EntityState} che rappresenta un generico stato di un'entit\`a.
+
+Ogni classe provveder\`a a realizzare le sottoclassi di \textsf{EntityState} e a fornire l'implementazione dei metodi astratti della classe.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm]{State.pdf}
+\caption{Diagramma UML del pattern \emph{State}}
+\label{img:State}
+\end{figure}
+
+Nel diagramma in figura \ref{img:State} si nota che la classe \textsf{EntityState} contiene i metodi: \textsf{isDestroyed} per verificare se l'astronave si trova in uno stato in cui \`e stata distrutta, e \textsf{collideWith} per gestire la collisione fra 
+
 
 \section{Gestione delle collisioni}
 \label{sec:collisioni}
