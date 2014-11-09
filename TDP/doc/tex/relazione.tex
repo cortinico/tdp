@@ -153,7 +153,9 @@ La gerarchia di classi \`e rappresentata nell'immagine \ref{img:GameEntity}\foot
 \label{img:GameEntity}
 \end{figure}
 
-Presentiamo nel dettaglio i vari pattern utilizzati.
+Poniamo attenzione al metodo \textsf{evolveEntity}, esso rappresenta il metodo fondamentale per definire come l'entit\`a si evolve nel tempo. \`E un metodo astratto e deve essere implementato da ogni sottoclasse definendo il proprio comportamento (si pensi ad esempio al cannone che ruota, all'astronave che decelera linearmente o ai missili che procedono il linea retta con velocit\`a costante).
+
+Gli altri metodi di \textsf{GameEntity} verranno trattati nel dettagli nelle sezioni seguenti.
 
 \subsection{Utilizzo dal pattern \emph{State}}
 
@@ -184,12 +186,34 @@ Nel diagramma in figura \ref{img:FactoryMethod} riportiamo le classi relative a 
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=15cm]{FactoryMethod.pdf}
+\includegraphics[width=10cm]{FactoryMethod.pdf}
 \caption{Diagramma UML del pattern \emph{Factory Method}}
 \label{img:FactoryMethod}
 \end{figure}
 
 \subsection{Utilizzo del pattern \emph{Observer}}
+
+Per gestire la logica dello spostamento di mine e del cannone, che devono inseguire una delle astronavi in gioco, si \`e deciso di utilizzare il pattern \emph{Observer}.
+
+In particolare, ogni volta che un'astronave riceve un comando di rotazione, accelerazione o di sparo, questa notifica a tutte le mine e al cannone in gioco.
+
+Per implementare il pattern sono stati utilizzati le classi e le interfacce delle Java API: le classi \textsf{Mine} e \textsf{Cannon} implementano l'interfaccia \textsf{java.util.Observer}, fornendo il metodo \textsf{update} che verr\`a invocato ogni volta che ricevono una notifica.
+
+Nell'implementazione attuale le classi \textsf{Mine} e \textsf{Cannon} inseguono l'ultima \textsf{SpaceShip} da cui hanno ricevuto una notifica, ma si potrebbe ampliare la logica prevedendo di seguire l'astronave che ha la distanza minore.
+
+Per quanto riguarda la classe \textsf{SpaceShip} si \`e deciso mantenere un riferimento ad un oggetto di tipo \textsf{DelegatedObservable}, in quanto \textsf{SpaceShip} era gi\`a in una gerarchia di classi. Si noti che la classe \textsf{DelegatedObservable} (sottoclasse di \textsf{java.util.Observable}) \`e una classe necessaria per il meccanismo della delega, in quanto estende la visibilit\`a dei metodi di \textsf{Observable}.
+
+Le classi coinvolte sono riassunte nel diagramma in figura \ref{img:Observer}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=14cm]{Observer.pdf}
+\caption{Diagramma UML del pattern \emph{Observer}}
+\label{img:Observer}
+\end{figure}
+
+
+
 
 \section{Gestione delle collisioni}
 \label{sec:collisioni}

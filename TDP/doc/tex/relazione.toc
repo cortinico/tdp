@@ -2,8 +2,8 @@
 \select@language {italian}
 \contentsline {section}{\numberline {1}Modellazione della realt\`a}{4}{section.1}
 \contentsline {subsection}{\numberline {1.1}Utilizzo dal pattern \emph {State}}{6}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Utilizzo del pattern \emph {Factory Method}}{6}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Utilizzo del pattern \emph {Observer}}{8}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.2}Utilizzo del pattern \emph {Factory Method}}{7}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Utilizzo del pattern \emph {Observer}}{7}{subsection.1.3}
 \contentsline {section}{\numberline {2}Gestione delle collisioni}{8}{section.2}
 \contentsline {section}{\numberline {3}Gestione del rendering grafico}{8}{section.3}
 \contentsline {section}{\numberline {4}Gestione dei comandi}{8}{section.4}
