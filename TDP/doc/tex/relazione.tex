@@ -158,6 +158,7 @@ Poniamo attenzione al metodo \textsf{evolveEntity}, esso rappresenta il metodo f
 Gli altri metodi di \textsf{GameEntity} verranno trattati nel dettagli nelle sezioni seguenti.
 
 \subsection{Utilizzo dal pattern \emph{State}}
+\label{sec:state}
 
 Al fine di modellare al meglio la necessit\`a di mantenere uno stato e di evolverlo da parte delle \textsf{GameEntity} si \`e utilizzato il pattern \emph{State}: \`e stata definita la classe astratta \textsf{EntityState} che rappresenta un generico stato di un'entit\`a.
 
@@ -212,14 +213,34 @@ Le classi coinvolte sono riassunte nel diagramma in figura \ref{img:Observer}.
 \label{img:Observer}
 \end{figure}
 
-
-
-
 \section{Gestione delle collisioni}
 \label{sec:collisioni}
 
+Un altro aspetto fondamentale, legato al concetto di stato, \`e quello della gestione delle collisioni. Una gestione delle collisioni mal implementata pu\`o ridurre drasticamente il gameplay di un videogioco, e portare frustrazioni al giocatore con conseguente degrado dell'esperienza utente.
+
+Abbiamo intanto definito un'area circolare, centrata sull'entit\`a e con un determinato raggio, in cui si registrano le collisioni; consideriamo una collisione nel momento in cui queste aree circolari si intersecano in almeno un punto. Quest'area \`e rappresentata dalla classe \textsf{BoundCircle}.
+
+Concettualmente ogni \textsf{GameEntity} dovrebbe controllare ogni altra entit\`a in gioco e verificare se sono presenti delle collisioni, ottenendo il \textsf{BoundCircle} e verificando se si interseca con il proprio.
+
+Invece di obbligare ogni \textsf{GameEntity} ad interagire con ogni altra \textsf{GameEntity} presente, abbiamo preferito un approccio pi\`u centralizzato, utilizzando il pattern \emph{Mediator}.
+
+In particolare abbiamo realizzato:
+\begin{itemize}
+\item L'interfaccia \textsf{Collideable} che deve essere implementata da ogni entit\`a, in particolare \textsf{Collideable} \`e implementata da \textsf{GameEntity} che fornisce direttamente l'implementazione dei due metodi dell'interfaccia:
+\begin{itemize}
+\item \textsf{getBoundCircle} che ritorna il \textsf{BoundCircle} di una dimensione standard (le sottoclassi faranno l'override di questo metodo se il bound circle \`e differente).
+\item \textsf{collideWith} che rappresenta il metodo invocato quando \textsf{GameEntity} entra in collisione con un altro \textsf{Collideable}, implementato invocando il metodo \textsf{collideWith} dello stato attuale (sezione \ref{sec:state}).
+\end{itemize}
+\item La classe \textsf{CollisionMediator} che rappresenta il mediatore delle collisioni, in particolare il metodo 
+\end{itemize}
+
+
+
 \section{Gestione del rendering grafico}
 \label{sec:graphics}
+
+\section{Gestione dell'engine di gioco}
+\label{sec:engine}
 
 \section{Gestione dei comandi}
 \label{sec:comandi}

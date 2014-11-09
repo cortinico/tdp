@@ -1,8 +1,9 @@
 package it.ncorti.tdp.core;
 
 import it.ncorti.tdp.core.entities.Cannon;
-import it.ncorti.tdp.core.entities.CollisionMediator;
+import it.ncorti.tdp.core.entities.CollisionConcreteMediator;
 import it.ncorti.tdp.core.entities.GameEntity;
+import it.ncorti.tdp.core.entities.CollisionMediator;
 import it.ncorti.tdp.core.entities.Mine;
 import it.ncorti.tdp.core.entities.Missile;
 import it.ncorti.tdp.core.entities.PlasmaBall;
@@ -65,7 +66,7 @@ public class GameEngine extends GameDisplay {
 		// Le liste sono sincronizzate per evitare problemi di concorrenza
 		commands = Collections.synchronizedList(new ArrayList<Command>());
 		entities = Collections.synchronizedList(new ArrayList<GameEntity>());
-		mediator = new CollisionMediator();
+		mediator = new CollisionConcreteMediator();
 
 		dispBuffer = new GraphicEnvironment();
 		backBuffer = new GraphicEnvironment();

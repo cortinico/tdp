@@ -120,7 +120,7 @@ public abstract class GameEntity implements Drawable, Collideable {
 	 * @see it.ncorti.tdp.core.entities.Collideable#getBoundCircle()
 	 */
 	public BoundCircle getBoundCircle(){
-		return new BoundCircle(getX(), getY(), CollisionMediator.BND_RADIUS);
+		return new BoundCircle(getX(), getY(), CollisionConcreteMediator.BND_RADIUS);
 	}
 	
 	
