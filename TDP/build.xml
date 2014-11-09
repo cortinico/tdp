@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file. Any modifications will be overwritten. 
+	To include a user specific buildfile here, simply create one in the same 
+	directory with the processing instruction <?eclipse.ant.import?> as the first 
+	entry and export the buildfile again. -->
+<project basedir="." default="build" name="TDP">
+	<property environment="env" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.7" />
+	<property name="source" value="1.7" />
+	<property name="left" value="a" />
+	<property name="right" value="d" />
+	<property name="propel" value="w" />
+	<property name="fire" value="s" />
+	<property name="host" value="localhost" />
+	<property name="port" value="34567" />
+
+	<path id="TDP.classpath">
+		<pathelement location="bin" />
+	</path>
+	<target name="init">
+		<mkdir dir="bin" />
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="src">
+				<exclude name="**/*.ucls" />
+				<exclude name="**/*.useq" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="clean">
+		<delete dir="bin" />
+	</target>
+
+	<target name="jar" depends="build">
+		<jar destfile="starcastle.jar">
+			<fileset dir="bin" />
+			<manifest>
+				<attribute name="Main-Class" value="it.ncorti.tdp.user.SimpleClient" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="javadoc">
+		<javadoc destdir="doc/" packagenames="it.ncorti.tdp.*"
+			sourcepath="src" defaultexcludes="yes" author="true" version="true"
+			use="true">
+			<classpath refid="TDP.classpath" />
+		</javadoc>
+	</target>
+
+	<target depends="init" name="build">
+		<echo message="${ant.project.name}: ${ant.file}" />
+		<javac debug="true" debuglevel="${debuglevel}" destdir="bin"
+			includeantruntime="false" source="${source}" target="${target}">
+			<src path="src" />
+			<classpath refid="TDP.classpath" />
+		</javac>
+	</target>
+
+	<target name="Simple">
+		<java classname="it.ncorti.tdp.user.SimpleClient" failonerror="true"
+			fork="yes">
+			<arg line="${left}" />
+			<arg line="${right}" />
+			<arg line="${propel}" />
+			<arg line="${fire}" />
+			<classpath refid="P2P_Final.classpath" />
+		</java>
+	</target>
+
+	<target name="Client">
+		<java classname="it.ncorti.tdp.user.rmi.RemoteClient" failonerror="true"
+			fork="yes">
+			<arg line="${left}" />
+			<arg line="${right}" />
+			<arg line="${propel}" />
+			<arg line="${fire}" />
+			<arg line="${host}" />
+			<arg line="${port}" />
+			<classpath refid="P2P_Final.classpath" />
+		</java>
+	</target>
+	
+	<target name="Server">
+		<java classname="it.ncorti.tdp.user.rmi.RemoteServer" failonerror="true"
+			fork="yes">
+			<arg line="${host}" />
+			<arg line="${port}" />
+			<classpath refid="P2P_Final.classpath" />
+		</java>
+	</target>
+</project>

@@ -21,4 +21,5 @@
 \contentsline {section}{\numberline {8}Descrizione dei packages}{18}{section.8}
 \contentsline {section}{\numberline {9}User guide}{18}{section.9}
 \contentsline {subsection}{\numberline {9.1}Documentazione}{19}{subsection.9.1}
-\contentsline {subsection}{\numberline {9.2}Avvio della simulazione}{19}{subsection.9.2}
+\contentsline {subsection}{\numberline {9.2}Avvio della software locale}{20}{subsection.9.2}
+\contentsline {subsection}{\numberline {9.3}Avvio della software remoto}{20}{subsection.9.3}

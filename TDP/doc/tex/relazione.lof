@@ -1,0 +1,17 @@
+\select@language {italian}
+\select@language {italian}
+\contentsline {figure}{\numberline {1}{\ignorespaces Una schermata di gioco di \emph {StarCastle}\relax }}{3}{figure.caption.3}
+\contentsline {figure}{\numberline {2}{\ignorespaces Diagramma del pattern \emph {Model-View-Controller}\relax }}{4}{figure.caption.5}
+\contentsline {figure}{\numberline {3}{\ignorespaces Diagramma UML della classe \textsf {GameEntity}\relax }}{6}{figure.caption.6}
+\contentsline {figure}{\numberline {4}{\ignorespaces Diagramma UML del pattern \emph {State}\relax }}{6}{figure.caption.7}
+\contentsline {figure}{\numberline {5}{\ignorespaces Diagramma UML del pattern \emph {Factory Method}\relax }}{7}{figure.caption.8}
+\contentsline {figure}{\numberline {6}{\ignorespaces Diagramma UML del pattern \emph {Observer}\relax }}{8}{figure.caption.9}
+\contentsline {figure}{\numberline {7}{\ignorespaces Diagramma UML del pattern \emph {Mediator}\relax }}{9}{figure.caption.10}
+\contentsline {figure}{\numberline {8}{\ignorespaces Diagramma UML delle primitive grafiche\relax }}{10}{figure.caption.11}
+\contentsline {figure}{\numberline {9}{\ignorespaces Diagramma UML dell'interfaccia \textsf {Drawable}\relax }}{11}{figure.caption.12}
+\contentsline {figure}{\numberline {10}{\ignorespaces Diagramma UML del pattern \emph {Strategy}\relax }}{12}{figure.caption.13}
+\contentsline {figure}{\numberline {11}{\ignorespaces Diagramma UML del pattern \emph {Singleton}\relax }}{13}{figure.caption.14}
+\contentsline {figure}{\numberline {12}{\ignorespaces Diagramma UML del pattern \emph {Decorator}\relax }}{14}{figure.caption.15}
+\contentsline {figure}{\numberline {13}{\ignorespaces Diagramma UML del pattern \emph {Command}\relax }}{15}{figure.caption.16}
+\contentsline {figure}{\numberline {14}{\ignorespaces Diagramma UML del pattern \emph {Fa\IeC {\c c}ade}\relax }}{16}{figure.caption.17}
+\contentsline {figure}{\numberline {15}{\ignorespaces Diagramma UML del pattern \emph {Remote Proxy}\relax }}{18}{figure.caption.18}

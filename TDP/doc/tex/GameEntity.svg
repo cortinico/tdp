@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="37cm" height="15cm" viewBox="294 148 738 282" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="503" y="149" width="271.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="503" y="149" width="271.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:700" x="638.9" y="168">GameEntity</text>
+    <rect style="fill: #ffffff" x="503" y="177" width="271.8" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="503" y="177" width="271.8" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="506" y="191">#x: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="506" y="207">#y: int</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="506" y="223">-state: EntityState</text>
+    <rect style="fill: #ffffff" x="503" y="229" width="271.8" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="503" y="229" width="271.8" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:700" x="506" y="243">#createInitialState(): EntityState</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:700" x="506" y="259">+evolveEntity(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="506" y="275">#setState(s:EntityState): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="506" y="291">+isDestroyed(): boolean</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="295" y="399" width="103.95" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="295" y="399" width="103.95" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="346.975" y="418">SpaceShip</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="463.8" y="399" width="77.75" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="463.8" y="399" width="77.75" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="502.675" y="418">Cannon</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="635.6" y="400.046" width="53.65" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="635.6" y="400.046" width="53.65" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="662.425" y="419.046">Mine</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="779.4" y="399" width="72.25" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="779.4" y="399" width="72.25" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="815.525" y="418">Missile</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="933.2" y="399" width="97.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="933.2" y="399" width="97.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="981.8" y="418">PowerBar</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="638.9,315.236 638.9,356 346.975,356 346.975,399 "/>
+    <polygon style="fill: #ffffff" points="646.9,315.236 638.9,299.236 630.9,315.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="646.9,315.236 638.9,299.236 630.9,315.236 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="638.9,315.236 638.9,356 502.675,356 502.675,399 "/>
+    <polygon style="fill: #ffffff" points="646.9,315.236 638.9,299.236 630.9,315.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="646.9,315.236 638.9,299.236 630.9,315.236 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="638.9,315.236 638.9,356.019 662.425,356.019 662.425,399.039 "/>
+    <polygon style="fill: #ffffff" points="646.9,315.236 638.9,299.236 630.9,315.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="646.9,315.236 638.9,299.236 630.9,315.236 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="638.9,315.236 638.9,356 815.525,356 815.525,399 "/>
+    <polygon style="fill: #ffffff" points="646.9,315.236 638.9,299.236 630.9,315.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="646.9,315.236 638.9,299.236 630.9,315.236 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="638.9,315.236 638.9,356 981.8,356 981.8,399 "/>
+    <polygon style="fill: #ffffff" points="646.9,315.236 638.9,299.236 630.9,315.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="646.9,315.236 638.9,299.236 630.9,315.236 "/>
+  </g>
+</svg>

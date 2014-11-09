@@ -53,7 +53,7 @@ tabsize=4,
 framexleftmargin=5mm, rulesepcolor=\color{LightLightGray},
 frame=tb,
 backgroundcolor=\color{LightLightGray},
-language={Java},
+%language={Java},
 %mathescape=true,
 %fontadjust=true,
 breaklines=true,breakatwhitespace=true,breakautoindent
@@ -539,8 +539,10 @@ ant jar
 Verr\`a generato un file chiamato \texttt{starcastle.jar} all'interno della cartella principale del software.
 Per avviare il file \texttt{jar} \`e necessario invocare il comando
 \begin{lstlisting}[basicstyle=\ttfamily]
-java -jar starcastle.jar [TODO]
+java -jar starcastle.jar <char-left> <char-right> <char-propel> <char-fire>
 \end{lstlisting}
+
+Dove $<$\texttt{char-left}$>$ e seguenti rappresentano i caratteri da utilizzare per i tasti sinistra, destra, accelera e spara.
 
 \subsection{Documentazione}
 
@@ -553,11 +555,34 @@ La documentazione in javadoc pu\`o essere visionata anche online al link seguent
 
 Per una comprensione organica del software si consiglia la lettura della seguente relazione nella sua interezza. La presente relazione viene rilasciata in Pdf ed in \LaTeX\ e pu\`o essere visionata all'interno della cartella \texttt{doc/tex/}.
 
-\subsection{Avvio della simulazione}
+\subsection{Avvio della software locale}
 
-Una volta compilato il software \`e possibile invocarlo tramite il comando
+Una volta compilato il software \`e possibile testarlo in locale utilizzando il comando
 \begin{lstlisting}[basicstyle=\ttfamily]
-ant Execute [TODO]
+ant Simple [-Dleft=<char> -Dright=<char> -Dpropel=<char> -Dfire=<char>]
 \end{lstlisting}
+
+Con le opzioni \texttt{-Dleft=} e seguenti \`e possibile impostare la mappatura dei tasti per il gioco. Se non vengono fornite verr\`a utilizzata la configurazione \textsf{w a s d}.
+
+Verr\`a mostrata una piccola finestra Swing (vedi immagine \ref{img:Swing}) che permetter\`a di catturare gli eventi di tasti premuto e farli elaborare al gioco.
+
+\subsection{Avvio della software remoto}
+
+Per avviare il server remoto \`e possibile utilizzare il target
+\begin{lstlisting}[basicstyle=\ttfamily]
+ant Server [-Dhost=<hostname>] [-Dport=<port>]
+\end{lstlisting}
+
+Con le opzioni \texttt{-Dhost=} e \texttt{-Dport=} seguenti \`e possibile impostare il proprio hostname/indirizzo IP e la porta di ascolto. Se non forniti il server si mette in ascolto come localhost (127.0.0.1) sulla porta (34567), assicurarsi che la porta indicata non sia occupata e che non vi siano problemi nella configurazione di rete.
+
+Per avviare il client \`e invece sufficiente invocare il comando 
+\begin{lstlisting}[basicstyle=\ttfamily]
+ant Client [-Dleft=<char> -Dright=<char> -Dpropel=<char> -Dfire=<char>] [-Dhost=<hostname>] [-Dport=<port>]
+\end{lstlisting}
+
+Le opzioni hanno significati uguali a quelle gi\`a presentate.
+
+\newpage
+\listoffigures
 
 \end{document}
