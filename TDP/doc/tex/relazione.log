@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.13)  9 NOV 2014 21:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.13)  9 NOV 2014 21:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -530,11 +530,7 @@ File: Strategy.pdf Graphic file (type pdf)
  <use Strategy.pdf>
 Package pdftex.def Info: Strategy.pdf used on input line 314.
 (pdftex.def)             Requested size: 398.33858pt x 164.52463pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[11 <./Drawable.pdf>] [12 <./Strategy.pdf>]
+ [11 <./Drawable.pdf>] [12 <./Strategy.pdf>]
 <Singleton.pdf, id=379, 282.05376pt x 86.3225pt>
 File: Singleton.pdf Graphic file (type pdf)
  <use Singleton.pdf>
@@ -567,32 +563,30 @@ File: Proxy.pdf Graphic file (type pdf)
 Package pdftex.def Info: Proxy.pdf used on input line 490.
 (pdftex.def)             Requested size: 284.52756pt x 237.10861pt.
  [17]
-[18 <./Proxy.pdf>] [19]
+[18 <./Proxy.pdf>] [19] <swing.png, id=537, 171.64125pt x 59.22125pt>
+File: swing.png Graphic file (type png)
 
-LaTeX Warning: Reference `img:Swing' on page 20 undefined on input line 567.
-
-[20] (./relazione.lof)
+<use swing.png>
+Package pdftex.def Info: swing.png used on input line 571.
+(pdftex.def)             Requested size: 85.35826pt x 29.45059pt.
+ [20 <./swing.png>] (./relazione.lof)
 \tf@lof=\write5
 \openout5 = `relazione.lof'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 588.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 595.
  [21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 588.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 595.
  (./relazione.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 588.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 588.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 595.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 595.
 Package rerunfilecheck Info: File `relazione.out' has not changed.
 (rerunfilecheck)             Checksum: D76A9D8646AADD2465B63C3EB025DB23;1640.
-
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 10612 strings out of 494976
- 153087 string characters out of 6180006
- 267933 words of memory out of 5000000
- 13565 multiletter control sequences out of 15000+600000
+ 10618 strings out of 494976
+ 153168 string characters out of 6180006
+ 269015 words of memory out of 5000000
+ 13569 multiletter control sequences out of 15000+600000
  16657 words of font info for 63 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  41i,16n,38p,802b,1039s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -612,10 +606,10 @@ mss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx1
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on relazione.pdf (21 pages, 652133 bytes).
+Output written on relazione.pdf (21 pages, 657530 bytes).
 PDF statistics:
- 644 PDF objects out of 1000 (max. 8388607)
- 515 compressed objects within 6 object streams
- 95 named destinations out of 1000 (max. 500000)
- 265 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 649 PDF objects out of 1000 (max. 8388607)
+ 518 compressed objects within 6 object streams
+ 96 named destinations out of 1000 (max. 500000)
+ 270 words of extra memory for PDF output out of 10000 (max. 10000000)
 
