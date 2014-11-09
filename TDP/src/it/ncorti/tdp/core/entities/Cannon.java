@@ -107,6 +107,9 @@ public class Cannon extends GameEntity implements Observer {
 				if (checkPowerBars()){
 					firePlasmaBall();
 				}
+				if (checkMineSpawn()){
+					spawnMine();
+				}
 			}
 		}
 	}
@@ -115,8 +118,16 @@ public class Cannon extends GameEntity implements Observer {
 	 * Metodo che fa sparare una plasmaball
 	 */
 	private void firePlasmaBall() {
-		PlasmaBall ball = new PlasmaBall(x, y, angle);
+		PlasmaBall ball = new PlasmaBall(getX(), getY(), angle);
 		GameEngine.getInstance().addEntity(ball);
+	}
+	
+	/**
+	 * Metodo che fa rilasciare una nuova mina
+	 */
+	private void spawnMine() {
+		Mine m = new Mine(getX(), getY());
+		GameEngine.getInstance().addEntity(m);
 	}
 
 	/**
@@ -127,6 +138,18 @@ public class Cannon extends GameEntity implements Observer {
 	private boolean checkPowerBars() {
 		/*	Metodo per controllare se c'e' spazio
 		 * 	fra gli anelli e quindi sparare.
+		 */
+		return false;
+	}
+	
+	/**
+	 * Metodo che controlla se sono presenti le condizioni per rilasciare una nuova
+	 * mina
+	 * 
+	 * @return True se si puo' generare una nuova mina, false altrimenti
+	 */
+	private boolean checkMineSpawn() {
+		/*	Metodo per controllare se si deve rilasciare una nuova mina
 		 */
 		return false;
 	}
