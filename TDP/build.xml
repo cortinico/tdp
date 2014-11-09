@@ -66,7 +66,7 @@
 			<arg line="${right}" />
 			<arg line="${propel}" />
 			<arg line="${fire}" />
-			<classpath refid="P2P_Final.classpath" />
+			<classpath refid="TDP.classpath" />
 		</java>
 	</target>
 
@@ -79,7 +79,7 @@
 			<arg line="${fire}" />
 			<arg line="${host}" />
 			<arg line="${port}" />
-			<classpath refid="P2P_Final.classpath" />
+			<classpath refid="TDP.classpath" />
 		</java>
 	</target>
 	
@@ -88,7 +88,7 @@
 			fork="yes">
 			<arg line="${host}" />
 			<arg line="${port}" />
-			<classpath refid="P2P_Final.classpath" />
+			<classpath refid="TDP.classpath" />
 		</java>
 	</target>
 </project>
