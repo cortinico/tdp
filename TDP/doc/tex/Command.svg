@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="44cm" height="23cm" viewBox="192 -86 864 454" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.35099e-37; stroke: #ffffff" d="M 363 257.9 C 242,257 132.155,129 231.455,57.9"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2.35099e-37; stroke: #ffffff" points="223.103,73.7192 231.455,57.9 213.788,60.7101 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="231.455" y="19.9" width="341.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="231.455" y="19.9" width="341.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:700" x="402.005" y="38.9">GameDisplay</text>
+    <rect style="fill: #ffffff" x="231.455" y="47.9" width="341.1" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="231.455" y="47.9" width="341.1" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:normal" x="234.455" y="61.9">+start(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:normal" x="234.455" y="77.9">+stop(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:normal" x="234.455" y="93.9">+sendCommand(c:Command): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:normal" x="234.455" y="109.9">+renderWindow(env:GraphicEnvironment): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="705.566" y="150" width="133.2" height="44"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="705.566" y="150" width="133.2" height="44"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="772.166" y="166">&lt;&lt;Interface&gt;&gt;</text>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:700" x="772.166" y="185">Command</text>
+    <rect style="fill: #ffffff" x="705.566" y="194" width="133.2" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="705.566" y="194" width="133.2" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:normal" x="708.566" y="208">+execute(): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="492.3" y="304.9" width="159.95" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="492.3" y="304.9" width="159.95" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="572.275" y="323.9">CommandRotate</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="693.083" y="302.442" width="158.15" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="693.083" y="302.442" width="158.15" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="772.158" y="321.442">CommandPropel</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="907.6" y="300.8" width="134.9" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="907.6" y="300.8" width="134.9" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="975.05" y="319.8">CommandFire</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="340.455" y="157.9" width="123" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="340.455" y="157.9" width="123" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="401.955" y="176.9">GameEngine</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="488.626,171.9 510,171.9 510,172 701.094,172 "/>
+    <polygon style="fill: #ffffff" points="463.455,171.9 477.455,167.1 491.455,171.9 477.455,176.7 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="463.455,171.9 477.455,167.1 491.455,171.9 477.455,176.7 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="687.33,180 703.33,172 687.33,164 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="495.455" y="159.9"> commands</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="492.3,318.9 401.955,318.9 401.955,190.372 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="409.955,204.136 401.955,188.136 393.955,204.136 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="488.3" y="306.9"> receiver</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="402.005,134.136 402.005,144.9 401.955,144.9 401.955,157.9 "/>
+    <polygon style="fill: #ffffff" points="410.005,134.136 402.005,118.136 394.005,134.136 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="410.005,134.136 402.005,118.136 394.005,134.136 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="835.137" y="18.782" width="173.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="835.137" y="18.782" width="173.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="922.037" y="37.782">KeyEventManager</text>
+    <rect style="fill: #ffffff" x="835.137" y="46.782" width="173.8" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="835.137" y="46.782" width="173.8" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="838.137" y="60.782">-left: char</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="838.137" y="76.782">-right: char</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="838.137" y="92.782">-propel: char</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="838.137" y="108.782">-fire: char</text>
+    <rect style="fill: #ffffff" x="835.137" y="114.782" width="173.8" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="835.137" y="114.782" width="173.8" height="20"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="838.137" y="128.782">+KeyPressed(KeyEvent)</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="788.749" y="-84.8637" width="266.6" height="44"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="788.749" y="-84.8637" width="266.6" height="44"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="922.049" y="-68.8637">&lt;&lt;Interface&gt;&gt;</text>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="922.049" y="-49.8637">java.swing.event.KeyListner</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="922.049,-22.6277 922.049,-3.04089 922.037,-3.04089 922.037,18.782 "/>
+    <polygon style="fill: #ffffff" points="930.049,-22.6277 922.049,-38.6277 914.049,-22.6277 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="930.049,-22.6277 922.049,-38.6277 914.049,-22.6277 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="922.043" y="-7.04089">implements</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="835.137,72.782 712.788,72.782 712.788,72.7969 579.911,72.7969 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="593.674,64.7969 577.674,72.7969 593.674,80.7969 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="831.137" y="60.782"> display</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="772.166,232.236 772.166,252.305 572.275,252.305 572.275,304.9 "/>
+    <polygon style="fill: #ffffff" points="780.166,232.236 772.166,216.236 764.166,232.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="780.166,232.236 772.166,216.236 764.166,232.236 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="672.22" y="248.305">implements</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="772.166,232.236 772.166,283.867 772.158,283.867 772.158,302.442 "/>
+    <polygon style="fill: #ffffff" points="780.166,232.236 772.166,216.236 764.166,232.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="780.166,232.236 772.166,216.236 764.166,232.236 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="772.162" y="279.867">implements</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="772.166,232.236 772.166,252.305 975.05,252.305 975.05,300.8 "/>
+    <polygon style="fill: #ffffff" points="780.166,232.236 772.166,216.236 764.166,232.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="780.166,232.236 772.166,216.236 764.166,232.236 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="873.608" y="248.305">implements</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="772.158,330.442 772.158,351.442 401.955,351.442 401.955,190.372 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="409.955,204.136 401.955,188.136 393.955,204.136 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="776.158" y="342.442"> receiver</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="975.05,330.438 975.05,351.438 401.955,351.438 401.955,192.01 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="409.955,205.774 401.955,189.774 393.955,205.774 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="979.05" y="342.438"> receiver</text>
+  </g>
+</svg>

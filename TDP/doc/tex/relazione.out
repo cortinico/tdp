@@ -3,18 +3,20 @@
 \BOOKMARK [2][-]{subsection.1.2}{Utilizzo del pattern Factory Method}{section.1}% 3
 \BOOKMARK [2][-]{subsection.1.3}{Utilizzo del pattern Observer}{section.1}% 4
 \BOOKMARK [1][-]{section.2}{Gestione delle collisioni}{}% 5
-\BOOKMARK [1][-]{section.3}{Gestione del rendering grafico}{}% 6
-\BOOKMARK [2][-]{subsection.3.1}{Uso del pattern Strategy}{section.3}% 7
-\BOOKMARK [1][-]{section.4}{Gestione dell'engine di gioco}{}% 8
-\BOOKMARK [2][-]{subsection.4.1}{Utilizzo del pattern Singleton}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.2}{Utilizzo del pattern Decorator}{section.4}% 10
-\BOOKMARK [1][-]{section.5}{Gestione dei comandi}{}% 11
-\BOOKMARK [2][-]{subsection.5.1}{Utilizzo del pattern Command}{section.5}% 12
-\BOOKMARK [2][-]{subsection.5.2}{Utilizzo del pattern Chain of reponsability}{section.5}% 13
-\BOOKMARK [1][-]{section.6}{Avvio e terminazione del gioco}{}% 14
-\BOOKMARK [2][-]{subsection.6.1}{Utilizzo del pattern Fa\347ade}{section.6}% 15
-\BOOKMARK [1][-]{section.7}{Gestione del multiplayer}{}% 16
-\BOOKMARK [2][-]{subsection.7.1}{Utilizzo del pattern Remote Proxy}{section.7}% 17
-\BOOKMARK [1][-]{section.8}{User guide}{}% 18
-\BOOKMARK [2][-]{subsection.8.1}{Documentazione}{section.8}% 19
-\BOOKMARK [2][-]{subsection.8.2}{Avvio della simulazione}{section.8}% 20
+\BOOKMARK [2][-]{subsection.2.1}{Utilizzo del pattern Mediator}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Gestione del rendering grafico}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Uso del pattern Strategy}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Gestione dell'engine di gioco}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Utilizzo del pattern Singleton}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{Utilizzo del pattern Decorator}{section.4}% 11
+\BOOKMARK [1][-]{section.5}{Gestione dei comandi}{}% 12
+\BOOKMARK [2][-]{subsection.5.1}{Utilizzo del pattern Command}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.2}{Utilizzo del pattern Chain of reponsability}{section.5}% 14
+\BOOKMARK [1][-]{section.6}{Avvio e terminazione del gioco}{}% 15
+\BOOKMARK [2][-]{subsection.6.1}{Utilizzo del pattern Fa\347ade}{section.6}% 16
+\BOOKMARK [1][-]{section.7}{Gestione del multiplayer}{}% 17
+\BOOKMARK [2][-]{subsection.7.1}{Utilizzo del pattern Remote Proxy}{section.7}% 18
+\BOOKMARK [1][-]{section.8}{Descrizione dei packages}{}% 19
+\BOOKMARK [1][-]{section.9}{User guide}{}% 20
+\BOOKMARK [2][-]{subsection.9.1}{Documentazione}{section.9}% 21
+\BOOKMARK [2][-]{subsection.9.2}{Avvio della simulazione}{section.9}% 22

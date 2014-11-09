@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.13)  9 NOV 2014 19:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.13)  9 NOV 2014 20:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -311,28 +311,49 @@ File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 (/usr/share/texmf/tex/latex/xcolor/svgnam.def
 File: svgnam.def 2007/01/21 v2.11 Predefined colors according to SVG 1.1 (UK)
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/pbox/pbox.sty
+Package: pbox 2011/12/07 v1.2 Dynamic parboxes
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count114
+\calc@Bcount=\count115
+\calc@Adimen=\dimen123
+\calc@Bdimen=\dimen124
+\calc@Askip=\skip47
+\calc@Bskip=\skip48
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count116
+\calc@Cskip=\skip49
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\pb@xlen=\skip50
+)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
-\captionmargin=\dimen123
-\captionmargin@=\dimen124
-\captionwidth=\dimen125
-\caption@tempdima=\dimen126
-\caption@indent=\dimen127
-\caption@parindent=\dimen128
-\caption@hangindent=\dimen129
+\captionmargin=\dimen125
+\captionmargin@=\dimen126
+\captionwidth=\dimen127
+\caption@tempdima=\dimen128
+\caption@indent=\dimen129
+\caption@parindent=\dimen130
+\caption@hangindent=\dimen131
 )
-\c@ContinuedFloat=\count114
+\c@ContinuedFloat=\count117
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
-\c@subfigure=\count115
-\c@subtable=\count116
+\c@subfigure=\count118
+\c@subtable=\count119
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
@@ -340,32 +361,32 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 (./relazione.aux)
 \openout1 = `relazione.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
-LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen130
+\scratchcounter=\count120
+\scratchdimen=\dimen132
 \scratchbox=\box28
-\nofMPsegments=\count118
-\nofMParguments=\count119
+\nofMPsegments=\count121
+\nofMParguments=\count122
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen131
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
+\MPscratchCnt=\count123
+\MPscratchDim=\dimen133
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
 \everyMPtoPDFconversion=\toks26
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -382,8 +403,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \it@ocap on input line 63.
-LaTeX Info: Redefining \it@ccap on input line 63.
+LaTeX Info: Redefining \it@ocap on input line 67.
+LaTeX Info: Redefining \it@ccap on input line 67.
 
 
 File italian.ldf warning: 
@@ -391,14 +412,14 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 63.
+italian.ldf    on input line 67.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-\c@lstlisting=\count123
+\c@lstlisting=\count126
 \AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 63.
+Package hyperref Info: Link coloring OFF on input line 67.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -406,11 +427,11 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count124
+\c@section@level=\count127
 )
-LaTeX Info: Redefining \ref on input line 63.
-LaTeX Info: Redefining \pageref on input line 63.
-LaTeX Info: Redefining \nameref on input line 63.
+LaTeX Info: Redefining \ref on input line 67.
+LaTeX Info: Redefining \pageref on input line 67.
+LaTeX Info: Redefining \nameref on input line 67.
 
 (./relazione.out) (./relazione.out)
 \@outlinefile=\write3
@@ -418,20 +439,20 @@ LaTeX Info: Redefining \nameref on input line 63.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 65.
+LaTeX Font Info:    Try loading font information for U+msa on input line 69.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 65.
+LaTeX Font Info:    Try loading font information for U+msb on input line 69.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<unipi.pdf, id=84, 229.72816pt x 234.28328pt>
+<unipi.pdf, id=92, 229.72816pt x 234.28328pt>
 File: unipi.pdf Graphic file (type pdf)
  <use unipi.pdf>
-Package pdftex.def Info: unipi.pdf used on input line 65.
+Package pdftex.def Info: unipi.pdf used on input line 69.
 (pdftex.def)             Requested size: 56.9055pt x 58.03087pt.
  [1
 
@@ -441,152 +462,152 @@ Package pdftex.def Info: unipi.pdf used on input line 65.
 \openout4 = `relazione.toc'.
 
  [2]
-<screen.jpg, id=128, 635.37375pt x 473.77pt>
+<screen.jpg, id=138, 635.37375pt x 473.77pt>
 File: screen.jpg Graphic file (type jpg)
  <use screen.jpg>
-Package pdftex.def Info: screen.jpg used on input line 91.
+Package pdftex.def Info: screen.jpg used on input line 95.
 (pdftex.def)             Requested size: 170.71652pt x 127.2979pt.
- [3 <./screen.jpg>] <mvc.png, id=141, 407.63528pt x 424.68776pt>
+ [3 <./screen.jpg>] <mvc.png, id=151, 407.63528pt x 424.68776pt>
 File: mvc.png Graphic file (type png)
  <use mvc.png>
-Package pdftex.def Info: mvc.png used on input line 114.
+Package pdftex.def Info: mvc.png used on input line 118.
 (pdftex.def)             Requested size: 142.26378pt x 148.21524pt.
  [4 <./mvc.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 134.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 138.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 134.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 138.
 
-<GameEntity.pdf, id=155, 739.76375pt x 282.05376pt>
+<GameEntity.pdf, id=165, 739.76375pt x 282.05376pt>
 File: GameEntity.pdf Graphic file (type pdf)
  <use GameEntity.pdf>
-Package pdftex.def Info: GameEntity.pdf used on input line 152.
+Package pdftex.def Info: GameEntity.pdf used on input line 156.
 (pdftex.def)             Requested size: 426.79134pt x 162.72623pt.
 
-[5] <State.pdf, id=163, 934.49126pt x 251.94125pt>
+[5] <State.pdf, id=174, 934.49126pt x 251.94125pt>
 File: State.pdf Graphic file (type pdf)
  <use State.pdf>
-Package pdftex.def Info: State.pdf used on input line 170.
+Package pdftex.def Info: State.pdf used on input line 174.
 (pdftex.def)             Requested size: 426.79134pt x 115.064pt.
  [6 <./GameEntity.pdf> <./State.pdf
 
 pdfTeX warning: pdflatex (file ./State.pdf): PDF inclusion: multiple pdfs with 
 page group included in a single page
->] <FactoryMethod.pdf, id=177, 541.02126pt x 208.78pt>
+>] <FactoryMethod.pdf, id=187, 541.02126pt x 208.78pt>
 File: FactoryMethod.pdf Graphic file (type pdf)
  <use FactoryMethod.pdf>
-Package pdftex.def Info: FactoryMethod.pdf used on input line 192.
+Package pdftex.def Info: FactoryMethod.pdf used on input line 196.
 (pdftex.def)             Requested size: 284.52756pt x 109.80226pt.
 
-[7 <./FactoryMethod.pdf>] <Observer.pdf, id=187, 709.65125pt x 276.03125pt>
+[7 <./FactoryMethod.pdf>] <Observer.pdf, id=197, 709.65125pt x 276.03125pt>
 File: Observer.pdf Graphic file (type pdf)
 
 <use Observer.pdf>
-Package pdftex.def Info: Observer.pdf used on input line 213.
+Package pdftex.def Info: Observer.pdf used on input line 217.
 (pdftex.def)             Requested size: 398.33858pt x 154.94287pt.
  [8 <./Observer.pdf>]
-<Mediator.pdf, id=197, 598.235pt x 290.08376pt>
+<Mediator.pdf, id=207, 598.235pt x 290.08376pt>
 File: Mediator.pdf Graphic file (type pdf)
  <use Mediator.pdf>
-Package pdftex.def Info: Mediator.pdf used on input line 246.
+Package pdftex.def Info: Mediator.pdf used on input line 252.
 (pdftex.def)             Requested size: 341.43306pt x 165.5619pt.
- [9 <./Mediator.pdf>] <GraphicEntity.pdf, id=206, 455.2441pt x 312.98033pt>
+ [9 <./Mediator.pdf>] <GraphicEntity.pdf, id=216, 455.2441pt x 312.98033pt>
 File: GraphicEntity.pdf Graphic file (type pdf)
 
 <use GraphicEntity.pdf>
-Package pdftex.def Info: GraphicEntity.pdf used on input line 271.
+Package pdftex.def Info: GraphicEntity.pdf used on input line 277.
 (pdftex.def)             Requested size: 227.62204pt x 156.48978pt.
- <Drawable.pdf, id=210, 282.05376pt x 66.2475pt>
-File: Drawable.pdf Graphic file (type pdf)
-
-<use Drawable.pdf>
-Package pdftex.def Info: Drawable.pdf used on input line 284.
-(pdftex.def)             Requested size: 199.16928pt x 46.78029pt.
  [10 <./GraphicEntity.pdf>]
-<Strategy.pdf, id=243, 1308.82678pt x 540.60233pt>
+<Drawable.pdf, id=249, 282.05376pt x 66.2475pt>
+File: Drawable.pdf Graphic file (type pdf)
+ <use Drawable.pdf>
+Package pdftex.def Info: Drawable.pdf used on input line 290.
+(pdftex.def)             Requested size: 199.16928pt x 46.78029pt.
+
+<Strategy.pdf, id=252, 1308.82678pt x 540.60233pt>
 File: Strategy.pdf Graphic file (type pdf)
  <use Strategy.pdf>
-Package pdftex.def Info: Strategy.pdf used on input line 308.
+Package pdftex.def Info: Strategy.pdf used on input line 314.
 (pdftex.def)             Requested size: 398.33858pt x 164.52463pt.
- [11 <./Drawable.pdf> <./Strategy.pdf
 
-pdfTeX warning: pdflatex (file ./Strategy.pdf): PDF inclusion: multiple pdfs wi
-th page group included in a single page
->] [12] <Singleton.pdf, id=290, 282.05376pt x 86.3225pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11 <./Drawable.pdf>] [12 <./Strategy.pdf>]
+<Singleton.pdf, id=302, 282.05376pt x 86.3225pt>
 File: Singleton.pdf Graphic file (type pdf)
  <use Singleton.pdf>
-Package pdftex.def Info: Singleton.pdf used on input line 361.
+Package pdftex.def Info: Singleton.pdf used on input line 367.
 (pdftex.def)             Requested size: 199.16928pt x 60.95613pt.
-
-[13 <./Singleton.pdf>] <Decorator.pdf, id=301, 768.22444pt x 312.98033pt>
+ [13 <./Singleton.pdf>] <Decorator.pdf, id=312, 768.22444pt x 312.98033pt>
 File: Decorator.pdf Graphic file (type pdf)
 
 <use Decorator.pdf>
-Package pdftex.def Info: Decorator.pdf used on input line 384.
+Package pdftex.def Info: Decorator.pdf used on input line 390.
 (pdftex.def)             Requested size: 341.43306pt x 139.10149pt.
  [14 <./Decorator.pdf>]
-
-LaTeX Warning: File `Command.pdf' not found on input line 412.
-
-
-! Package pdftex.def Error: File `Command.pdf' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.412 \includegraphics[width=12cm]{Command.pdf}
-                                               
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[15] (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
+<Command.pdf, id=347, 1251.92131pt x 654.41339pt>
+File: Command.pdf Graphic file (type pdf)
+ <use Command.pdf>
+Package pdftex.def Info: Command.pdf used on input line 418.
+(pdftex.def)             Requested size: 426.79134pt x 223.09674pt.
+ [15 <./Command.pdf>] (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.d
+ef
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
-) [16]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 489.
+)
+<Facade.pdf, id=383, 426.79132pt x 312.98033pt>
+File: Facade.pdf Graphic file (type pdf)
+ <use Facade.pdf>
+Package pdftex.def Info: Facade.pdf used on input line 444.
+(pdftex.def)             Requested size: 199.16928pt x 146.05966pt.
+ [16 <./Facade.pdf>] <Proxy.pdf, id=405, 682.86612pt x 569.05513pt>
+File: Proxy.pdf Graphic file (type pdf)
+ <use Proxy.pdf>
+Package pdftex.def Info: Proxy.pdf used on input line 490.
+(pdftex.def)             Requested size: 284.52756pt x 237.10861pt.
  [17]
-[18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 489.
+[18 <./Proxy.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 563.
+ [19]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 563.
  (./relazione.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 489.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 489.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 563.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 563.
 Package rerunfilecheck Info: File `relazione.out' has not changed.
-(rerunfilecheck)             Checksum: BEDE38A32A4FD84E9F7E8F97E27D37E9;1420.
+(rerunfilecheck)             Checksum: A80DFE6DC65CFD833DD2E2EC211B875D;1559.
  ) 
 Here is how much of TeX's memory you used:
- 10546 strings out of 494976
- 152173 string characters out of 6180006
- 285827 words of memory out of 5000000
- 13523 multiletter control sequences out of 15000+600000
- 16958 words of font info for 64 fonts, out of 8000000 for 9000
+ 10707 strings out of 494976
+ 154289 string characters out of 6180006
+ 288685 words of memory out of 5000000
+ 13667 multiletter control sequences out of 15000+600000
+ 16657 words of font info for 63 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 41i,11n,40p,802b,1798s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,16n,40p,802b,1114s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on relazione.pdf (18 pages, 660911 bytes).
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on relazione.pdf (19 pages, 719141 bytes).
 PDF statistics:
- 447 PDF objects out of 1000 (max. 8388607)
- 369 compressed objects within 4 object streams
- 81 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 537 PDF objects out of 1000 (max. 8388607)
+ 435 compressed objects within 5 object streams
+ 87 named destinations out of 1000 (max. 500000)
+ 257 words of extra memory for PDF output out of 10000 (max. 10000000)
 

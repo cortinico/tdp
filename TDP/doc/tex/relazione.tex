@@ -17,11 +17,15 @@
 \usepackage{hyperref}
 \usepackage{amsfonts}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{pbox}
 
 \usepackage{caption}
 \usepackage{subcaption}
 
 \setlength{\parskip}{8pt}
+
+% Padding tabella
+\renewcommand{\arraystretch}{2.5}
 
 %\usepackage{chngcntr}
 %\counterwithin{equation}{subsection}
@@ -224,6 +228,8 @@ Abbiamo intanto definito un'area circolare, centrata sull'entit\`a e con un dete
 
 Concettualmente ogni \textsf{GameEntity} dovrebbe controllare ogni altra entit\`a in gioco e verificare se sono presenti delle collisioni, ottenendo il \textsf{BoundCircle} e verificando se si interseca con il proprio.
 
+\subsection{Utilizzo del pattern \emph{Mediator}}
+
 Invece di obbligare ogni \textsf{GameEntity} ad interagire con ogni altra \textsf{GameEntity} presente, abbiamo preferito un approccio pi\`u centralizzato, utilizzando il pattern \emph{Mediator}.
 
 In particolare abbiamo realizzato:
@@ -395,7 +401,7 @@ Si \`e deciso in particolare di utilizzare i pattern \emph{Command} e \emph{Chai
 
 \subsection{Utilizzo del pattern \emph{Command}}
 
-La prima classe che presentiamo \`e la classe \textsf{KeyEventManager}, che implementa l'interfaccia \textsf{java.swing.event.KeyListner}, \`e si occupa di raccogliere gli eventi da tastiera dell'utente e li trasforma in comandi.
+La prima classe che presentiamo \`e la classe \textsf{KeyEventManager}, che implementa l'interfaccia \textsf{java.swing.event.KeyListner}\footnote{\`E stata implementata questa interfaccia in modo da poter utilizzare facilmente l'oggetto con il framework Java Swing}, \`e si occupa di raccogliere gli eventi da tastiera dell'utente e li trasforma in comandi.
 
 I comandi vengono modellati dalle classi che implementano l'interfaccia \textsf{Command}: \textsf{CommandRotate}, \textsf{CommandFire} e \textsf{CommandPropel} che rappresentano gli omonimi comandi da realizzare sull'astronave.
 
@@ -409,7 +415,7 @@ Le classi coinvolte nell'implementazione del pattern \emph{Command} sono raffigu
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=12cm]{Command.pdf}
+\includegraphics[width=15cm]{Command.pdf}
 \caption{Diagramma UML del pattern \emph{Command}}
 \label{img:Command}
 \end{figure}
@@ -427,21 +433,93 @@ Le classi coinvolte sono le stesse del diagramma in figura \ref{img:Decorator}.
 \section{Avvio e terminazione del gioco}
 \label{sec:avvio}
 
+Tutte queste classi che sono state presentate devono essere istanziate correttamente e nel giusto ordine. Questo potrebbe creare problemi per l'utilizzatore delle classi, si \`e quindi pensato di realizzare un classe unica che si occupi di creare gli oggetti necessaria e che esponga i metodi necessari ad eseguire le operazioni basilari del videogioco.
+
+Questa classe \`e la classe \textsf{GameFacade}, che utilizza il pattern \emph{Façade}.
+
 \subsection{Utilizzo del pattern \emph{Façade}}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=7cm]{Facade.pdf}
+\caption{Diagramma UML del pattern \emph{Façade}}
+\label{img:Facade}
+\end{figure}
+
+La classe \textsf{GameFacade} (mostrata nel diagramma in figura \ref{img:Facade}) mantiene il riferimento al \textsf{GameDisplay} e al \textsf{GameEngine} costruendo l'eventuale \textsf{WindowDecorator}.
+
+La classe mantiene inoltre l'elenco dei giocatori in una \textsf{HashMap}$<$\textsf{Double}, \textsf{SpaceShip}$>$, associando un ID ad ogni astronave creata, tale ID servir\`a per associare il giocatore reale alla propria astronave.
+
+I metodi che offre sono:
+\begin{itemize}
+\item \textsf{playGame} e \textsf{stopGame} per avviare/terminare il videogioco.
+\item \textsf{addPlayer(): KeyEventManager} che crea un nuovo giocatore, e ritorna un nuovo \textsf{KeyEventManager}, utilizzabile all'interno di una finestra Java Swing.
+\item \textsf{addPlayer(): double} che crea un nuovo giocatore, ma ritorna invece l'ID dell'astronave appena generata.
+\item \textsf{rotate}, \textsf{propel} e \textsf{fire}, che permettono di interagire con l'astronave, necessitano dell'ID dell'astronave che si vuole comandare.
+\item \textsf{setWindowed} per togliere/aggiungere il \textsf{WindowDecorator} a runtime.
+\end{itemize}
+
+Chiaramente un utente pu\`o decidere di usare la versione di \textsf{addPlayer} che ritorna un \textsf{KeyEventManager}, collegarlo ad un componente Swing e non preoccuparsi pi\`u della gestione dell'input, oppure utilizzare la versione che ritorna l'ID, e gestire l'input in modo da invocare i comandi.
+
+Un esempio di utilizzo del primo meccanismo \`e mostrato nella classe di esempio \textsf{SimpleClient}.
 
 \section{Gestione del multiplayer}
 \label{sec:multiplayer}
 
+Una progettazione modulare come quella realizzata affidandosi ai \emph{design patterns} pu\`o aiutarci facilmente in fase di ampliamento. Si pensi ad esempio al caso in cui si voglia permettere ad un secondo giocatore di interagire in remoto.
+
+Per permettere il gioco remoto si \`e deciso di utilizzare il pattern \emph{Remote Proxy} unitamente alla tecnologia Java RMI (\emph{Remote Method Invocation}).
+
 \subsection{Utilizzo del pattern \emph{Remote Proxy}}
+
+\`E stata dappirma definita l'interfaccia \textsf{RemoteGame} (che estende l'interfaccia \textsf{java.rmi.Remote}) in modo da definire i metodi invocabili da un client.
+
+Dopodich\'e si \`e dichiarata la classe  \textsf{GameFacade} come sottoclasse della classe  \textsf{java.rmi.server.UnicastRemoteObject} e si \`e implementata le precedente interfaccia
+\textsf{RemoteGame}.
+
+\`E dunque possibile esporre un oggetto \textsf{GameFacade} tramite il protocollo RMI in modo che possa essere raggiungibile da parte di un altro \emph{host} nella rete. L'host remoto potr\`a recuperare un oggetto di tipo \textsf{RemoteGame} su cui potr\`a invocare i metodi previsti dall'interfaccia.
+
+L'interfaccia \textsf{RemoteGame} prevede sostanzialmente gli stessi metodi di \textsf{GameFacade}, apparte per il metodo \textsf{addPlayer(): KeyEventManager} in quanto \textsf{KeyEventManager} non \`e un oggetto \textsf{Serializable} e non pu\`o essere trasmesso sulla rete: ci\`o comporta che un utente remoto sia obbligato ad utilizzare il proprio ID ed ad invocare sull'oggetto \textsf{RemoteGame} i metodi \textsf{rotate}, \textsf{propel} e \textsf{fire}.
+
+Sono state realizzate le classi \textsf{RemoteClient} e \textsf{RemoteServer} che realizzano rispettivamente il client e il server di gioco, e che necessitano dei parametri di rete per funzionare (host e porta).
+
+Le classi coinvolte nel pattern \emph{Remote Proxy} sono mostrate nell'immagine \ref{img:Proxy}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=10cm]{Proxy.pdf}
+\caption{Diagramma UML del pattern \emph{Remote Proxy}}
+\label{img:Proxy}
+\end{figure}
+
+\section{Descrizione dei packages}
+
+Il software \`e stato realizzato in Java e organizzato in package di cui diamo una breve discrezione:
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Nome package} & \textbf{Descrizione} \\
+\hline
+\textsf{it.ncorti.tdp.core} & \pbox{9cm}{Contiene le classi che costituiscono il core del gioco, in particolare \textsf{GameEngine}} \\
+\hline
+\textsf{it.ncorti.tdp.core.entities} & \pbox{9cm}{Contiene le classi che costituiscono le possibili entit\`a presenti nel gioco, e le classi relative al meccanismo di gestione delle collisioni} \\
+\hline
+\textsf{it.ncorti.tdp.graphics} & \pbox{9cm}{Contiene le classi che contengono i meccanismi per realizzare il rendering grafico del gioco} \\
+\hline
+\textsf{it.ncorti.tdp.user} & \pbox{9cm}{Contiene le classi che gestiscono gli eventi di input utente} \\
+\hline
+\textsf{it.ncorti.tdp.user.rmi} & \pbox{9cm}{Contiene le classi che permettono il gioco da remoto} \\
+\hline
+\end{tabular}
+\end{center}
+
 
 \section{User guide}
 \label{sec:guide}
 
-La simulazione \`e stata realizzata in Java utilizzando il simulatore Peersim ed \`e stata corredata di un file \textbf{ant} (il file \texttt{build.xml}) che offre dei target per automatizzare il processo di compilazione e di esecuzione del software.
+Il software \`e stata corredato di un file \textbf{ant} (il file \texttt{build.xml}) che offre dei target per automatizzare il processo di compilazione e di esecuzione del software.
 
-Per funzionare, la simulazione ha bisogno di un file di configurazione in input da cui poter caricare la configurazione della rete (numero di nodi, numero di link, protocolli da utilizzare, etc...). Alcuni esempi di file di configurazione possono essere trovati all'interno della cartella \texttt{example/}.
-
-Per compilare la simulazione \`e necessario posizionarsi all'interno della directory dove \`e contenuto il software ed invocare da terminale il comando
+Per compilare il software \`e necessario posizionarsi all'interno della directory dove \`e contenuto il software ed invocare da terminale il comando
 
 \begin{lstlisting}[basicstyle=\ttfamily]
 ant build
@@ -458,10 +536,10 @@ ant clean
 \begin{lstlisting}[basicstyle=\ttfamily]
 ant jar
 \end{lstlisting}
-Verr\`a generato un file chiamato \texttt{p2p\_final.jar} all'interno della cartella principale del software.
+Verr\`a generato un file chiamato \texttt{starcastle.jar} all'interno della cartella principale del software.
 Per avviare il file \texttt{jar} \`e necessario invocare il comando
 \begin{lstlisting}[basicstyle=\ttfamily]
-java -jar p2p_final.jar [file di configurazione]
+java -jar starcastle.jar [TODO]
 \end{lstlisting}
 
 \subsection{Documentazione}
@@ -471,19 +549,15 @@ Al fine di rendere il codice sorgente pi\`u comprensibile, il software \`e stato
 ant javadoc
 \end{lstlisting}
 
+La documentazione in javadoc pu\`o essere visionata anche online al link seguente \url{http://cortinico.github.io/tdp/}.
+
 Per una comprensione organica del software si consiglia la lettura della seguente relazione nella sua interezza. La presente relazione viene rilasciata in Pdf ed in \LaTeX\ e pu\`o essere visionata all'interno della cartella \texttt{doc/tex/}.
 
 \subsection{Avvio della simulazione}
 
 Una volta compilato il software \`e possibile invocarlo tramite il comando
 \begin{lstlisting}[basicstyle=\ttfamily]
-ant Execute [-Dfile=nomefile]
+ant Execute [TODO]
 \end{lstlisting}
-
-Con \texttt{-Dfile=nomefile} \`e possibile impostare il file di configurazione da usare. Per effettuare alcune computazioni di esempio \`e quindi sufficiente impostare \texttt{-Dfile=example/<nomefile.conf>}, eseguendo alcuni dei files di esempio gi\`a predisposti all'interno della cartella \texttt{example}.
-
-I nomi dei files contenuti nella cartella \texttt{example} permettono di comprendere facilmente quali sono le configurazioni impostate. Sono stati predisposti calcoli solamente \textsc{count} oppure \textsc{count-beacon}, con grafi random, small-world e scale-free. Inoltre sono stati predisposti esempi con debugger attivato ed altri esempi in cui si calcolano altre funzioni (massimo, somma, etc...).
-
-Se la struttura dei file di configurazione non fosse chiara \`e possibile visionare il file \textsf{example.conf} che contiene tutti i commenti necessari a comprendere le impostazioni possibili.
 
 \end{document}

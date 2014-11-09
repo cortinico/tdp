@@ -5,9 +5,10 @@
 \contentsline {subsection}{\numberline {1.2}Utilizzo del pattern \emph {Factory Method}}{7}{subsection.1.2}
 \contentsline {subsection}{\numberline {1.3}Utilizzo del pattern \emph {Observer}}{7}{subsection.1.3}
 \contentsline {section}{\numberline {2}Gestione delle collisioni}{8}{section.2}
-\contentsline {section}{\numberline {3}Gestione del rendering grafico}{9}{section.3}
+\contentsline {subsection}{\numberline {2.1}Utilizzo del pattern \emph {Mediator}}{8}{subsection.2.1}
+\contentsline {section}{\numberline {3}Gestione del rendering grafico}{10}{section.3}
 \contentsline {subsection}{\numberline {3.1}Uso del pattern \emph {Strategy}}{11}{subsection.3.1}
-\contentsline {section}{\numberline {4}Gestione dell'engine di gioco}{12}{section.4}
+\contentsline {section}{\numberline {4}Gestione dell'engine di gioco}{11}{section.4}
 \contentsline {subsection}{\numberline {4.1}Utilizzo del pattern \emph {Singleton}}{13}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Utilizzo del pattern \emph {Decorator}}{13}{subsection.4.2}
 \contentsline {section}{\numberline {5}Gestione dei comandi}{14}{section.5}
@@ -15,8 +16,9 @@
 \contentsline {subsection}{\numberline {5.2}Utilizzo del pattern \emph {Chain of reponsability}}{15}{subsection.5.2}
 \contentsline {section}{\numberline {6}Avvio e terminazione del gioco}{16}{section.6}
 \contentsline {subsection}{\numberline {6.1}Utilizzo del pattern \emph {Fa\IeC {\c c}ade}}{16}{subsection.6.1}
-\contentsline {section}{\numberline {7}Gestione del multiplayer}{16}{section.7}
-\contentsline {subsection}{\numberline {7.1}Utilizzo del pattern \emph {Remote Proxy}}{16}{subsection.7.1}
-\contentsline {section}{\numberline {8}User guide}{16}{section.8}
-\contentsline {subsection}{\numberline {8.1}Documentazione}{17}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Avvio della simulazione}{17}{subsection.8.2}
+\contentsline {section}{\numberline {7}Gestione del multiplayer}{17}{section.7}
+\contentsline {subsection}{\numberline {7.1}Utilizzo del pattern \emph {Remote Proxy}}{17}{subsection.7.1}
+\contentsline {section}{\numberline {8}Descrizione dei packages}{18}{section.8}
+\contentsline {section}{\numberline {9}User guide}{18}{section.9}
+\contentsline {subsection}{\numberline {9.1}Documentazione}{19}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Avvio della simulazione}{19}{subsection.9.2}

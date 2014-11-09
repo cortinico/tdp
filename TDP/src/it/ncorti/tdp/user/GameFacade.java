@@ -28,7 +28,7 @@ public class GameFacade extends UnicastRemoteObject implements RemoteGame {
 	private GameDisplay gameDisp;
 	
 	/** Riferimento all'ambiente di gioco (stato) */
-	private GameEngine gameEnv;
+	private GameEngine gameEng;
 	/** Riferimento alla finestra */
 	private WindowDecorator gameDecorator;
 	
@@ -51,15 +51,15 @@ public class GameFacade extends UnicastRemoteObject implements RemoteGame {
 	 * @throws RemoteException Se c'è stato un problema con il proxy
 	 */
 	public GameFacade(boolean windowed) throws RemoteException {	
-		gameEnv = GameEngine.getInstance();
+		gameEng = GameEngine.getInstance();
 		
-		gameDecorator = new WindowDecorator(gameEnv);
+		gameDecorator = new WindowDecorator(gameEng);
 		this.flagWindowed = windowed;
 		
 		if (windowed)
 			gameDisp = gameDecorator;
 		else
-			gameDisp = gameEnv;
+			gameDisp = gameEng;
 			
 		players = new HashMap<>(1);
 		
@@ -92,7 +92,7 @@ public class GameFacade extends UnicastRemoteObject implements RemoteGame {
 		double ID = newShip.getID();
 		
 		players.put(ID, newShip);
-		gameEnv.addEntity(newShip);
+		gameEng.addEntity(newShip);
 		
 		Log.e(TAG, "Ship " + ID + " Created");
 		return ID;
@@ -166,7 +166,7 @@ public class GameFacade extends UnicastRemoteObject implements RemoteGame {
 		if (windowed)
 			gameDisp = gameDecorator;
 		else
-			gameDisp = gameEnv;
+			gameDisp = gameEng;
 		gameDisp.renderWindow(new GraphicEnvironment());
 		
 		Log.e(TAG, "Setted Window to " + windowed);
