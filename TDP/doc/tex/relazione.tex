@@ -310,18 +310,129 @@ Le classi coinvolte nell'utilizzo del pattern \emph{Strategy} sono mostrate nel 
 \label{img:Strategy}
 \end{figure}
 
-
 \section{Gestione dell'engine di gioco}
 \label{sec:engine}
+
+Tutte le \textsf{GameEntity} devono essere mantenute da una classe che si occuper\`a di gestire il ciclo di rendering. Questa classe \`e \textsf{GameEngine}, che mantiene i riferimenti a
+
+\begin{itemize}
+\item La lista delle \textsf{GameEntity} in gioco
+\item Il \textsf{CollisionMediator}
+\item I contesti grafici dove effettuare il rendering (\emph{back buffer} e \emph{display buffer})
+\end{itemize}
+
+Inoltre \textsf{GameEngine} deve offrire i metodi per
+\begin{itemize}
+\item Inizializzare lo stato di gioco,
+\item Avviare il ciclo di gioco,
+\item Interrompere il ciclo di gioco,
+\item Aggiungere un'entit\`a al gioco,
+\item Rimuovere un'entit\`a dal gioco,
+\item Interagire con un'astronave (farla ruotare, sparare, etc\dots{}),
+\item Ricevere un comando (sezione \ref{sec:comandi}).
+\end{itemize}
+
+Il ciclo di gioco \`e schematizzato nell'algoritmo seguente:
+\begin{enumerate}
+\item Controllo se sono nello stato di gameover,
+\item Rimuovo le entit\`a che si sono distrutte (\textsf{isDestroyed}),
+\item Eseguo comandi che ho ricevuto dall'utente,
+\item Faccio evolvere le entit\`a in gioco (\textsf{evolveEntity}),
+\item Controllo se ci sono state collisioni,
+\begin{enumerate}
+\item Se s\`i, notifico i soggetti coinvolti,
+\end{enumerate}
+\item Renderizzo sul \emph{back buffer},
+\item Disegno il \emph{back buffer} su schermo.
+\end{enumerate}
+
+\subsection{Utilizzo del pattern \emph{Singleton}}
+
+L'oggetto \textsf{GameEngine} \`e fondamentale per il funzionamento del gioco, e non vogliamo che siano presenti due istanze concrete della classe, abbiamo dunque deciso di utilizzare il pattern \emph{Singleton}.
+
+Abbiamo un campo statico privato di tipo \textsf{GameEngine} dentro la classe stessa, che mantiene il riferimento all'istanza concreta; abbiamo reso il costruttore privato e realizzato il metodo statico \textsf{getInstance} per permettere di recuperare l'istanza di \textsf{GameEngine}.
+
+Utilizzando questo pattern possiamo inoltre evitare di dover passare i riferimenti al \textsf{GameEngine} concreto, ma recuperarli invocato il metodo statico \textsf{GameEngine.getInstance()}.
+
+L'implementazione del pattern \emph{Singleton} \`e rappresentata dal diagramma in figura \ref{img:Singleton}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=7cm]{Singleton.pdf}
+\caption{Diagramma UML del pattern \emph{Singleton}}
+\label{img:Singleton}
+\end{figure}
+
+Si noti che si sta utilizzando la versione \emph{eager} del pattern \emph{Singleton} in quanto si inizializza subito l'istanza concreta, questo per evitare eventuali problemi di concorrenza; l'impatto in termini di performance \`e trascurabile.
+
+\subsection{Utilizzo del pattern \emph{Decorator}}
+
+Il videogioco deve prevedere anche la modalit\`a \textit{windowed}. Aggiungere la seguente modalit\`a consiste fondamentalmente in aggiungere del comportamento alla fase di rendering iniziale del videogioco.
+
+All'avvio il gioco determina le dimensioni dell'area che pu\`o utilizzare per effettuare le operazioni di rendering grafico. Aggiungere la modalit\`a \textit{windowed} consiste in ridimensionare quest'area e aggiungere gli elementi grafici della finestra (bordi, bottoni, men\`u, etc\dots{}).
+
+Trovandoci in una situazioni in cui si sta estendendo una funzionalit\`a, si \`e deciso di utilizzare il pattern \emph{Decorator}, il \textsf{GameEngine} rappresenta la nostra classe base, la classe astratta \textsf{GameDisplay} rappresenta la radice della gerarchia che definisce le operazioni comuni a \textsf{GameEngine} e ai decorator.
+
+Abbiamo inoltre realizzato la classe \textsf{WindowDecorator} che rappresenta l'unico \textit{decorator} concreto, abbiamo omesso la classe astratta padre della gerarchia dei \emph{decorator} in quanto non vi erano altri \emph{decorator} concreti.
+
+\textsf{WindowDecorator} mantiene un riferimento \textsf{component} a un oggetto di tipo \textsf{GameDisplay} (nella fattispecie il \textsf{GameEngine}), di cui estende il comportamento. In particolare il metodo \textsf{renderWindow} esegue dapprima lo stesso metodo su \textsf{component} ed aggiunge la logica della finestra.
+
+Le classi coinvolte nell'implementazione del pattern \emph{Decorator} sono raffigurate nel diagramma in figura \ref{img:Decorator}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=12cm]{Decorator.pdf}
+\caption{Diagramma UML del pattern \emph{Decorator}}
+\label{img:Decorator}
+\end{figure}
 
 \section{Gestione dei comandi}
 \label{sec:comandi}
 
+La gestione dei comandi rappresenta il componente \emph{Controller} del sistema \emph{Model-View-Controller}. \`E bene definire quale sar\`a il flusso che dovr\`a percorrere l'input utente al fine di arrivare al modello e poterlo mutare.
+
+Si \`e deciso in particolare di utilizzare i pattern \emph{Command} e \emph{Chain of responsability} per modellare la gestione dei comandi.
+
+\subsection{Utilizzo del pattern \emph{Command}}
+
+La prima classe che presentiamo \`e la classe \textsf{KeyEventManager}, che implementa l'interfaccia \textsf{java.swing.event.KeyListner}, \`e si occupa di raccogliere gli eventi da tastiera dell'utente e li trasforma in comandi.
+
+I comandi vengono modellati dalle classi che implementano l'interfaccia \textsf{Command}: \textsf{CommandRotate}, \textsf{CommandFire} e \textsf{CommandPropel} che rappresentano gli omonimi comandi da realizzare sull'astronave.
+
+La classe che si occupa della gestione dei comandi \`e \textsf{GameEngine} che mantiene una lista di comandi da eseguire e si occupa di eseguirli ad ogni ciclo di rendering. Si \`e deciso di gestire i comandi in questo modo per non far interferire la frequenza di arrivo dei comandi con la frequenza di esecuzione del ciclo di rendering.
+
+La classe \textsf{GameEngine} svolge il ruolo sia di \emph{Invoker}, in quanto \`e lei che invoca il metodo \textsf{execute} sui comandi, sia il ruolo di \emph{Receiver}, in quanto i comandi eseguono metodi di \textsf{GameEngine} per far evolvere lo stato (\textsf{rotateSpaceShip}, etc\dots{}).
+
+La classe \textsf{KeyEventManager} svolge invece il ruolo di \emph{Client} del pattern, esso crea una volta singola tutti i comandi (al fine di guadagnarne in performance) e li recapita all'\emph{Invoker} appena riceve un input.
+
+Le classi coinvolte nell'implementazione del pattern \emph{Command} sono raffigurate nel diagramma in figura \ref{img:Command}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=12cm]{Command.pdf}
+\caption{Diagramma UML del pattern \emph{Command}}
+\label{img:Command}
+\end{figure}
+
+\subsection{Utilizzo del pattern \emph{Chain of reponsability}}
+
+Si \`e deciso di utilizzare la struttura realizzata con il pattern \emph{Decorator} per implementare il pattern \emph{Chain of reponsability}: aggiungendo il metodo \textsf{receiveCommand} a \textsf{GameDisplay} prevediamo che ogni oggetto della gerarchia dei \textit{decorator} abbia questo metodo.
+
+Quando il \textsf{KeyEventManager} invier\`a un comando al \textsf{GameDisplay}, il \textit{decorator} pi\`u esterno\footnote{Nel nostro caso abbiamo solamente un \emph{decorator} concreto (\textsf{WindowDecorator}), ma nulla vieta di poter scrivere altri \textit{decorator}} potr\`a decidere se gestire il comando e non propagarlo ulteriormente, oppure passare il comando al proprio \textsf{component} invocando il solito comando \textsf{receiveCommand}.
+
+Si noti come, malgaro le classi siano le stesse, il flusso di esecuzione \`e invertito: nel caso del metodo \textsf{renderWindow}, il decorator pi\`u esterno chiedere prima l'esecuzione al \textsf{component} ed estende successivamente con il proprio comportamento; nel caso del metodo \textsf{receiveCommand} si esegue prima la logica del \textit{decorator} verificando se \`e possibile gestire il comando, e successivamente lo si propaga al \textsf{component}.
+
+Le classi coinvolte sono le stesse del diagramma in figura \ref{img:Decorator}.
+
 \section{Avvio e terminazione del gioco}
 \label{sec:avvio}
 
+\subsection{Utilizzo del pattern \emph{Façade}}
+
 \section{Gestione del multiplayer}
 \label{sec:multiplayer}
+
+\subsection{Utilizzo del pattern \emph{Remote Proxy}}
 
 \section{User guide}
 \label{sec:guide}

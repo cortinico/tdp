@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.13)  9 NOV 2014 17:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.9.13)  9 NOV 2014 19:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -428,7 +428,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 65.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<unipi.pdf, id=60, 229.72816pt x 234.28328pt>
+<unipi.pdf, id=84, 229.72816pt x 234.28328pt>
 File: unipi.pdf Graphic file (type pdf)
  <use unipi.pdf>
 Package pdftex.def Info: unipi.pdf used on input line 65.
@@ -441,12 +441,12 @@ Package pdftex.def Info: unipi.pdf used on input line 65.
 \openout4 = `relazione.toc'.
 
  [2]
-<screen.jpg, id=98, 635.37375pt x 473.77pt>
+<screen.jpg, id=128, 635.37375pt x 473.77pt>
 File: screen.jpg Graphic file (type jpg)
  <use screen.jpg>
 Package pdftex.def Info: screen.jpg used on input line 91.
 (pdftex.def)             Requested size: 170.71652pt x 127.2979pt.
- [3 <./screen.jpg>] <mvc.png, id=111, 407.63528pt x 424.68776pt>
+ [3 <./screen.jpg>] <mvc.png, id=141, 407.63528pt x 424.68776pt>
 File: mvc.png Graphic file (type png)
  <use mvc.png>
 Package pdftex.def Info: mvc.png used on input line 114.
@@ -461,13 +461,13 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 134.
 
-<GameEntity.pdf, id=125, 739.76375pt x 282.05376pt>
+<GameEntity.pdf, id=155, 739.76375pt x 282.05376pt>
 File: GameEntity.pdf Graphic file (type pdf)
  <use GameEntity.pdf>
 Package pdftex.def Info: GameEntity.pdf used on input line 152.
 (pdftex.def)             Requested size: 426.79134pt x 162.72623pt.
 
-[5] <State.pdf, id=133, 934.49126pt x 251.94125pt>
+[5] <State.pdf, id=163, 934.49126pt x 251.94125pt>
 File: State.pdf Graphic file (type pdf)
  <use State.pdf>
 Package pdftex.def Info: State.pdf used on input line 170.
@@ -476,68 +476,96 @@ Package pdftex.def Info: State.pdf used on input line 170.
 
 pdfTeX warning: pdflatex (file ./State.pdf): PDF inclusion: multiple pdfs with 
 page group included in a single page
->] <FactoryMethod.pdf, id=146, 541.02126pt x 208.78pt>
+>] <FactoryMethod.pdf, id=177, 541.02126pt x 208.78pt>
 File: FactoryMethod.pdf Graphic file (type pdf)
  <use FactoryMethod.pdf>
 Package pdftex.def Info: FactoryMethod.pdf used on input line 192.
 (pdftex.def)             Requested size: 284.52756pt x 109.80226pt.
 
-[7 <./FactoryMethod.pdf>] <Observer.pdf, id=156, 709.65125pt x 276.03125pt>
+[7 <./FactoryMethod.pdf>] <Observer.pdf, id=187, 709.65125pt x 276.03125pt>
 File: Observer.pdf Graphic file (type pdf)
 
 <use Observer.pdf>
 Package pdftex.def Info: Observer.pdf used on input line 213.
 (pdftex.def)             Requested size: 398.33858pt x 154.94287pt.
  [8 <./Observer.pdf>]
-<Mediator.pdf, id=167, 598.235pt x 290.08376pt>
+<Mediator.pdf, id=197, 598.235pt x 290.08376pt>
 File: Mediator.pdf Graphic file (type pdf)
  <use Mediator.pdf>
 Package pdftex.def Info: Mediator.pdf used on input line 246.
 (pdftex.def)             Requested size: 341.43306pt x 165.5619pt.
- [9 <./Mediator.pdf>] <GraphicEntity.pdf, id=176, 455.2441pt x 312.98033pt>
+ [9 <./Mediator.pdf>] <GraphicEntity.pdf, id=206, 455.2441pt x 312.98033pt>
 File: GraphicEntity.pdf Graphic file (type pdf)
 
 <use GraphicEntity.pdf>
 Package pdftex.def Info: GraphicEntity.pdf used on input line 271.
 (pdftex.def)             Requested size: 227.62204pt x 156.48978pt.
- <Drawable.pdf, id=180, 282.05376pt x 66.2475pt>
+ <Drawable.pdf, id=210, 282.05376pt x 66.2475pt>
 File: Drawable.pdf Graphic file (type pdf)
 
 <use Drawable.pdf>
 Package pdftex.def Info: Drawable.pdf used on input line 284.
 (pdftex.def)             Requested size: 199.16928pt x 46.78029pt.
  [10 <./GraphicEntity.pdf>]
-<Strategy.pdf, id=213, 910.40125pt x 379.4175pt>
+<Strategy.pdf, id=243, 1308.82678pt x 540.60233pt>
 File: Strategy.pdf Graphic file (type pdf)
  <use Strategy.pdf>
 Package pdftex.def Info: Strategy.pdf used on input line 308.
-(pdftex.def)             Requested size: 398.33858pt x 166.0121pt.
+(pdftex.def)             Requested size: 398.33858pt x 164.52463pt.
  [11 <./Drawable.pdf> <./Strategy.pdf
 
 pdfTeX warning: pdflatex (file ./Strategy.pdf): PDF inclusion: multiple pdfs wi
 th page group included in a single page
->] [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 378.
- [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 378.
+>] [12] <Singleton.pdf, id=290, 282.05376pt x 86.3225pt>
+File: Singleton.pdf Graphic file (type pdf)
+ <use Singleton.pdf>
+Package pdftex.def Info: Singleton.pdf used on input line 361.
+(pdftex.def)             Requested size: 199.16928pt x 60.95613pt.
+
+[13 <./Singleton.pdf>] <Decorator.pdf, id=301, 768.22444pt x 312.98033pt>
+File: Decorator.pdf Graphic file (type pdf)
+
+<use Decorator.pdf>
+Package pdftex.def Info: Decorator.pdf used on input line 384.
+(pdftex.def)             Requested size: 341.43306pt x 139.10149pt.
+ [14 <./Decorator.pdf>]
+
+LaTeX Warning: File `Command.pdf' not found on input line 412.
+
+
+! Package pdftex.def Error: File `Command.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.412 \includegraphics[width=12cm]{Command.pdf}
+                                               
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[15] (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+) [16]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 489.
+ [17]
+[18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 489.
  (./relazione.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 378.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 378.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 489.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 489.
 Package rerunfilecheck Info: File `relazione.out' has not changed.
-(rerunfilecheck)             Checksum: 7725EB9989583AC3F3F53AAADC777248;926.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+(rerunfilecheck)             Checksum: BEDE38A32A4FD84E9F7E8F97E27D37E9;1420.
  ) 
 Here is how much of TeX's memory you used:
- 10011 strings out of 494976
- 146527 string characters out of 6180006
- 284827 words of memory out of 5000000
- 13018 multiletter control sequences out of 15000+600000
- 16612 words of font info for 63 fonts, out of 8000000 for 9000
+ 10546 strings out of 494976
+ 152173 string characters out of 6180006
+ 285827 words of memory out of 5000000
+ 13523 multiletter control sequences out of 15000+600000
+ 16958 words of font info for 64 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 41i,11n,40p,802b,1114s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,11n,40p,802b,1798s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
@@ -551,13 +579,14 @@ onts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on relazione.pdf (13 pages, 655071 bytes).
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on relazione.pdf (18 pages, 660911 bytes).
 PDF statistics:
- 315 PDF objects out of 1000 (max. 8388607)
- 262 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
- 168 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 447 PDF objects out of 1000 (max. 8388607)
+ 369 compressed objects within 4 object streams
+ 81 named destinations out of 1000 (max. 500000)
+ 226 words of extra memory for PDF output out of 10000 (max. 10000000)
 

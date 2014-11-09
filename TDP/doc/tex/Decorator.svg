@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="27cm" height="11cm" viewBox="278 73 530 202" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.35099e-37; stroke: #ffffff" d="M 363 257.9 C 242,257 261,184 360.3,112.9"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2.35099e-37; stroke: #ffffff" points="351.948,128.719 360.3,112.9 342.634,115.71 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="363" y="243.9" width="123" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="363" y="243.9" width="123" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="424.5" y="262.9">GameEngine</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="360.3" y="74.9" width="341.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="360.3" y="74.9" width="341.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:700" x="530.85" y="93.9">GameDisplay</text>
+    <rect style="fill: #ffffff" x="360.3" y="102.9" width="341.1" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="360.3" y="102.9" width="341.1" height="68"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:normal" x="363.3" y="116.9">+start(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:normal" x="363.3" y="132.9">+stop(): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:normal" x="363.3" y="148.9">+sendCommand(c:Command): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:normal" x="363.3" y="164.9">+renderWindow(env:GraphicEnvironment): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="553.3" y="243.9" width="171.7" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="553.3" y="243.9" width="171.7" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="639.15" y="262.9">WindowDecorator</text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="424.5" y1="243.9" x2="515.815" y2="181.22"/>
+    <polygon style="fill: #ffffff" points="520.342,187.816 529.006,172.165 511.288,174.624 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="520.342,187.816 529.006,172.165 511.288,174.624 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="639.15" y1="243.9" x2="545.972" y2="181.093"/>
+    <polygon style="fill: #ffffff" points="550.443,174.459 532.704,172.15 541.5,187.726 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="550.443,174.459 532.704,172.15 541.5,187.726 "/>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 725 257.9 C 850,258 800,163 705.387,114.926"/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="721.282,114.029 703.393,113.913 714.034,128.293 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="739" y="272">
+    <tspan x="739" y="272">component</tspan>
+  </text>
+</svg>

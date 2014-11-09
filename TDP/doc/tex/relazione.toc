@@ -8,9 +8,15 @@
 \contentsline {section}{\numberline {3}Gestione del rendering grafico}{9}{section.3}
 \contentsline {subsection}{\numberline {3.1}Uso del pattern \emph {Strategy}}{11}{subsection.3.1}
 \contentsline {section}{\numberline {4}Gestione dell'engine di gioco}{12}{section.4}
-\contentsline {section}{\numberline {5}Gestione dei comandi}{12}{section.5}
-\contentsline {section}{\numberline {6}Avvio e terminazione del gioco}{12}{section.6}
-\contentsline {section}{\numberline {7}Gestione del multiplayer}{12}{section.7}
-\contentsline {section}{\numberline {8}User guide}{12}{section.8}
-\contentsline {subsection}{\numberline {8.1}Documentazione}{13}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Avvio della simulazione}{13}{subsection.8.2}
+\contentsline {subsection}{\numberline {4.1}Utilizzo del pattern \emph {Singleton}}{13}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Utilizzo del pattern \emph {Decorator}}{13}{subsection.4.2}
+\contentsline {section}{\numberline {5}Gestione dei comandi}{14}{section.5}
+\contentsline {subsection}{\numberline {5.1}Utilizzo del pattern \emph {Command}}{14}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Utilizzo del pattern \emph {Chain of reponsability}}{15}{subsection.5.2}
+\contentsline {section}{\numberline {6}Avvio e terminazione del gioco}{16}{section.6}
+\contentsline {subsection}{\numberline {6.1}Utilizzo del pattern \emph {Fa\IeC {\c c}ade}}{16}{subsection.6.1}
+\contentsline {section}{\numberline {7}Gestione del multiplayer}{16}{section.7}
+\contentsline {subsection}{\numberline {7.1}Utilizzo del pattern \emph {Remote Proxy}}{16}{subsection.7.1}
+\contentsline {section}{\numberline {8}User guide}{16}{section.8}
+\contentsline {subsection}{\numberline {8.1}Documentazione}{17}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Avvio della simulazione}{17}{subsection.8.2}
