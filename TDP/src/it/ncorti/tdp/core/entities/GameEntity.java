@@ -88,7 +88,7 @@ public abstract class GameEntity implements Drawable, Collideable {
 	/**
 	 * Aggiorna la strategia di disegno dell'entita
 	 * 
-	 * @param state Nuova strategia di disegno dell'entita' di gioco
+	 * @param strategy Nuova strategia di disegno dell'entita' di gioco
 	 */
 	protected void setStrategy(DrawStrategy strategy){
 		this.strategy = strategy;

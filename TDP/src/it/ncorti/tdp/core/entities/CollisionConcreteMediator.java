@@ -4,7 +4,7 @@ import it.ncorti.tdp.user.Log;
 import java.util.List;
 
 /**
- * Classe che rappresenta un mediatore che si occupa di notificare a tutti i Collideable
+ * Classe che rappresenta un mediatore concreto che si occupa di notificare a tutti i Collideable
  * che si e' verificata una collisione
  * 
  * @author Nicola Corti
