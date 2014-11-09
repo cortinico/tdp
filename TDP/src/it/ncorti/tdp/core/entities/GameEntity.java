@@ -18,9 +18,9 @@ public abstract class GameEntity implements Drawable, Collideable {
 	protected int y;
 	
 	/** Stato dell'entita' */
-	protected EntityState state;
+	private EntityState state;
 	/** Strategia di gioco */
-	protected DrawStrategy strategy;
+	private DrawStrategy strategy;
 	
 	/**
 	 * Costruttore base che crea una nuova entita' di gioco.
@@ -86,6 +86,16 @@ public abstract class GameEntity implements Drawable, Collideable {
 	}
 	
 	/**
+	 * Aggiorna la strategia di disegno dell'entita
+	 * 
+	 * @param state Nuova strategia di disegno dell'entita' di gioco
+	 */
+	protected void setStrategy(DrawStrategy strategy){
+		this.strategy = strategy;
+	}
+	
+	
+	/**
 	 * Indica se l'entita' di gioco e' stata distrutta
 	 * 
 	 * @return True se l'entita' e' stata distrutta
@@ -112,7 +122,7 @@ public abstract class GameEntity implements Drawable, Collideable {
 	 */
 	@Override
 	public void draw(GraphicEnvironment g) {
-		this.strategy.drawEntity(g, state.getEntity());
+		this.strategy.drawEntities(g, state.getGraphicEntities());
 	}
 	
 

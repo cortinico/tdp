@@ -1,14 +1,16 @@
 \select@language {italian}
 \select@language {italian}
-\contentsline {section}{\numberline {1}Modellazione della realt\`a}{4}{section.1}
+\contentsline {section}{\numberline {1}Modellazione della realt\`a}{5}{section.1}
 \contentsline {subsection}{\numberline {1.1}Utilizzo dal pattern \emph {State}}{6}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Utilizzo del pattern \emph {Factory Method}}{7}{subsection.1.2}
 \contentsline {subsection}{\numberline {1.3}Utilizzo del pattern \emph {Observer}}{7}{subsection.1.3}
 \contentsline {section}{\numberline {2}Gestione delle collisioni}{8}{section.2}
-\contentsline {section}{\numberline {3}Gestione del rendering grafico}{8}{section.3}
-\contentsline {section}{\numberline {4}Gestione dei comandi}{8}{section.4}
-\contentsline {section}{\numberline {5}Avvio e terminazione del gioco}{8}{section.5}
-\contentsline {section}{\numberline {6}Gestione del multiplayer}{8}{section.6}
-\contentsline {section}{\numberline {7}User guide}{8}{section.7}
-\contentsline {subsection}{\numberline {7.1}Documentazione}{9}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Avvio della simulazione}{9}{subsection.7.2}
+\contentsline {section}{\numberline {3}Gestione del rendering grafico}{9}{section.3}
+\contentsline {subsection}{\numberline {3.1}Uso del pattern \emph {Strategy}}{11}{subsection.3.1}
+\contentsline {section}{\numberline {4}Gestione dell'engine di gioco}{12}{section.4}
+\contentsline {section}{\numberline {5}Gestione dei comandi}{12}{section.5}
+\contentsline {section}{\numberline {6}Avvio e terminazione del gioco}{12}{section.6}
+\contentsline {section}{\numberline {7}Gestione del multiplayer}{12}{section.7}
+\contentsline {section}{\numberline {8}User guide}{12}{section.8}
+\contentsline {subsection}{\numberline {8.1}Documentazione}{13}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Avvio della simulazione}{13}{subsection.8.2}

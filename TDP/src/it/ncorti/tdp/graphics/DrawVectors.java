@@ -13,7 +13,7 @@ public class DrawVectors extends DrawStrategy {
 	 * @see it.ncorti.tdp.graphics.DrawStrategy#drawEntity(it.ncorti.tdp.graphics.GraphicEnvironment, java.util.List)
 	 */
 	@Override
-	public void drawEntity(GraphicEnvironment env, List<GraphicEntity> vectors) {
+	public void drawEntities(GraphicEnvironment env, List<GraphicEntity> vectors) {
 		
 		// Disegna semplicemente ogni primitiva grafica
 		for (GraphicEntity vect : vectors)

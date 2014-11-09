@@ -26,7 +26,7 @@ public class EntityDeadState extends EntityState {
 	 * @see it.ncorti.tdp.core.entities.EntityState#getEntity()
 	 */
 	@Override
-	public List<GraphicEntity> getEntity() {
+	public List<GraphicEntity> getGraphicEntities() {
 
 		// Ritorno una lista di primitive vuota
 		return new ArrayList<GraphicEntity>();

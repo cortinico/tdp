@@ -1,6 +1,6 @@
 package it.ncorti.tdp.core.entities;
 
-import it.ncorti.tdp.graphics.DrawSprite;
+import it.ncorti.tdp.graphics.DrawSprites;
 import it.ncorti.tdp.graphics.DrawStrategy;
 import it.ncorti.tdp.user.Log;
 
@@ -47,7 +47,7 @@ public class Mine extends GameEntity implements Observer {
 	 * @see it.ncorti.tdp.core.entities.GameEntity#createInitialStrategy() */
 	@Override
 	protected DrawStrategy createInitialStrategy() {
-		return new DrawSprite();
+		return new DrawSprites();
 	}
 
 	/* (non-Javadoc)

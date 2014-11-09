@@ -55,9 +55,9 @@ language={Java},
 breaklines=true,breakatwhitespace=true,breakautoindent
 }
 
-\title{StarCastle - Esempio di applicazione dei design pattern nella modellazione di un videogioco}
-\author{Nicola Corti - 454413 \\Corso di Laurea Magistrale in Informatica - Universit\`a di Pisa}
-\date{22 Aprile 2014}
+\title{\emph{StarCastle} - Esempio di applicazione dei design pattern nella modellazione di un videogioco}
+\author{Nicola Corti - 454413 \\Corso di Laurea Magistrale in Informatica \\ Universit\`a degli studi di Pisa \\ \\ \includegraphics[width=2cm]{unipi.pdf}}
+\date{10 Novembre 2014}
 
  
 \begin{document}
@@ -68,6 +68,7 @@ Questa relazione ha lo scopo di illustrare come i design pattern possono essere 
 
 Il codice sorgente allegato \`e da considerarsi parte integrante di questa relazione, al fine di permettere una comprensione pi\`u organica di tutti gli aspetti di design ed implementativi.
 \end{abstract}
+\newpage
 
 \tableofcontents
 \newpage
@@ -146,7 +147,7 @@ Per questi motivi si \`e deciso di progettare una gerarchia di classi che ha com
 
 La gerarchia di classi \`e rappresentata nell'immagine \ref{img:GameEntity}\footnote{Si noti che in questo e nei prossimi diagrammi UML non sono rappresentati tutti gli attrubuti e i metodi della classe, ma solamente quelli significati nel contesto in cui vengono trattati, al fine di non appesantire il diagramma}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \centering
 \includegraphics[width=15cm]{GameEntity.pdf}
 \caption{Diagramma UML della classe \textsf{GameEntity}}
@@ -180,6 +181,7 @@ Utilizzare il pattern \emph{State} comporta la realizzazione di tante piccole cl
 Si noti infine che \`e stata realizzata una singola classe \textsf{DeadEntityState} al fine di rappresentare lo stato in cui termina una generica entit\`a che \`e stata distrutta; invece di realizzare svariate classi del tipo \textsf{SpaceShipDeadState}, \textsf{CannonDeadState}, etc\dots{} riducendo cos\`i la replicazione del codice.
 
 \subsection{Utilizzo del pattern \emph{Factory Method}}
+\label{sec:factory}
 
 Per la creazione del primo stato in cui nasce una \textsf{GameEntity} si \`e deciso di utilizzare il pattern \emph{Factory Method}: nella classe \textsf{GameEntity} \`e presente il metodo astratto \textsf{createInitialState}, ogni classe deve quindi implementare questo metodo, costruendo quello che \`e l'oggetto che rappresenta il loro stato iniziale. Per cui ad esempio la classe \textsf{SpaceShip} ritorner\`a un nuovo oggetto di tipo \textsf{SpaceShipAliveState}.
 
@@ -231,13 +233,83 @@ In particolare abbiamo realizzato:
 \item \textsf{getBoundCircle} che ritorna il \textsf{BoundCircle} di una dimensione standard (le sottoclassi faranno l'override di questo metodo se il bound circle \`e differente).
 \item \textsf{collideWith} che rappresenta il metodo invocato quando \textsf{GameEntity} entra in collisione con un altro \textsf{Collideable}, implementato invocando il metodo \textsf{collideWith} dello stato attuale (sezione \ref{sec:state}).
 \end{itemize}
-\item La classe \textsf{CollisionMediator} che rappresenta il mediatore delle collisioni, in particolare il metodo 
+\item L'interfaccia \textsf{CollisionMediator}, che deve essere implementata dai mediator concreti, con il metodo \textsf{checkCollision} che deve controllare, data una lista di \textsf{Collideable}, se sono presenti collisioni, e notificare i soggetti coinvolti nella collisione 
+\item La classe \textsf{CollisionConcreteMediator} che rappresenta un'implementazione concreta dell'interfaccia \textsf{CollisionMediator}.
 \end{itemize}
 
+Si noti come questa implementazione del pattern \emph{Mediator} risulta leggermente differente da quella prevista dalla \emph{GoF}: i soggetti \emph{Colleague} previsti dal \emph{GoF} dovrebbero mantenere il riferimento al \emph{Mediator}, mentre nel nostro caso non abbiamo previsto che i \textsf{GameEntity} potessero interagire direttamente con il \textsf{CollisionMediator}, ma che sia il \textsf{CollisionMediator} a richiedere le informazioni per computare le collisioni alle singole \textsf{GameEntity}.
+
+Le classi coinvolte nella gestione delle collisioni sono presentate nel diagramma in figura \ref{img:Mediator}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=12cm]{Mediator.pdf}
+\caption{Diagramma UML del pattern \emph{Mediator}}
+\label{img:Mediator}
+\end{figure}
 
 
 \section{Gestione del rendering grafico}
 \label{sec:graphics}
+
+Una volta definita la componente \emph{Model} del nostro sistema \emph{Model-View-Controller}, passiamo a definire la parte \emph{View}.
+
+Generalmente i videogiochi permettono di essere visualizzati mostrando una serie di primitive grafiche per ogni entit\`a in gioco. Abbiamo dunque modellato le primitive grafiche nel modo seguente:
+
+\begin{itemize}
+\item Un'interfaccia \textsf{GraphicEntity} che rappresenta una generica primitiva grafica.
+\begin{itemize}
+\item La classe \textsf{GraphicSprite} che implementa \textsf{GraphicEntity} e permette di creare una \emph{sprite} indicando il nome del file da disegnare,
+\item La classe \textsf{GraphicVector} che implementa \textsf{GraphicEntity} e permette di creare un vettore grafico, indicando le coordinate di inizio, di fine e il colore.
+\end{itemize}
+\end{itemize}
+
+La gerarchia di classi delle primitive grafiche \`e mostrata in figura \ref{img:GraphicEntity}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=8cm]{GraphicEntity.pdf}
+\caption{Diagramma UML delle primitive grafiche}
+\label{img:GraphicEntity}
+\end{figure}
+
+Abbiamo successivamente realizzato l'interfaccia \textsf{Drawable} (immagine \ref{img:Drawable}), che deve essere implementata dai soggetti che desiderano essere disegnati a scherma. L'interfaccia prevede un metodo \textsf{draw} con  un parametro di tipo \textsf{GraphicEnvironment} (il contesto grafico), si realizzano quindi tutte le operazioni necessarie a mostrare su schermo l'oggetto.
+
+Nel nostro caso abbiamo deciso di far implementare l'interfaccia \textsf{Drawable} alla classe \textsf{GameEntity} e di lasciare l'onere di dover fornire le primitive grafiche ad ogni singolo stato sottoclasse di \textsf{EntityState}: ogni stato fornisce il metodo \textsf{getGraphicEntities} che ritorna una lista di primitive grafiche (\textsf{List}$<$\textsf{GraphicEntity}$>$) che permettono di renderizzare la singola entit\`a.
+
+Chiariamo meglio questo concetto con un esempio: una \textsf{PowerBar} che non \`e stata mai colpita\footnote{La \textsf{PowerBar} si trova dunque nello stato \textsf{PowerBarNoHitState}} invocher\`a il metodo \textsf{getGraphicEntities} sul suo stato, ottenendo una lista di \textsf{GraphicEntity}, in particolare un solo \textsf{GraphicVector} che permette di disegnare l'oggetto \textsf{PowerBar}. Nel momento in cui avviene una collisione con un \textsf{Missile} l'oggetto \textsf{PowerBar} transisce in un nuovo stato\footnote{Lo stato \textsf{PowerBarOneHitState}} ed invocando il metodo \textsf{getGraphicEntities} si otterranno le primitive grafiche per ridisegnare la \textsf{PowerBar} che \`e stata colpita.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=7cm]{Drawable.pdf}
+\caption{Diagramma UML dell'interfaccia \textsf{Drawable}}
+\label{img:Drawable}
+\end{figure}
+
+\subsection{Uso del pattern \emph{Strategy}}
+
+Consideriamo inoltre che dobbiamo prevedere inoltre un meccanismo per animare le primitive grafiche di una \textsf{GameEntity}, per gestire le animazioni abbiamo deciso di implementare il pattern \emph{Strategy} nei \textsf{GameEntity}.
+
+Abbiamo realizzato la classe astratta \textsf{DrawStrategy} che contiene il metodo \textsf{drawEntity}: questo metodo accetta due parametri, un \textsf{GraphicEnvironment} dove poter disegnare e una lista di \textsf{GraphicEntity}. Abbiamo inoltre fornito due strategie concrete:
+
+\begin{itemize}
+\item \textsf{DrawVectors} che disegna semplicemente l'elenco dei vettori forniti sull'ambiente grafico
+\item \textsf{DrawSprites} che anima le sprites fornite, disegnano una delle sprites nella lista a turno.
+\end{itemize}
+
+La \textsf{DrawStrategy} iniziale viene impostata tramite il metodo astratto \textsf{createInitialStrategy} della classe \textsf{GameEntity}, utilizzando il pattern \emph{Factory Method}, in un modo analogo a quanto avviene con lo stato (sezione \ref{sec:factory}).
+
+\`E quindi possibile cambiare strategia a runtime usando il metodo \textsf{setStrategy}, oppure realizzare strategie pi\`u complesse, che prevedano animazioni pi\`u fluide, unendo sprite e vettori assieme.
+
+Le classi coinvolte nell'utilizzo del pattern \emph{Strategy} sono mostrate nel diagramma in figura \ref{img:Strategy}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=14cm]{Strategy.pdf}
+\caption{Diagramma UML del pattern \emph{Strategy}}
+\label{img:Strategy}
+\end{figure}
+
 
 \section{Gestione dell'engine di gioco}
 \label{sec:engine}

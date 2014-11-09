@@ -36,7 +36,7 @@ public class PowerBarNoHitState extends EntityState {
 	 * @see it.ncorti.tdp.core.entities.EntityState#getEntity()
 	 */
 	@Override
-	public List<GraphicEntity> getEntity() {
+	public List<GraphicEntity> getGraphicEntities() {
 		return powerBarNoHitVect;
 	}
 

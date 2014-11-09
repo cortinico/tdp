@@ -22,7 +22,7 @@ public abstract class EntityState {
 	 * 
 	 * @return Lista di entita' grafiche che permettono di disegnare l'entita'
 	 */
-	public abstract List<GraphicEntity> getEntity();
+	public abstract List<GraphicEntity> getGraphicEntities();
 	
 	/**
 	 * Definisce il comportamento dell'entita' quando viene in collisione con un'altra entita'

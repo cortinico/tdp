@@ -7,7 +7,7 @@ import java.util.List;
  * @author Nicola Corti
  *
  */
-public class DrawSprite extends DrawStrategy {
+public class DrawSprites extends DrawStrategy {
 
 	/** Lista degli sprite */
 	private List<GraphicEntity> lastSprites;
@@ -18,7 +18,7 @@ public class DrawSprite extends DrawStrategy {
 	 * @see it.ncorti.tdp.graphics.DrawStrategy#drawEntity(it.ncorti.tdp.graphics.GraphicEnvironment, java.util.List)
 	 */
 	@Override
-	public void drawEntity(GraphicEnvironment env, List<GraphicEntity> entity) {
+	public void drawEntities(GraphicEnvironment env, List<GraphicEntity> entity) {
 
 		// Controllo se mi hanno inviato la stessa lista di entita' grafiche
 		if (lastSprites == null || !lastSprites.equals(entity)) {

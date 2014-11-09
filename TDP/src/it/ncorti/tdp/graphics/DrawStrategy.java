@@ -15,6 +15,6 @@ public abstract class DrawStrategy {
 	 * @param env Ambiente grafico
 	 * @param entity Lista di primitive grafiche
 	 */
-	public abstract void drawEntity(GraphicEnvironment env, List<GraphicEntity> entity);
+	public abstract void drawEntities(GraphicEnvironment env, List<GraphicEntity> entity);
 	
 }

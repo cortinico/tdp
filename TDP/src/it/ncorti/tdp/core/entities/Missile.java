@@ -1,6 +1,6 @@
 package it.ncorti.tdp.core.entities;
 
-import it.ncorti.tdp.graphics.DrawSprite;
+import it.ncorti.tdp.graphics.DrawSprites;
 import it.ncorti.tdp.graphics.DrawStrategy;
 
 /**
@@ -43,7 +43,7 @@ public class Missile extends GameEntity {
 	 */
 	@Override
 	protected DrawStrategy createInitialStrategy() {
-		return new DrawSprite();
+		return new DrawSprites();
 	}
 	
 	/* (non-Javadoc)
