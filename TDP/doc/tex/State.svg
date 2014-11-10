@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="47cm" height="13cm" viewBox="209 215 932 252" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="821.55,298.55 821.55,316.326 1011.29,316.326 1011.29,436.738 "/>
+    <polygon style="fill: #ffffff" points="829.55,298.55 821.55,282.55 813.55,298.55 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="829.55,298.55 821.55,282.55 813.55,298.55 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="821.55,298.55 821.55,316.246 744.05,316.246 744.05,437.578 "/>
+    <polygon style="fill: #ffffff" points="829.55,298.55 821.55,282.55 813.55,298.55 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="829.55,298.55 821.55,282.55 813.55,298.55 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="821.55,298.55 821.55,316.246 648.792,316.246 648.792,389.648 "/>
+    <polygon style="fill: #ffffff" points="829.55,298.55 821.55,282.55 813.55,298.55 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="829.55,298.55 821.55,282.55 813.55,298.55 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="232.624" y="216.292" width="264.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="232.624" y="216.292" width="264.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:700" x="364.674" y="235.292">GameEntity</text>
+    <rect style="fill: #ffffff" x="232.624" y="244.292" width="264.1" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="232.624" y="244.292" width="264.1" height="52"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="235.624" y="258.292">#setState(s:EntityState): void</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="235.624" y="274.292">+isDestroyed(): boolean</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="235.624" y="290.292">+collideWith(c:Collideable): void</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="639.45" y="216.314" width="364.2" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="639.45" y="216.314" width="364.2" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:700" x="821.55" y="235.314">EntityState</text>
+    <rect style="fill: #ffffff" x="639.45" y="244.314" width="364.2" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="639.45" y="244.314" width="364.2" height="36"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:normal" x="642.45" y="258.314">+isDestroyed(): boolean</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:italic;font-weight:normal" x="642.45" y="274.314">+collideWith(e:GameEntity,c:Collideable): void</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="521.896,254.292 567.587,254.292 567.587,254.314 634.978,254.314 "/>
+    <polygon style="fill: #ffffff" points="496.724,254.292 510.724,249.492 524.724,254.292 510.724,259.092 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="496.724,254.292 510.724,249.492 524.724,254.292 510.724,259.092 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="621.214,262.314 637.214,254.314 621.214,246.314 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="569.587" y="250.303"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="528.724" y="250.292"> state</text>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="528.724" y="266.292"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="619.45" y="250.314"/>
+  </g>
+  <g>
+    <polygon style="fill: #ffffff" points="324,314 484,314 496,326 496,348 324,348 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="324,314 484,314 496,326 496,348 324,348 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" points="484,314 484,326 496,326 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="331" y="338.9">
+      <tspan x="331" y="338.9">state.isDestroyed();</tspan>
+    </text>
+  </g>
+  <g>
+    <polygon style="fill: #ffffff" points="231.8,371.1 445.7,371.1 457.7,383.1 457.7,405.1 231.8,405.1 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="231.8,371.1 445.7,371.1 457.7,383.1 457.7,405.1 231.8,405.1 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" points="445.7,371.1 445.7,383.1 457.7,383.1 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="238.8" y="396">
+      <tspan x="238.8" y="396">state.collideWith(this, c);</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="496,331 517.724,331 517.724,270.292 507.724,270.292 "/>
+    <path style="fill: #ffffff" d="M 497.724 270.292 C 497.724,267.792 500.224,265.292 502.724,265.292 C 505.224,265.292 507.724,267.792 507.724,270.292 C 507.724,272.792 505.224,275.292 502.724,275.292 C 500.224,275.292 497.724,272.792 497.724,270.292z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 497.724 270.292 C 497.724,267.792 500.224,265.292 502.724,265.292 C 505.224,265.292 507.724,267.792 507.724,270.292 C 507.724,272.792 505.224,275.292 502.724,275.292 C 500.224,275.292 497.724,272.792 497.724,270.292"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="231.8,388.1 210.8,388.1 210.8,286.292 221.624,286.292 "/>
+    <path style="fill: #ffffff" d="M 231.624 286.292 C 231.624,288.792 229.124,291.292 226.624,291.292 C 224.124,291.292 221.624,288.792 221.624,286.292 C 221.624,283.792 224.124,281.292 226.624,281.292 C 229.124,281.292 231.624,283.792 231.624,286.292z"/>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" d="M 231.624 286.292 C 231.624,288.792 229.124,291.292 226.624,291.292 C 224.124,291.292 221.624,288.792 221.624,286.292 C 221.624,283.792 224.124,281.292 226.624,281.292 C 229.124,281.292 231.624,283.792 231.624,286.292"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="890.45" y="336.672" width="158.45" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="890.45" y="336.672" width="158.45" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="969.675" y="355.672">DeadEntityState</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="672.658" y="336.672" width="197.1" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="672.658" y="336.672" width="197.1" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="771.208" y="355.672">SpaceShipAliveState</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="821.55,298.55 821.55,316.493 771.208,316.493 771.208,336.672 "/>
+    <polygon style="fill: #ffffff" points="829.55,298.55 821.55,282.55 813.55,298.55 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="829.55,298.55 821.55,282.55 813.55,298.55 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="821.55,298.55 821.55,316.493 969.675,316.493 969.675,336.672 "/>
+    <polygon style="fill: #ffffff" points="829.55,298.55 821.55,282.55 813.55,298.55 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="829.55,298.55 821.55,282.55 813.55,298.55 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="563.342" y="389.648" width="170.9" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="563.342" y="389.648" width="170.9" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="648.792" y="408.648">CannonAliveState</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="803.838" y="387.966" width="146.8" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="803.838" y="387.966" width="146.8" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="877.238" y="406.966">MineAliveState</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="974.54" y="387.124" width="165.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="974.54" y="387.124" width="165.4" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1057.24" y="406.124">MissileAliveState</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="821.55,298.55 821.55,316.246 877.238,316.246 877.238,387.966 "/>
+    <polygon style="fill: #ffffff" points="829.55,298.55 821.55,282.55 813.55,298.55 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="829.55,298.55 821.55,282.55 813.55,298.55 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="821.55,298.55 821.55,316.246 1057.24,316.246 1057.24,387.124 "/>
+    <polygon style="fill: #ffffff" points="829.55,298.55 821.55,282.55 813.55,298.55 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="829.55,298.55 821.55,282.55 813.55,298.55 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="645.75" y="437.578" width="196.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="645.75" y="437.578" width="196.6" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="744.05" y="456.578">PowerBarNoHitState</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="907.268" y="436.738" width="208.05" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="907.268" y="436.738" width="208.05" height="28"/>
+    <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="1011.29" y="455.738">PowerBarOneHitState</text>
+  </g>
+</svg>

@@ -59,7 +59,7 @@ backgroundcolor=\color{LightLightGray},
 breaklines=true,breakatwhitespace=true,breakautoindent
 }
 
-\title{\emph{StarCastle} - Esempio di applicazione dei design pattern nella modellazione di un videogioco}
+\title{\emph{StarCastle} - Esempio di applicazione dei \emph{design pattern} nella modellazione di un videogioco}
 \author{Nicola Corti - 454413 \\Corso di Laurea Magistrale in Informatica \\ Universit\`a degli studi di Pisa \\ \\ \includegraphics[width=2cm]{unipi.pdf}}
 \date{10 Novembre 2014}
 
@@ -68,7 +68,7 @@ breaklines=true,breakatwhitespace=true,breakautoindent
 \maketitle
 
 \begin{abstract}
-Questa relazione ha lo scopo di illustrare come i design pattern possono essere utilizzati nella modellazione di un software complesso, quale pu\`o essere un videogioco. Gli aspetti da tenere in considerazione sono svariati, dal mantenimento di uno stato consistente, alla gestione degli eventi, delle collisioni, etc\dots{}
+Questa relazione ha lo scopo di illustrare come i design pattern possono essere utilizzati nella modellazione di un software complesso, quale pu\`o essere un videogioco. Gli aspetti da tenere in considerazione sono svariati, dal mantenimento di uno stato consistente, alla gestione degli eventi, delle collisioni, etc\dots{} i \emph{design pattern} possono correre in aiuto al modellatore, permettendo di creare software modulare che si adatta meglio a modifiche future.
 
 Il codice sorgente allegato \`e da considerarsi parte integrante di questa relazione, al fine di permettere una comprensione pi\`u organica di tutti gli aspetti di design ed implementativi.
 \end{abstract}
@@ -88,7 +88,7 @@ Per questo motivo risulta fondamentale analizzare sotto ogni aspetto il videogio
 
 In particolare in questa relazione mostreremo come i \emph{design pattern} possono essere di supporto nella progettazione del videogioco \emph{StarCastle}\footnote{\url{http://en.wikipedia.org/wiki/Star_Castle}}, un videogioco vettoriale del 1980 prodotto da Cinematronics\footnote{\`E possibile testare una demo online del gioco all'indirizzo seguente \\ \url{http://www.download-free-games.com/online/game/star_castle/}}.
 
-In \emph{StarCastle} il giocatore si trover\`a a comandare un'astronave spaziale, e dovr\`a attaccare un cannone posto al centro dello schermo (vedi immagine \ref{img:screen}). Il cannone \`e protetto da 3 annelli formate da barre di energie ed \`e in grado di attaccare il giocatore tramite mine (che inseguiranno l'astronave del giocatore) e sfere al plasma (che verranno sparate direttamente dal cannone verso l'astronave). 
+In \emph{StarCastle} il giocatore si trover\`a a comandare un'astronave spaziale, e dovr\`a attaccare un cannone posto al centro dello schermo (vedi immagine \ref{img:screen}). Il cannone \`e protetto da 3 anelli formati da barre di energia ed \`e in grado di attaccare il giocatore tramite mine (che inseguiranno l'astronave del giocatore) e sfere al plasma (che verranno sparate direttamente dal cannone in direzione retta verso l'astronave). 
 
 \begin{figure}
 \centering
@@ -99,16 +99,16 @@ In \emph{StarCastle} il giocatore si trover\`a a comandare un'astronave spaziale
 
 Tralasciamo una discussione pi\`u dettagliata di tutte le meccaniche di gioco, in quanto verranno analizzate singolarmente nelle varie sezioni seguenti.
 
-Preferiamo piuttosto soffermarci su un pattern che ha guidato la fase di progettazione di tutto il software e che permea tutti gli aspetti che verranno analizzati nelle sezioni seguenti, il \emph{Model-View-Controller}.
+Preferiamo piuttosto soffermarci su un pattern che ha guidato la fase di progettazione architettura di tutto il software e che permea tutti gli aspetti che verranno analizzati nelle sezioni seguenti, il \emph{Model-View-Controller}.
 
 \subsection*{Il pattern \emph{Model-View-Controller}}
 
-Il \emph{Model-View-Controller} \`e un pattern architetturale che ha come scopo principale quello di mettere il focus sulla separazione fra la rappresentazione dei dati e la loro rappresentazione.
+Il \emph{Model-View-Controller} \`e un pattern architetturale che ha come scopo principale quello di porre il focus sulla separazione fra la rappresentazione interna dello stato e la sua visualizzazione.
 
 I componenti che interagiscono nel pattern \emph{Model-View-Controller}, come suggerisce il nome, sono 3 (vedi immagine \ref{img:mvc}):
 
 \begin{description}
-\item[\textsf{Model}] Mantiene la rappresentazione dei dati e si occupa della \emph{business logic},
+\item[\textsf{Model}] Mantiene la rappresentazione dello stato e si occupa della \emph{business logic},
 \item[\textsf{View}] Interagisce con il \textsf{Model} e offre all'utente una sua rappresentazione visuale,
 \item[\textsf{Controller}] Raccoglie l'input dell'utente e modifica il \textsf{Model} di conseguenza.
 \end{description}
@@ -120,12 +120,12 @@ I componenti che interagiscono nel pattern \emph{Model-View-Controller}, come su
 \label{img:mvc}
 \end{figure}
 
-In particolare in \emph{StarCastle} sono stati i componenti del \emph{Model-View-Controller} sono stati istanziati come segue:
+In particolare in \emph{StarCastle} i componenti del \emph{Model-View-Controller} sono stati istanziati come segue:
 
 \begin{description}
 \item[\textsf{Model}] Rappresenta lo stato di tutte le entit\`a di gioco, mantenendone stato attuale, posizione, velocit\`a ed eventuali interazioni con altre entit\`a di gioco
 \item[\textsf{View}] Rappresenta il contesto grafico sul quale verranno disegnate tutte le primitive grafiche per rappresentare i vari componenti del gioco, secondo le policy grafiche previste dal sistema
-\item[\textsf{Controller}] Rappresenta il meccanismo che si occupa di raccogliere gli input dell'utente, e di convertirli in comandi di giochi, che verranno elaborati al fine di far evolvere le entit\`a in gioco (nella fattispecie quindi muovere o far sparare una navicella).
+\item[\textsf{Controller}] Rappresenta il meccanismo che si occupa di raccogliere gli input dell'utente, e di convertirli in comandi di gioco, che verranno elaborati al fine di far evolvere le entit\`a in gioco (nella fattispecie quindi muovere o far sparare una navicella).
 \end{description}
 
 \section{Modellazione della realt\`a}
@@ -138,7 +138,7 @@ Analizzando il nostro caso ci rendiamo subito conto che:
 \item Le entit\`a da modellare sono fondamentalmente 5: l'astronave, il cannone, le mine, i missili e le barre di energia.
 \item Esse condividono alcuni attributi comuni, quali ad esempio la posizione.
 \item Esse condividono dei comportamenti comuni, quali ad esempio la necessit\`a di modificare la propria posizione.
-\item Le entit\`a necessitano di mantenere uno stato comune, che muta quando avviene una collisione fra due entit\`a distinte.
+\item Le entit\`a necessitano di mantenere uno stato comune (vivo, distrutto, etc\dots{}), che muta quando avviene una collisione fra due entit\`a distinte.
 \item Alcune entit\`a (cannone e mine) hanno la necessit\`a di essere notificate quando un utente interagisce con il gioco, al fine di poter decidere quale navicella spaziale seguire.
 \end{itemize}
 
@@ -149,7 +149,7 @@ Per questi motivi si \`e deciso di progettare una gerarchia di classi che ha com
 \item[\emph{Observer}] Per modellare il meccanismo di notifica di interazione del giocatore alle mine e al cannone.
 \end{description}
 
-La gerarchia di classi \`e rappresentata nell'immagine \ref{img:GameEntity}\footnote{Si noti che in questo e nei prossimi diagrammi UML non sono rappresentati tutti gli attrubuti e i metodi della classe, ma solamente quelli significati nel contesto in cui vengono trattati, al fine di non appesantire il diagramma}.
+La gerarchia di classi \`e rappresentata\footnote{Si noti che in questo e nei prossimi diagrammi UML non sono rappresentati tutti gli attrubuti e i metodi della classe, ma solamente quelli significati nel contesto in cui vengono trattati, al fine di non appesantire i diagrammi.} nell'immagine \ref{img:GameEntity}.
 
 \begin{figure}[ht]
 \centering
@@ -160,7 +160,7 @@ La gerarchia di classi \`e rappresentata nell'immagine \ref{img:GameEntity}\foot
 
 Poniamo attenzione al metodo \textsf{evolveEntity}, esso rappresenta il metodo fondamentale per definire come l'entit\`a si evolve nel tempo. \`E un metodo astratto e deve essere implementato da ogni sottoclasse definendo il proprio comportamento (si pensi ad esempio al cannone che ruota, all'astronave che decelera linearmente o ai missili che procedono il linea retta con velocit\`a costante).
 
-Gli altri metodi di \textsf{GameEntity} verranno trattati nel dettagli nelle sezioni seguenti.
+Gli altri metodi di \textsf{GameEntity} verranno trattati nel dettaglio nelle sezioni seguenti.
 
 \subsection{Utilizzo dal pattern \emph{State}}
 \label{sec:state}
@@ -180,9 +180,9 @@ Nel diagramma in figura \ref{img:State} si nota che la classe \textsf{EntityStat
 
 Si noti come il metodo \textsf{collideWith} ha due parametri, il primo rappresenta il riferimento al \textsf{GameEntity} stesso, mentre il secondo rappresenta un oggetto con cui si \`e entrati in collisione; il primo parametro \`e necessario in quanto lo stato invocher\`a il metodo \textsf{setState} sul \textsf{GameEntity} al fine di realizzare la transizione verso un nuovo stato.
 
-Utilizzare il pattern \emph{State} comporta la realizzazione di tante piccole classi che rappresentano i singoli stati delle entit\`a, come si pu\`o notare dalle sottoclassi di \textsf{EntityState} presenti nel diagramma. Questo sembrerebbe introdurre complessit\`a nella progettazione, ma porta invece notevoli benefici, permettendo di evitare grossi statement switch e permettendo di semplificare notevolmente la fase di rendering grafico (sezione \ref{sec:graphics}).
+Utilizzare il pattern \emph{State} comporta la realizzazione di tante piccole classi che rappresentano i singoli stati delle entit\`a, come si pu\`o notare dalle sottoclassi di \textsf{EntityState} presenti nel diagramma. Questo sembrerebbe introdurre complessit\`a nella progettazione, ma porta invece notevoli benefici, permettendo di evitare grossi statement \texttt{switch} e permettendo di semplificare notevolmente la fase di rendering grafico (sezione \ref{sec:graphics}).
 
-Si noti infine che \`e stata realizzata una singola classe \textsf{DeadEntityState} al fine di rappresentare lo stato in cui termina una generica entit\`a che \`e stata distrutta; invece di realizzare svariate classi del tipo \textsf{SpaceShipDeadState}, \textsf{CannonDeadState}, etc\dots{} riducendo cos\`i la replicazione del codice.
+Si noti infine che \`e stata realizzata una singola classe \textsf{DeadEntityState} al fine di rappresentare lo stato in cui termina una generica entit\`a che \`e stata distrutta, invece di realizzare svariate classi del tipo \textsf{SpaceShipDeadState}, \textsf{CannonDeadState}, etc\dots{} riducendo cos\`i la replicazione del codice.
 
 \subsection{Utilizzo del pattern \emph{Factory Method}}
 \label{sec:factory}
@@ -202,13 +202,13 @@ Nel diagramma in figura \ref{img:FactoryMethod} riportiamo le classi relative a 
 
 Per gestire la logica dello spostamento di mine e del cannone, che devono inseguire una delle astronavi in gioco, si \`e deciso di utilizzare il pattern \emph{Observer}.
 
-In particolare, ogni volta che un'astronave riceve un comando di rotazione, accelerazione o di sparo, questa notifica a tutte le mine e al cannone in gioco.
+In particolare, ogni volta che un'astronave riceve un comando di rotazione, accelerazione o di sparo, questa lo notifica a tutte le mine e al cannone in gioco.
 
 Per implementare il pattern sono stati utilizzati le classi e le interfacce delle Java API: le classi \textsf{Mine} e \textsf{Cannon} implementano l'interfaccia \textsf{java.util.Observer}, fornendo il metodo \textsf{update} che verr\`a invocato ogni volta che ricevono una notifica.
 
 Nell'implementazione attuale le classi \textsf{Mine} e \textsf{Cannon} inseguono l'ultima \textsf{SpaceShip} da cui hanno ricevuto una notifica, ma si potrebbe ampliare la logica prevedendo di seguire l'astronave che ha la distanza minore.
 
-Per quanto riguarda la classe \textsf{SpaceShip} si \`e deciso mantenere un riferimento ad un oggetto di tipo \textsf{DelegatedObservable}, in quanto \textsf{SpaceShip} era gi\`a in una gerarchia di classi. Si noti che la classe \textsf{DelegatedObservable} (sottoclasse di \textsf{java.util.Observable}) \`e una classe necessaria per il meccanismo della delega, in quanto estende la visibilit\`a dei metodi di \textsf{Observable}.
+Per quanto riguarda la classe \textsf{SpaceShip} si \`e deciso di mantenere un riferimento ad un oggetto di tipo \textsf{DelegatedObservable}, in quanto \textsf{SpaceShip} era gi\`a in una gerarchia di classi. Si noti che la classe \textsf{DelegatedObservable} (sottoclasse di \textsf{java.util.Observable}) \`e una classe necessaria per il meccanismo della delega, in quanto estende la visibilit\`a dei metodi di \textsf{Observable}.
 
 Le classi coinvolte sono riassunte nel diagramma in figura \ref{img:Observer}.
 
@@ -234,12 +234,12 @@ Invece di obbligare ogni \textsf{GameEntity} ad interagire con ogni altra \texts
 
 In particolare abbiamo realizzato:
 \begin{itemize}
-\item L'interfaccia \textsf{Collideable} che deve essere implementata da ogni entit\`a, in particolare \textsf{Collideable} \`e implementata da \textsf{GameEntity} che fornisce direttamente l'implementazione dei due metodi dell'interfaccia:
+\item L'interfaccia \textsf{Collideable} che deve essere implementata da ogni entit\`a che vuole entrare in collisione, in particolare \textsf{Collideable} \`e implementata da \textsf{GameEntity} che fornisce direttamente l'implementazione dei due metodi dell'interfaccia:
 \begin{itemize}
 \item \textsf{getBoundCircle} che ritorna il \textsf{BoundCircle} di una dimensione standard (le sottoclassi faranno l'override di questo metodo se il bound circle \`e differente).
 \item \textsf{collideWith} che rappresenta il metodo invocato quando \textsf{GameEntity} entra in collisione con un altro \textsf{Collideable}, implementato invocando il metodo \textsf{collideWith} dello stato attuale (sezione \ref{sec:state}).
 \end{itemize}
-\item L'interfaccia \textsf{CollisionMediator}, che deve essere implementata dai mediator concreti, con il metodo \textsf{checkCollision} che deve controllare, data una lista di \textsf{Collideable}, se sono presenti collisioni, e notificare i soggetti coinvolti nella collisione 
+\item L'interfaccia \textsf{CollisionMediator}, che deve essere implementata dai mediator concreti, con il metodo \textsf{checkCollision} che deve controllare, data una lista di \textsf{Collideable}, se sono presenti collisioni, e notificare i soggetti coinvolti nella collisione,
 \item La classe \textsf{CollisionConcreteMediator} che rappresenta un'implementazione concreta dell'interfaccia \textsf{CollisionMediator}.
 \end{itemize}
 
@@ -279,11 +279,11 @@ La gerarchia di classi delle primitive grafiche \`e mostrata in figura \ref{img:
 \label{img:GraphicEntity}
 \end{figure}
 
-Abbiamo successivamente realizzato l'interfaccia \textsf{Drawable} (immagine \ref{img:Drawable}), che deve essere implementata dai soggetti che desiderano essere disegnati a scherma. L'interfaccia prevede un metodo \textsf{draw} con  un parametro di tipo \textsf{GraphicEnvironment} (il contesto grafico), si realizzano quindi tutte le operazioni necessarie a mostrare su schermo l'oggetto.
+Abbiamo successivamente realizzato l'interfaccia \textsf{Drawable} (immagine \ref{img:Drawable}), che deve essere implementata dai soggetti che desiderano essere disegnati a scherma. L'interfaccia prevede un metodo \textsf{draw} con  un parametro di tipo \textsf{GraphicEnvironment} (il contesto grafico); il metodo \textsf{draw} permetter\`a dunque di eseguire sul contesto grafico tutte le operazioni necessarie a mostrare su schermo l'oggetto.
 
 Nel nostro caso abbiamo deciso di far implementare l'interfaccia \textsf{Drawable} alla classe \textsf{GameEntity} e di lasciare l'onere di dover fornire le primitive grafiche ad ogni singolo stato sottoclasse di \textsf{EntityState}: ogni stato fornisce il metodo \textsf{getGraphicEntities} che ritorna una lista di primitive grafiche (\textsf{List}$<$\textsf{GraphicEntity}$>$) che permettono di renderizzare la singola entit\`a.
 
-Chiariamo meglio questo concetto con un esempio: una \textsf{PowerBar} che non \`e stata mai colpita\footnote{La \textsf{PowerBar} si trova dunque nello stato \textsf{PowerBarNoHitState}} invocher\`a il metodo \textsf{getGraphicEntities} sul suo stato, ottenendo una lista di \textsf{GraphicEntity}, in particolare un solo \textsf{GraphicVector} che permette di disegnare l'oggetto \textsf{PowerBar}. Nel momento in cui avviene una collisione con un \textsf{Missile} l'oggetto \textsf{PowerBar} transisce in un nuovo stato\footnote{Lo stato \textsf{PowerBarOneHitState}} ed invocando il metodo \textsf{getGraphicEntities} si otterranno le primitive grafiche per ridisegnare la \textsf{PowerBar} che \`e stata colpita.
+Chiariamo meglio questo concetto con un esempio: una \textsf{PowerBar} che non \`e stata mai colpita\footnote{La \textsf{PowerBar} si trova dunque nello stato \textsf{PowerBarNoHitState}} invocher\`a il metodo \textsf{getGraphicEntities} sul suo stato, ottenendo una lista di \textsf{GraphicEntity}, in particolare un solo \textsf{GraphicVector} che permette di disegnare l'oggetto \textsf{PowerBar}. Nel momento in cui avviene una collisione con un \textsf{Missile} l'oggetto \textsf{PowerBar} transisce in un nuovo stato\footnote{Lo stato \textsf{PowerBarOneHitState}} ed invocando il metodo \textsf{getGraphicEntities} si otterranno le primitive grafiche per ridisegnare la \textsf{PowerBar} che \`e stata colpita una volta.
 
 \begin{figure}[ht]
 \centering
@@ -294,7 +294,7 @@ Chiariamo meglio questo concetto con un esempio: una \textsf{PowerBar} che non \
 
 \subsection{Uso del pattern \emph{Strategy}}
 
-Consideriamo inoltre che dobbiamo prevedere inoltre un meccanismo per animare le primitive grafiche di una \textsf{GameEntity}, per gestire le animazioni abbiamo deciso di implementare il pattern \emph{Strategy} nei \textsf{GameEntity}.
+Consideriamo inoltre che dobbiamo prevedere un meccanismo per animare le primitive grafiche di una \textsf{GameEntity}: abbiamo deciso di implementare il pattern \emph{Strategy} nei \textsf{GameEntity}.
 
 Abbiamo realizzato la classe astratta \textsf{DrawStrategy} che contiene il metodo \textsf{drawEntity}: questo metodo accetta due parametri, un \textsf{GraphicEnvironment} dove poter disegnare e una lista di \textsf{GraphicEntity}. Abbiamo inoltre fornito due strategie concrete:
 
@@ -377,7 +377,7 @@ Il videogioco deve prevedere anche la modalit\`a \textit{windowed}. Aggiungere l
 
 All'avvio il gioco determina le dimensioni dell'area che pu\`o utilizzare per effettuare le operazioni di rendering grafico. Aggiungere la modalit\`a \textit{windowed} consiste in ridimensionare quest'area e aggiungere gli elementi grafici della finestra (bordi, bottoni, men\`u, etc\dots{}).
 
-Trovandoci in una situazioni in cui si sta estendendo una funzionalit\`a, si \`e deciso di utilizzare il pattern \emph{Decorator}, il \textsf{GameEngine} rappresenta la nostra classe base, la classe astratta \textsf{GameDisplay} rappresenta la radice della gerarchia che definisce le operazioni comuni a \textsf{GameEngine} e ai decorator.
+Trovandoci in una situazione in cui si sta estendendo una funzionalit\`a, si \`e deciso di utilizzare il pattern \emph{Decorator}, il \textsf{GameEngine} rappresenta la nostra classe base, la classe astratta \textsf{GameDisplay} rappresenta la radice della gerarchia che definisce le operazioni comuni a \textsf{GameEngine} e ai \textit{decorator}.
 
 Abbiamo inoltre realizzato la classe \textsf{WindowDecorator} che rappresenta l'unico \textit{decorator} concreto, abbiamo omesso la classe astratta padre della gerarchia dei \emph{decorator} in quanto non vi erano altri \emph{decorator} concreti.
 
@@ -422,18 +422,18 @@ Le classi coinvolte nell'implementazione del pattern \emph{Command} sono raffigu
 
 \subsection{Utilizzo del pattern \emph{Chain of reponsability}}
 
-Si \`e deciso di utilizzare la struttura realizzata con il pattern \emph{Decorator} per implementare il pattern \emph{Chain of reponsability}: aggiungendo il metodo \textsf{receiveCommand} a \textsf{GameDisplay} prevediamo che ogni oggetto della gerarchia dei \textit{decorator} abbia questo metodo.
+Si \`e deciso di utilizzare la struttura realizzata con il pattern \emph{Decorator} per implementare il pattern \emph{Chain of reponsability}: aggiungendo il metodo \textsf{sendCommand} a \textsf{GameDisplay} prevediamo che ogni oggetto della gerarchia dei \textit{decorator} abbia questo metodo.
 
-Quando il \textsf{KeyEventManager} invier\`a un comando al \textsf{GameDisplay}, il \textit{decorator} pi\`u esterno\footnote{Nel nostro caso abbiamo solamente un \emph{decorator} concreto (\textsf{WindowDecorator}), ma nulla vieta di poter scrivere altri \textit{decorator}} potr\`a decidere se gestire il comando e non propagarlo ulteriormente, oppure passare il comando al proprio \textsf{component} invocando il solito comando \textsf{receiveCommand}.
+Quando il \textsf{KeyEventManager} invier\`a un comando al \textsf{GameDisplay}, il \textit{decorator} pi\`u esterno\footnote{Nel nostro caso abbiamo solamente un \emph{decorator} concreto (\textsf{WindowDecorator}), ma nulla vieta di poter scrivere altri \textit{decorator}} potr\`a decidere se gestire il comando e non propagarlo ulteriormente, oppure passare il comando al proprio \textsf{component} invocando il solito comando \textsf{sendCommand}.
 
-Si noti come, malgaro le classi siano le stesse, il flusso di esecuzione \`e invertito: nel caso del metodo \textsf{renderWindow}, il decorator pi\`u esterno chiedere prima l'esecuzione al \textsf{component} ed estende successivamente con il proprio comportamento; nel caso del metodo \textsf{receiveCommand} si esegue prima la logica del \textit{decorator} verificando se \`e possibile gestire il comando, e successivamente lo si propaga al \textsf{component}.
+Si noti come, malgrado le classi siano le stesse, il flusso di esecuzione \`e invertito: nel caso del metodo \textsf{renderWindow}, il decorator pi\`u esterno chiedere prima l'esecuzione al \textsf{component} ed estende successivamente con il proprio comportamento; nel caso del metodo \textsf{sendCommand} si esegue prima la logica del \textit{decorator} verificando se \`e possibile gestire il comando, e successivamente lo si propaga al \textsf{component}.
 
 Le classi coinvolte sono le stesse del diagramma in figura \ref{img:Decorator}.
 
 \section{Avvio e terminazione del gioco}
 \label{sec:avvio}
 
-Tutte queste classi che sono state presentate devono essere istanziate correttamente e nel giusto ordine. Questo potrebbe creare problemi per l'utilizzatore delle classi, si \`e quindi pensato di realizzare un classe unica che si occupi di creare gli oggetti necessaria e che esponga i metodi necessari ad eseguire le operazioni basilari del videogioco.
+Tutte queste classi che sono state presentate devono essere istanziate correttamente e nel giusto ordine. Questo potrebbe creare problemi per l'utilizzatore delle classi, si \`e quindi pensato di realizzare un classe unica che si occupi di creare gli oggetti necessari e che esponga i metodi necessari ad eseguire le operazioni basilari del videogioco.
 
 Questa classe \`e la classe \textsf{GameFacade}, che utilizza il pattern \emph{Façade}.
 
@@ -459,7 +459,7 @@ I metodi che offre sono:
 \item \textsf{setWindowed} per togliere/aggiungere il \textsf{WindowDecorator} a runtime.
 \end{itemize}
 
-Chiaramente un utente pu\`o decidere di usare la versione di \textsf{addPlayer} che ritorna un \textsf{KeyEventManager}, collegarlo ad un componente Swing e non preoccuparsi pi\`u della gestione dell'input, oppure utilizzare la versione che ritorna l'ID, e gestire l'input in modo da invocare i comandi.
+Chiaramente un utente pu\`o decidere di usare la versione di \textsf{addPlayer} che ritorna un \textsf{KeyEventManager}, collegarlo ad un componente Swing e non preoccuparsi pi\`u della gestione dell'input, oppure utilizzare la versione che ritorna l'ID, e preoccuparsi dunque gestire l'input in modo da invocare i comandi sulla classe \textsf{GameFacade}.
 
 Un esempio di utilizzo del primo meccanismo \`e mostrato nella classe di esempio \textsf{SimpleClient}.
 
@@ -481,7 +481,7 @@ Dopodich\'e si \`e dichiarata la classe  \textsf{GameFacade} come sottoclasse de
 
 L'interfaccia \textsf{RemoteGame} prevede sostanzialmente gli stessi metodi di \textsf{GameFacade}, apparte per il metodo \textsf{addPlayer(): KeyEventManager} in quanto \textsf{KeyEventManager} non \`e un oggetto \textsf{Serializable} e non pu\`o essere trasmesso sulla rete: ci\`o comporta che un utente remoto sia obbligato ad utilizzare il proprio ID ed ad invocare sull'oggetto \textsf{RemoteGame} i metodi \textsf{rotate}, \textsf{propel} e \textsf{fire}.
 
-Sono state realizzate le classi \textsf{RemoteClient} e \textsf{RemoteServer} che realizzano rispettivamente il client e il server di gioco, e che necessitano dei parametri di rete per funzionare (host e porta).
+Sono state realizzate le classi di esempio \textsf{RemoteClient} e \textsf{RemoteServer} che realizzano rispettivamente il client e il server di gioco, e che necessitano dei parametri di rete per funzionare (host e porta).
 
 Le classi coinvolte nel pattern \emph{Remote Proxy} sono mostrate nell'immagine \ref{img:Proxy}.
 
@@ -564,7 +564,7 @@ ant Simple [-Dleft=<char> -Dright=<char> -Dpropel=<char> -Dfire=<char>]
 
 Con le opzioni \texttt{-Dleft=} e seguenti \`e possibile impostare la mappatura dei tasti per il gioco. Se non vengono fornite verr\`a utilizzata la configurazione \textsf{w a s d}.
 
-Verr\`a mostrata una piccola finestra Swing (vedi immagine \ref{img:Swing}) che permetter\`a di catturare gli eventi di tasti premuto e farli elaborare al gioco.
+Verr\`a mostrata una piccola finestra Swing (vedi immagine \ref{img:Swing}) che permetter\`a di catturare gli eventi di pressione dei tasti al fine di passarli al videogioco.
 
 \begin{figure}[h]
 \centering
@@ -580,7 +580,7 @@ Per avviare il server remoto \`e possibile utilizzare il target
 ant Server [-Dhost=<hostname>] [-Dport=<port>]
 \end{lstlisting}
 
-Con le opzioni \texttt{-Dhost=} e \texttt{-Dport=} seguenti \`e possibile impostare il proprio hostname/indirizzo IP e la porta di ascolto. Se non forniti il server si mette in ascolto come localhost (127.0.0.1) sulla porta (34567), assicurarsi che la porta indicata non sia occupata e che non vi siano problemi nella configurazione di rete.
+Con le opzioni \texttt{-Dhost=} e \texttt{-Dport=} \`e possibile impostare il proprio hostname/indirizzo IP e la porta di ascolto. Se non forniti il server si mette in ascolto come localhost (127.0.0.1) sulla porta (34567), assicurarsi che la porta indicata non sia occupata e che non vi siano problemi nella configurazione di rete.
 
 Per avviare il client \`e invece sufficiente invocare il comando 
 \begin{lstlisting}[basicstyle=\ttfamily]
